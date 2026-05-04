@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{23a53467-fb80-41df-90a9-3e4f601bb933}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="zd_expensetitle" select="1" icon="1" preview="1">
+        <row name="result" id="zd_hh_expenseid">
+          <cell name="zd_expensetitle" width="300" />
+          <cell name="zd_amount" width="150" />
+          <cell name="zd_description" width="150" />
+          <cell name="zd_category" width="150" />
+          <cell name="zd_department" width="150" />
+          <cell name="zd_expensestatus" width="150" />
+          <cell name="zd_approvaldate" width="150" />
+          <cell name="zd_approvedby" width="150" />
+          <cell name="ownerid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="zd_hh_expense">
+          <attribute name="zd_hh_expenseid" />
+          <attribute name="zd_expensetitle" />
+          <attribute name="createdon" />
+          <order attribute="zd_expensetitle" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="zd_amount" />
+          <attribute name="zd_description" />
+          <attribute name="zd_category" />
+          <attribute name="zd_department" />
+          <attribute name="zd_expensestatus" />
+          <attribute name="zd_approvaldate" />
+          <attribute name="zd_approvedby" />
+          <attribute name="ownerid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active hh_Expenses" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

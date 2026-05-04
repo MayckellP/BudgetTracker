@@ -1,0 +1,1699 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  scrSearch:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |-
+        =UpdateContext({locSidebarOpened: Blank(), locCurrentRowAction: false});
+        Set(gblExpenseStatusByNotify, false);
+    Children:
+      - cntMain_scrSearch:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =App.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =If(varIsMobileView, LayoutDirection.Vertical, LayoutDirection.Horizontal)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =App.Width
+            X: =App.Width/2 - Self.Width/2
+            Y: =App.Height/2 - Self.Height/2
+          Children:
+            - cmpNavbarHeader_scrSearch_Mobile:
+                Control: CanvasComponent
+                ComponentName: cmpNavbarHeader
+                ComponentLibraryUniqueName: crb5e_navigation_a8e64
+                Properties:
+                  BackgroundColor: =RGBA(0, 121, 107, 1)
+                  FillPortions: =0.34
+                  HamburguerIconSize: =30
+                  Height: =80
+                  IconRefresh: =SampleImage
+                  LayoutMaxHeight: =65
+                  LayoutMinHeight: =60
+                  MarginContainer: =10
+                  PageName: ="Suchen"
+                  ShowNavbarSidebar: |-
+                    =UpdateContext({locSidebarOpened: !locSidebarOpened});
+                  SidebarActived: =locSidebarOpened
+                  TextDetails: =User().FullName
+                  TextDetailsColor: =RGBA(214, 221, 224, 1)
+                  TextDetailsFontSize: =8
+                  TitleFontSize: =12
+                  TitleTextColor: =RGBA(255, 255, 255, 1)
+                  Visible: =varIsMobileView
+                  Width: =App.Width
+            - cmpSidebar_scrSearch:
+                Control: CanvasComponent
+                ComponentName: cmpSidebar
+                ComponentLibraryUniqueName: crb5e_navigation_a8e64
+                Properties:
+                  AlignInContainer: =AlignInContainer.Stretch
+                  BackgroundColor: =RGBA(255, 255, 255, 1)
+                  Btn1Icon: =If(varIsDarkModusActived, Dashboard_Selected, Dashboard_Black)
+                  Btn1IconSelected: =Dashboard_Selected
+                  Btn1Navigate: =scrExpense
+                  Btn1Text: ="Finanz Übersicht"
+                  Btn1Visible: =true
+                  Btn2Icon: =If(varIsDarkModusActived, Report_Selected, Report_Black)
+                  Btn2IconSelected: =Report_Selected
+                  Btn2Navigate: =scrReport
+                  Btn2Text: ="Berichte"
+                  Btn2Visible: =gblIsSupervisor
+                  Btn3Icon: =If(varIsDarkModusActived, Search_Selected, Search_Black)
+                  Btn3IconSelected: =Search_Selected
+                  Btn3Navigate: =App.ActiveScreen
+                  Btn3Text: ="Suchen"
+                  Btn3Visible: =true
+                  Btn4Icon: =Support_Black
+                  Btn4IconSelected: =Support_Selected
+                  Btn4Navigate: =App.ActiveScreen
+                  Btn4Text: ="Einstellung"
+                  Btn4Visible: =false
+                  BtnNewRecordIcon: =Plus
+                  BtnNewRecordText: ="Ausgaben erfassen"
+                  BtnNewRecordVisible: =true
+                  ClientImage: =ClientExample
+                  ClientName: ="Hospital AG"
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0.8
+                  FontSize: =varFontSizeButton
+                  Height: =App.Height
+                  LayoutMaxWidth: =varDsSidebarWidth
+                  LayoutMinWidth: =120
+                  OnSelectBtnNewRecord: =
+                  PrimaryColor: =varDsColorPrimaryButton
+                  SelectedPage: ="Suchen"
+                  SelectedTextColor: =RGBA(255, 255, 255, 1)
+                  TextColor: =RGBA(0, 0, 0, 1)
+                  TitleFontSize: =12
+                  Visible: =!varIsMobileView
+                  Width: =varDsSidebarWidth
+            - cntMainRight_scrSearch:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =varDsBackgroundApp
+                  FillPortions: =4
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =varDsGap
+                  LayoutMaxWidth: =If(varBreakpoint = "Mobile", Parent.Width, 0)
+                  PaddingBottom: =varDsGap
+                  PaddingLeft: =varDsGap
+                  PaddingRight: =varDsGap
+                  PaddingTop: =varDsGap
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  X: =cmpSidebar_scrSearch.Width
+                Children:
+                  - cmpHeader_scrSearch:
+                      Control: CanvasComponent
+                      ComponentName: cmpHeaderSimple
+                      ComponentLibraryUniqueName: crb5e_headers_07abe
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BackgroundColor: =RGBA(0, 0, 0, 0)
+                        DarkModusInput: =varIsDarkModusActived
+                        DetailsColor: =varDsColorGeneralLegend
+                        DetailsFontSize: =varFontSizeNormalText
+                        DetailsText: ="Übersicht & Export der Finanzdaten"
+                        FillPortions: =0.85
+                        Height: =App.Height * 0.06
+                        IconRefresh: =Icon_Refresh_DarkGreen
+                        IconsSize: =12
+                        LayoutMaxHeight: =varDsHeaderHeight
+                        LayoutMaxWidth: =Parent.Width
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        OnSelect_RefreshData: |-
+                          =ClearCollect(ColMain_Expense, hh_Expenses);
+                          ClearCollect(ColMain_Department, hh_Departments);
+                          ClearCollect(ColMain_Category, hh_Categories);
+                        TitelColor: =varDsColorTitlePage
+                        TitelFontSize: =varFontSizePageTitle
+                        TitelText: ="Suchen"
+                        TitelWidth: =120
+                        Visible: =!varIsMobileView
+                        Width: =Max(1728, App.Width)
+                  - cntBody_scrSearch:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        DropShadow: =DropShadow.None
+                        FillPortions: =13
+                        Height: =Parent.Height * 0.1
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =varDsGap
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - cntBodyTop_scrSearch:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              Height: =If(IsBlank(gblSelectedRowMyExpense), 67, 158)
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =varDsGap
+                              LayoutMaxHeight: =Parent.Height
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =varDsBorderSizeContainer
+                              PaddingLeft: =varDsBorderSizeContainer
+                              PaddingRight: =varDsBorderSizeContainer
+                              PaddingTop: =varDsBorderSizeContainer
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width * 0.65
+                            Children:
+                              - cntGalEdit_departmentExpense:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    AlignInContainer: =AlignInContainer.SetByContainer
+                                    BorderColor: =RGBA(222, 222, 222, 1)
+                                    BorderThickness: =varDsBorderSizeContainer
+                                    DropShadow: =DropShadow.None
+                                    Fill: =varDsBGCardContainer
+                                    Height: =Parent.Height * 0.55
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutGap: =5
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =10
+                                    PaddingLeft: =varDsContainerPaddingX
+                                    PaddingRight: =varDsContainerPaddingX
+                                    PaddingTop: =10
+                                    RadiusBottomLeft: =6
+                                    RadiusBottomRight: =6
+                                    RadiusTopLeft: =6
+                                    RadiusTopRight: =6
+                                    Width: =Parent.Width
+                                  Children:
+                                    - cntGalTitle_departmentExpense_2:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          Height: =varDsContainerHeader
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =10
+                                          LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =
+                                          PaddingLeft: =
+                                          PaddingRight: =
+                                          PaddingTop: =
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                        Children:
+                                          - lblGalTitle_departmentExpense_2:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                BorderColor: =RGBA(0, 18, 107, 1)
+                                                FillPortions: =1
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =0
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =varFontSizeCardTitle
+                                                Text: ="Ausgabedetails"
+                                          - cntDdExpUser_report_2:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutGap: =5
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Visible: =false
+                                                Width: =200
+                                              Children:
+                                                - lblExpUser_report_2:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      Align: =Align.Right
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =RGBA(0, 18, 107, 1)
+                                                      Color: =RGBA(91, 91, 91, 1)
+                                                      FillPortions: =1
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =10
+                                                      Text: ="Benutzer"
+                                                      Width: =80
+                                                - ddExpUser_report_2:
+                                                    Control: DropDown@0.0.45
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                                      BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                                      BorderColor: =RGBA(222, 222, 222, 1)
+                                                      BorderRadius: =6
+                                                      BorderThickness: =0.5
+                                                      FillPortions: =1.8
+                                                      FontSize: =11
+                                                      Items: =["Pending", "Approved", "Rejected"]
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Width: =150
+                                                    Children:
+                                                      - Value1_8:
+                                                          Control: DropDownDataField@1.5.0
+                                                          Variant: textualColumn
+                                                          IsLocked: true
+                                                          Properties:
+                                                            FieldDisplayName: ="Value"
+                                                            FieldName: ="Value"
+                                                            FieldType: ="s"
+                                                            Order: =1
+                                          - cntDdExpStatus_report_2:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutGap: =5
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Visible: =false
+                                                Width: =200
+                                              Children:
+                                                - lblExpStatus_report_2:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      Align: =Align.Right
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =RGBA(0, 18, 107, 1)
+                                                      Color: =varDsColorGeneralSubText
+                                                      FillPortions: =1
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =10
+                                                      Text: ="Status"
+                                                      Width: =80
+                                                - ddExpStatus_report_2:
+                                                    Control: DropDown@0.0.45
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                                      BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                                      BorderColor: =RGBA(222, 222, 222, 1)
+                                                      BorderRadius: =6
+                                                      BorderThickness: =0.5
+                                                      FillPortions: =1.8
+                                                      FontSize: =11
+                                                      Items: =["Pending", "Approved", "Rejected"]
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Width: =150
+                                                    Children:
+                                                      - Value1_9:
+                                                          Control: DropDownDataField@1.5.0
+                                                          Variant: textualColumn
+                                                          IsLocked: true
+                                                          Properties:
+                                                            FieldDisplayName: ="Value"
+                                                            FieldName: ="Value"
+                                                            FieldType: ="s"
+                                                            Order: =1
+                                    - ConExp_Table_2:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          X: =40
+                                          Y: =40
+                                        Children:
+                                          - ContGal_TitleExpense_2:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                Fill: =RGBA(237, 255, 251, 1)
+                                                FillPortions: =0
+                                                Height: =35
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                              Children:
+                                                - LblExpTitle_name_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      AutoHeight: =true
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =1.2
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =20
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Title"
+                                                      TextRole: ='Label.TextRole'.Default
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.3
+                                                - LblExpTitle_date_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.6
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Datum"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.2
+                                                - LblExpTitle_amount_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.65
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Betrag"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.2
+                                                - LblExpTitle_category_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.9
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Kategorie"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_description_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =2.1
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Beschreibung"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Visible: =!(App.Width <= 450)
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_user_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =1
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Benutzer"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Visible: =!(App.Width <= 450)
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_state_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.55
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Status"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_action_2:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Center
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.5
+                                                      FontSize: =varFontSizeNormalText
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Aktion"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.15
+                                          - DvdEmp_Title_2:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                BorderColor: =RGBA(166, 166, 166, 1)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                DisabledFill: =RGBA(166, 166, 166, 1)
+                                                Fill: =RGBA(0, 121, 107, 0.5)
+                                                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                Height: =1
+                                                HoverFill: =RGBA(0, 120, 212, 1)
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PressedFill: =RGBA(0, 120, 212, 1)
+                                          - GalExp_2:
+                                              Control: Gallery@2.15.0
+                                              Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_pcfCore
+                                              Properties:
+                                                BorderColor: =RGBA(166, 166, 166, 1)
+                                                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                FocusedBorderThickness: =2
+                                                Items: =gblSelectedRowMyExpense//Filter(hh_Expenses, 'hh_Expenses (Views)'.'My Expense')
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                TemplateSize: =40
+                                              Children:
+                                                - DvdEmp_Row_2:
+                                                    Control: Rectangle@2.3.0
+                                                    Properties:
+                                                      BorderColor: =RGBA(166, 166, 166, 1)
+                                                      BorderStyle: =BorderStyle.None
+                                                      BorderThickness: =2
+                                                      DisabledFill: =RGBA(166, 166, 166, 1)
+                                                      Fill: =RGBA(230, 230, 230, 1)
+                                                      FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                      Height: =1
+                                                      HoverFill: =RGBA(0, 120, 212, 1)
+                                                      PressedFill: =RGBA(0, 120, 212, 1)
+                                                      Width: =ContEmp_Row_2.Width - ContEmp_Row_2.PaddingLeft*2
+                                                      X: =Parent.TemplateWidth/2 - Self.Width/2
+                                                      Y: =Parent.TemplateHeight - Self.Height
+                                                - ContEmp_Row_2:
+                                                    Control: GroupContainer@1.5.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      Height: =Parent.TemplateHeight
+                                                      LayoutAlignItems: =LayoutAlignItems.Center
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      PaddingBottom: =4
+                                                      PaddingTop: =4
+                                                      RadiusBottomLeft: =0
+                                                      RadiusBottomRight: =0
+                                                      RadiusTopLeft: =0
+                                                      RadiusTopRight: =0
+                                                      Width: =Parent.Width
+                                                    Children:
+                                                      - txtExpe_name:
+                                                          Control: Classic/TextInput@2.3.2
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(222, 222, 222, 1)
+                                                            BorderThickness: =0
+                                                            Color: =varDsColorGeneralLegend
+                                                            Default: =ThisItem.ExpenseTitle
+                                                            DisabledColor: =RGBA(157, 157, 157, 1)
+                                                            DisabledFill: =RGBA(0, 0, 0, 0)
+                                                            DisplayMode: =If(Text(ThisItem.ExpenseStatus) = "Pending" && ThisItem.'Created By'.'Primary Email' = User().Email, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            Fill: =RGBA(255, 255, 255, 0)
+                                                            FocusedBorderThickness: =0
+                                                            Font: =Font.'Segoe UI'
+                                                            HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                                            HoverFill: =RGBA(230, 230, 230, 0.5)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PressedColor: =RGBA(0, 0, 0, 1)
+                                                            PressedFill: =
+                                                            RadiusBottomLeft: =4
+                                                            RadiusBottomRight: =4
+                                                            RadiusTopLeft: =4
+                                                            RadiusTopRight: =4
+                                                            Size: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            Width: =LblExpTitle_name_2.Width
+                                                      - LblExp_date_2:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralLegend
+                                                            DisplayMode: =DisplayMode.Disabled
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =Text(ThisItem.'Created On', "dd.mmm")
+                                                            VerticalAlignment: =VerticalAlign.Middle
+                                                            Width: =LblExpTitle_date_2.Width
+                                                      - txtExpe_amount:
+                                                          Control: Classic/TextInput@2.3.2
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(222, 222, 222, 1)
+                                                            BorderThickness: =0
+                                                            Color: =varDsColorGeneralLegend
+                                                            Default: =ThisItem.Amount
+                                                            DisabledColor: =RGBA(157, 157, 157, 1)
+                                                            DisabledFill: =RGBA(0, 0, 0, 0)
+                                                            DisplayMode: =If(Text(ThisItem.ExpenseStatus) = "Pending" && ThisItem.'Created By'.'Primary Email' = User().Email, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            Fill: =RGBA(0, 0, 0, 0)
+                                                            FocusedBorderThickness: =0
+                                                            Font: =Font.'Segoe UI'
+                                                            Format: =TextFormat.Number
+                                                            HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                                            HoverFill: =RGBA(230, 230, 230, 0.5)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PressedColor: =RGBA(0, 0, 0, 1)
+                                                            PressedFill: =
+                                                            RadiusBottomLeft: =4
+                                                            RadiusBottomRight: =4
+                                                            RadiusTopLeft: =4
+                                                            RadiusTopRight: =4
+                                                            Size: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            Width: =LblExpTitle_amount_2.Width
+                                                      - ddExp_category:
+                                                          Control: DropDown@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                                            BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                                            BorderColor: =RGBA(222, 222, 222, 1)
+                                                            BorderRadius: =6
+                                                            BorderThickness: =0.5
+                                                            DefaultSelectedItems: =ThisItem.Category
+                                                            DisplayMode: =If(Text(ThisItem.ExpenseStatus) <> "Pending", DisplayMode.View, DisplayMode.Edit)
+                                                            FontSize: =varFontSizeNormalText +1
+                                                            Items: =ColMain_Category
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            Width: =LblExpTitle_category_2.Width
+                                                          Children:
+                                                            - zd_categoryname1:
+                                                                Control: DropDownDataField@1.5.0
+                                                                Variant: textualColumn
+                                                                IsLocked: true
+                                                                Properties:
+                                                                  FieldDisplayName: ="zd_categoryname"
+                                                                  FieldName: ="zd_categoryname"
+                                                                  FieldType: ="s"
+                                                                  Order: =1
+                                                      - txtExpe_description:
+                                                          Control: Classic/TextInput@2.3.2
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(222, 222, 222, 1)
+                                                            BorderThickness: =0
+                                                            Color: =varDsColorGeneralLegend
+                                                            Default: =ThisItem.Description
+                                                            DisabledColor: =RGBA(157, 157, 157, 1)
+                                                            DisabledFill: =RGBA(0, 0, 0, 0)
+                                                            DisplayMode: =If(Text(ThisItem.ExpenseStatus) = "Pending" && ThisItem.'Created By'.'Primary Email' = User().Email, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            Fill: =RGBA(255, 255, 255, 0)
+                                                            FocusedBorderThickness: =0
+                                                            Font: =Font.'Segoe UI'
+                                                            HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                                            HoverFill: =RGBA(214, 221, 224, 1)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            Mode: =TextMode.MultiLine
+                                                            PressedColor: =RGBA(0, 0, 0, 1)
+                                                            PressedFill: =
+                                                            RadiusBottomLeft: =4
+                                                            RadiusBottomRight: =4
+                                                            RadiusTopLeft: =4
+                                                            RadiusTopRight: =4
+                                                            Size: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            Visible: =!(App.Width <= 450)
+                                                            Width: =LblExpTitle_description_2.Width
+                                                      - LblExp_user_2:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralLegend
+                                                            DisplayMode: =DisplayMode.Disabled
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.'Created By'.'Full Name'
+                                                            Visible: =!(App.Width <= 450)
+                                                            Width: =LblExpTitle_user_2.Width
+                                                      - LblExp_state_2:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralLegend
+                                                            DisplayMode: =DisplayMode.Disabled
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.ExpenseStatus
+                                                            Width: =LblExpTitle_state_2.Width
+                                                      - cntBtnExp_action_2:
+                                                          Control: GroupContainer@1.5.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            LayoutAlignItems: =LayoutAlignItems.Center
+                                                            LayoutDirection: =LayoutDirection.Horizontal
+                                                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingBottom: =8
+                                                            PaddingLeft: =8
+                                                            PaddingRight: =8
+                                                            PaddingTop: =8
+                                                            RadiusBottomLeft: =0
+                                                            RadiusBottomRight: =0
+                                                            RadiusTopLeft: =0
+                                                            RadiusTopRight: =0
+                                                            Width: =LblExpTitle_action_2.Width
+                                                          Children:
+                                                            - btnExp_action_2:
+                                                                Control: Button@0.0.45
+                                                                Properties:
+                                                                  Align: =Align.Center
+                                                                  Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                                  DisplayMode: =If(Text(ThisItem.ExpenseStatus) <> "Pending", DisplayMode.Disabled, DisplayMode.Edit)
+                                                                  FontColor: =RGBA(0, 121, 107, 1)
+                                                                  Icon: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, "MoreHorizontal", "Save")
+                                                                  IconRotation: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, 90, 0)
+                                                                  IconStyle: ='ButtonCanvas.IconStyle'.Outline
+                                                                  Layout: ='ButtonCanvas.Layout'.IconOnly
+                                                                  LayoutMinHeight: =16
+                                                                  LayoutMinWidth: =16
+                                                                  OnSelect: |-
+                                                                    =If(
+                                                                        ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, 
+                                                                        UpdateContext({locCurrentEditedRowAction: !locCurrentEditedRowAction}), 
+                                                                        Patch(
+                                                                            hh_Expenses,
+                                                                            ThisItem,
+                                                                            {
+                                                                                ExpenseTitle: txtExpe_name.Text,
+                                                                                Amount: Int(txtExpe_amount.Text),
+                                                                                Category: ddExp_category.Selected,
+                                                                                Description: txtExpe_description.Text
+                                                                            }
+                                                                        );
+                                                                        Refresh(gblSelectedRowMyExpense)
+                                                                    )
+                                                                  Text: =
+                                                                  Width: =Self.Height
+                                                - cntExpAction_Row_1:
+                                                    Control: GroupContainer@1.5.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.Regular
+                                                      Fill: =RGBA(255, 255, 255, 1)
+                                                      Height: =70
+                                                      LayoutAlignItems: =LayoutAlignItems.Center
+                                                      LayoutDirection: =LayoutDirection.Vertical
+                                                      LayoutGap: =4
+                                                      PaddingBottom: =6
+                                                      PaddingLeft: =6
+                                                      PaddingRight: =6
+                                                      PaddingTop: =6
+                                                      Visible: =ThisItem.IsSelected && locCurrentEditedRowAction
+                                                      Width: |+
+                                                        =120
+                                                      X: =LblExpTitle_action_1.X - Self.Width + 20
+                                                    Children:
+                                                      - btnExpeApprove_scrSearch_1:
+                                                          Control: Button@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                            DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            FillPortions: =1
+                                                            Font: =Font.'Segoe UI'
+                                                            FontSize: =varFontSizeNormalText + 2
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =20
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            OnSelect: |-
+                                                              =Patch(
+                                                                  hh_Expenses,
+                                                                  ThisItem,
+                                                                  {
+                                                                      ExpenseStatus: 'ExpenseStatus (hh_Expenses)'.Approved
+                                                                  }
+                                                              );
+                                                              ClearCollect(ColMain_Expense, hh_Expenses);
+                                                              ClearCollect(ColMain_Notification, hh_Notifications);
+
+                                                              Reset(GalExp_2);
+                                                              UpdateContext({locCurrentEditedRowAction: false});
+                                                            Text: ="Freigeben"
+                                                      - DvExpeAction_scrSearch_3:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(166, 166, 166, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            BorderThickness: =2
+                                                            DisabledFill: =RGBA(166, 166, 166, 1)
+                                                            Fill: =RGBA(230, 230, 230, 1)
+                                                            FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                            Height: =1
+                                                            HoverFill: =RGBA(230, 230, 230, 1)
+                                                            LayoutMinWidth: =0
+                                                            PressedFill: =RGBA(230, 230, 230, 1)
+                                                            Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                                            X: =
+                                                            Y: =
+                                                      - btnExpeReject_scrSearch_1:
+                                                          Control: Button@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                            DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            FillPortions: =1
+                                                            Font: =Font.'Segoe UI'
+                                                            FontSize: =varFontSizeNormalText + 2
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =20
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            OnSelect: |-
+                                                              =Patch(
+                                                                  hh_Expenses,
+                                                                  ThisItem,
+                                                                  {
+                                                                      ExpenseStatus: 'ExpenseStatus (hh_Expenses)'.Rejected
+                                                                  }
+                                                              );
+                                                              ClearCollect(ColMain_Expense, hh_Expenses);
+                                                              ClearCollect(ColMain_Notification, hh_Notifications);
+
+                                                              Reset(GalExp_2);
+                                                              UpdateContext({locCurrentEditedRowAction: false});
+                                                            Text: ="Ablehnen"
+                        - cntBodyBottom_scrSearch:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =2
+                              Height: =Parent.Height
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =varDsGap
+                              LayoutMaxHeight: =Parent.Height
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =varDsBorderSizeContainer
+                              PaddingLeft: =varDsBorderSizeContainer
+                              PaddingRight: =varDsBorderSizeContainer
+                              PaddingTop: =varDsBorderSizeContainer
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width * 0.65
+                            Children:
+                              - cntGal_departmentExpense_1:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(222, 222, 222, 1)
+                                    BorderThickness: =varDsBorderSizeContainer
+                                    DropShadow: =DropShadow.None
+                                    Fill: =varDsBGCardContainer
+                                    Height: =Parent.Height * 0.55
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutGap: =5
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =10
+                                    PaddingLeft: =varDsContainerPaddingX
+                                    PaddingRight: =varDsContainerPaddingX
+                                    PaddingTop: =10
+                                    RadiusBottomLeft: =6
+                                    RadiusBottomRight: =6
+                                    RadiusTopLeft: =6
+                                    RadiusTopRight: =6
+                                    Width: =Parent.Width
+                                  Children:
+                                    - cntGalTitle_departmentExpense_1:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          Height: =varDsContainerHeader
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =10
+                                          LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =
+                                          PaddingLeft: =
+                                          PaddingRight: =
+                                          PaddingTop: =
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                        Children:
+                                          - lblGalTitle_departmentExpense_1:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                BorderColor: =RGBA(0, 18, 107, 1)
+                                                Color: =varDsColorGeneralSubText
+                                                FillPortions: =1
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =0
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =varFontSizeCardTitle
+                                                Text: ="Alle Ausgaben"
+                                          - BtnRset_report_1:
+                                              Control: Button@0.0.45
+                                              Properties:
+                                                AccessibleLabel: ="Daten zurücksetzen"
+                                                AlignInContainer: =AlignInContainer.Center
+                                                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                                DisplayMode: =If(IsBlank(ddExpStatus_report_1.Selected) && IsBlank(ddExpUser_report_1.Selected), DisplayMode.Disabled, DisplayMode.Edit)
+                                                Height: =Parent.Height
+                                                Icon: ="ArrowClockwise"
+                                                Layout: ='ButtonCanvas.Layout'.IconOnly
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                OnSelect: =Reset(ddExpStatus_report_1); Reset(ddExpUser_report_1); Reset(GalExp);
+                                                Text: =
+                                                Width: =Self.Height
+                                          - cntDdExpUser_report_1:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutGap: =5
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Visible: |-
+                                                  =With(
+                                                      {
+                                                          varIsMobile: Parent.Width <= 450
+                                                      },
+                                                      !varIsMobile && gblIsSupervisor
+                                                  )
+                                                Width: =200
+                                              Children:
+                                                - lblExpUser_report_1:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      Align: =Align.Right
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =RGBA(0, 18, 107, 1)
+                                                      Color: =varDsColorGeneralLegend
+                                                      FillPortions: =1
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =varFontSizeInputLabel
+                                                      Text: ="Benutzer"
+                                                      Width: =80
+                                                - ddExpUser_report_1:
+                                                    Control: DropDown@0.0.45
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                                      BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                                      BorderColor: =RGBA(222, 222, 222, 1)
+                                                      BorderRadius: =6
+                                                      BorderThickness: =0.5
+                                                      FillPortions: =1.8
+                                                      FontSize: =varFontSizeInputLabel + 2
+                                                      Items: =Distinct(hh_Expenses, 'Created By'.'Full Name')
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Width: =150
+                                          - cntDdExpStatus_report_1:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutGap: =5
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Visible: |-
+                                                  =With(
+                                                      {
+                                                          varIsMobile: Parent.Width <= 450
+                                                      },
+                                                      !varIsMobile
+                                                  )
+                                                Width: =200
+                                              Children:
+                                                - lblExpStatus_report_1:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      Align: =Align.Right
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =RGBA(0, 18, 107, 1)
+                                                      Color: =varDsColorGeneralLegend
+                                                      FillPortions: =1
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =varFontSizeInputLabel
+                                                      Text: ="Status"
+                                                      Width: =80
+                                                - ddExpStatus_report_1:
+                                                    Control: DropDown@0.0.45
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                                      BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                                      BorderColor: =RGBA(222, 222, 222, 1)
+                                                      BorderRadius: =6
+                                                      BorderThickness: =0.5
+                                                      FillPortions: =1.8
+                                                      FontSize: =varFontSizeInputLabel + 2
+                                                      Items: =Distinct(ColMain_Expense, ExpenseStatus)
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Width: =150
+                                    - ConExp_Table_1:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          X: =40
+                                          Y: =40
+                                        Children:
+                                          - ContGal_TitleExpense_1:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                Fill: =RGBA(237, 255, 251, 1)
+                                                FillPortions: =0
+                                                Height: =35
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                              Children:
+                                                - LblExpTitle_name_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      AutoHeight: =true
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =1.2
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =20
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Title"
+                                                      TextRole: ='Label.TextRole'.Default
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.3
+                                                - LblExpTitle_date_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.6
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Datum"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.2
+                                                - LblExpTitle_amount_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.65
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Betrag"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.2
+                                                - LblExpTitle_category_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.9
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Kategorie"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_description_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =2.1
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Beschreibung"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Visible: =!(App.Width <= 450)
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_user_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =1
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Benutzer"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Visible: =!(App.Width <= 450)
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_state_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Left
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.55
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Status"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.15
+                                                - LblExpTitle_action_1:
+                                                    Control: FluentV8/Label@1.8.6
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Alignment: =Align.Center
+                                                      Color: =RGBA(6, 95, 70, 1)
+                                                      FillPortions: =0.5
+                                                      FontSize: =varFontSizeCardTitle
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingStart: =2
+                                                      Text: ="Aktion"
+                                                      VerticalAlignment: =VerticalAlign.Middle
+                                                      Width: =Parent.Width * 0.15
+                                          - DvdEmp_Title_1:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                BorderColor: =RGBA(166, 166, 166, 1)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                DisabledFill: =RGBA(166, 166, 166, 1)
+                                                Fill: =RGBA(0, 121, 107, 0.5)
+                                                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                Height: =1
+                                                HoverFill: =RGBA(0, 120, 212, 1)
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PressedFill: =RGBA(0, 120, 212, 1)
+                                          - GalExp_1:
+                                              Control: Gallery@2.15.0
+                                              Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_pcfCore
+                                              Properties:
+                                                BorderColor: =RGBA(166, 166, 166, 1)
+                                                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                FocusedBorderThickness: =2
+                                                Items: "=Filter(\r\n    hh_Expenses,\r\n    'hh_Expenses (Views)'.'All Expenses',\r\n    \r\n    IsBlank(ddExpUser_report_1.Selected) || \r\n    'Created By'.'Full Name' = ddExpUser_report_1.Selected.Value,\r\n\r\n    IsBlank(ddExpStatus_report_1.Selected) || \r\n    ExpenseStatus = ddExpStatus_report_1.Selected.Value\r\n)"
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                ShowScrollbar: =false
+                                                TemplateSize: =40
+                                              Children:
+                                                - bgExp_Row:
+                                                    Control: Rectangle@2.3.0
+                                                    Properties:
+                                                      BorderColor: =RGBA(0, 18, 107, 1)
+                                                      Fill: =RGBA(245, 250, 249, 1)
+                                                      Height: =Parent.TemplateHeight
+                                                      Visible: =ThisItem.IsSelected
+                                                      Width: =Parent.TemplateWidth
+                                                - dvdExp_Row:
+                                                    Control: Rectangle@2.3.0
+                                                    Properties:
+                                                      BorderColor: =RGBA(166, 166, 166, 1)
+                                                      BorderStyle: =BorderStyle.None
+                                                      DisabledFill: =RGBA(166, 166, 166, 1)
+                                                      Fill: =RGBA(230, 230, 230, 1)
+                                                      FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                      Height: =1
+                                                      HoverFill: =RGBA(0, 120, 212, 1)
+                                                      PressedFill: =RGBA(0, 120, 212, 1)
+                                                      Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                                      X: =Parent.TemplateWidth/2 - Self.Width/2
+                                                      Y: =Parent.TemplateHeight - Self.Height
+                                                - ContEmp_Row_1:
+                                                    Control: GroupContainer@1.5.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      Height: =Parent.TemplateHeight
+                                                      LayoutAlignItems: =LayoutAlignItems.Center
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      PaddingBottom: =4
+                                                      PaddingTop: =4
+                                                      RadiusBottomLeft: =0
+                                                      RadiusBottomRight: =0
+                                                      RadiusTopLeft: =0
+                                                      RadiusTopRight: =0
+                                                      Width: =Parent.Width
+                                                    Children:
+                                                      - LblExp_name_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.ExpenseTitle
+                                                            Width: =LblExpTitle_name_1.Width
+                                                      - LblExp_date_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =Text(ThisItem.'Created On', "dd.mmm")
+                                                            VerticalAlignment: =VerticalAlign.Middle
+                                                            Width: =LblExpTitle_date_1.Width
+                                                      - LblExp_amount_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.Amount & " CHF"
+                                                            Width: =LblExpTitle_amount_1.Width
+                                                      - LblExp_category_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.Category.CategoryName
+                                                            Width: =LblExpTitle_category_1.Width
+                                                      - LblExp_description_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.Description
+                                                            Visible: =!(App.Width <= 450)
+                                                            Width: =LblExpTitle_description_1.Width
+                                                      - LblExp_user_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.'Created By'.'Full Name'
+                                                            Visible: =!(App.Width <= 450)
+                                                            Width: =LblExpTitle_user_1.Width
+                                                      - LblExp_state_1:
+                                                          Control: FluentV8/Label@1.8.6
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Alignment: =Align.Left
+                                                            AutoHeight: =true
+                                                            Color: =varDsColorGeneralSubText
+                                                            FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingStart: =2
+                                                            Text: =ThisItem.ExpenseStatus
+                                                            Width: =LblExpTitle_state_1.Width
+                                                      - cntBtnExp_action_1:
+                                                          Control: GroupContainer@1.5.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            LayoutAlignItems: =LayoutAlignItems.Center
+                                                            LayoutDirection: =LayoutDirection.Horizontal
+                                                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            PaddingBottom: =8
+                                                            PaddingLeft: =8
+                                                            PaddingRight: =8
+                                                            PaddingTop: =8
+                                                            RadiusBottomLeft: =0
+                                                            RadiusBottomRight: =0
+                                                            RadiusTopLeft: =0
+                                                            RadiusTopRight: =0
+                                                            Width: =LblExpTitle_action_1.Width
+                                                          Children:
+                                                            - btnExp_action_1:
+                                                                Control: Button@0.0.45
+                                                                Properties:
+                                                                  Align: =Align.Center
+                                                                  Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                                  FontColor: =RGBA(0, 121, 107, 1)
+                                                                  Icon: ="MoreHorizontal"
+                                                                  IconRotation: =90
+                                                                  IconStyle: ='ButtonCanvas.IconStyle'.Outline
+                                                                  Layout: ='ButtonCanvas.Layout'.IconOnly
+                                                                  LayoutMinHeight: =16
+                                                                  LayoutMinWidth: =16
+                                                                  OnSelect: |-
+                                                                    =UpdateContext({locCurrentRowAction: !locCurrentRowAction});
+                                                                  Text: =
+                                                                  Width: =Self.Height
+                                                - cntExpAction_Row:
+                                                    Control: GroupContainer@1.5.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.Regular
+                                                      Fill: =RGBA(255, 255, 255, 1)
+                                                      Height: =130
+                                                      LayoutAlignItems: =LayoutAlignItems.Center
+                                                      LayoutDirection: =LayoutDirection.Vertical
+                                                      LayoutGap: =4
+                                                      PaddingBottom: =6
+                                                      PaddingLeft: =6
+                                                      PaddingRight: =6
+                                                      PaddingTop: =6
+                                                      Visible: =ThisItem.IsSelected && locCurrentRowAction
+                                                      Width: =120
+                                                      X: '=LblExpTitle_action_1.X - Self.Width + LblExpTitle_action_1.Width/3 '
+                                                      Y: =10
+                                                    Children:
+                                                      - btnExpeView_scrSearch:
+                                                          Control: Button@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                            FillPortions: =1
+                                                            Font: =Font.'Segoe UI'
+                                                            FontSize: =varFontSizeNormalText + 2
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =20
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            OnSelect: |-
+                                                              =Set(gblSelectedRowMyExpense, ThisItem);
+                                                              UpdateContext({locCurrentRowAction: false});
+                                                            Text: ="Ansehen"
+                                                      - DvExpeAction_scrSearch:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(166, 166, 166, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            BorderThickness: =2
+                                                            DisabledFill: =RGBA(166, 166, 166, 1)
+                                                            Fill: =RGBA(230, 230, 230, 1)
+                                                            FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                            Height: =1
+                                                            HoverFill: =RGBA(230, 230, 230, 1)
+                                                            LayoutMinWidth: =0
+                                                            PressedFill: =RGBA(230, 230, 230, 1)
+                                                            Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                                            X: =
+                                                            Y: =
+                                                      - btnExpeApprove_scrSearch:
+                                                          Control: Button@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                            DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            FillPortions: =1
+                                                            Font: =Font.'Segoe UI'
+                                                            FontSize: =varFontSizeNormalText + 2
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =20
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            OnSelect: |-
+                                                              =Patch(
+                                                                  hh_Expenses,
+                                                                  ThisItem,
+                                                                  {
+                                                                      ExpenseStatus: 'ExpenseStatus (hh_Expenses)'.Approved
+                                                                  }
+                                                              );
+                                                              ClearCollect(ColMain_Expense, hh_Expenses);
+                                                              ClearCollect(ColMain_Notification, hh_Notifications);
+
+                                                              UpdateContext({locCurrentRowAction: false});
+                                                            Text: ="Freigeben"
+                                                      - DvExpeAction_scrSearch_1:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(166, 166, 166, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            BorderThickness: =2
+                                                            DisabledFill: =RGBA(166, 166, 166, 1)
+                                                            Fill: =RGBA(230, 230, 230, 1)
+                                                            FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                            Height: =1
+                                                            HoverFill: =RGBA(230, 230, 230, 1)
+                                                            LayoutMinWidth: =0
+                                                            PressedFill: =RGBA(230, 230, 230, 1)
+                                                            Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                                            X: =
+                                                            Y: =
+                                                      - btnExpeReject_scrSearch:
+                                                          Control: Button@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                            DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            FillPortions: =1
+                                                            Font: =Font.'Segoe UI'
+                                                            FontSize: =varFontSizeNormalText + 2
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =20
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            OnSelect: |-
+                                                              =Patch(
+                                                                  hh_Expenses,
+                                                                  ThisItem,
+                                                                  {
+                                                                      ExpenseStatus: 'ExpenseStatus (hh_Expenses)'.Rejected
+                                                                  }
+                                                              );
+                                                              ClearCollect(ColMain_Expense, hh_Expenses);
+                                                              ClearCollect(ColMain_Notification, hh_Notifications);
+
+                                                              UpdateContext({locCurrentRowAction: false});
+                                                            Text: ="Ablehnen"
+                                                      - DvExpeView_scrSearch:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            BorderColor: =RGBA(166, 166, 166, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            BorderThickness: =2
+                                                            DisabledFill: =RGBA(166, 166, 166, 1)
+                                                            Fill: =RGBA(230, 230, 230, 1)
+                                                            FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                                            Height: =1
+                                                            HoverFill: =RGBA(230, 230, 230, 1)
+                                                            LayoutMinWidth: =0
+                                                            PressedFill: =RGBA(230, 230, 230, 1)
+                                                            Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                                            X: =
+                                                            Y: =
+                                                      - btnExpeEdit_scrSearch:
+                                                          Control: Button@0.0.45
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Stretch
+                                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                                            DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && ThisItem.'Created By'.'Primary Email' = User().Email, DisplayMode.Edit, DisplayMode.Disabled)
+                                                            FillPortions: =1
+                                                            Font: =Font.'Segoe UI'
+                                                            FontSize: =varFontSizeNormalText + 2
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =20
+                                                            LayoutMinHeight: =16
+                                                            LayoutMinWidth: =16
+                                                            OnSelect: |-
+                                                              =Set(gblSelectedRowMyExpense, ThisItem);
+                                                              UpdateContext({locCurrentRowAction: false});
+                                                            Text: ="Bearbeiten"
+      - cmpNavbarSidebar_scrSearch_Mobile:
+          Control: CanvasComponent
+          ComponentName: cmpNavbarSidebar
+          ComponentLibraryUniqueName: crb5e_navigation_a8e64
+          Properties:
+            BackgroundColor: =RGBA(0, 102, 90, 1)
+            Btn1Enabled: =true
+            Btn1Icon: =Dashboard_Selected
+            Btn1IconSelected: =Dashboard_Selected
+            Btn1Navigate: =scrExpense
+            Btn1Text: ="Finanz Überischt"
+            Btn2Enabled: =gblIsSupervisor
+            Btn2Icon: =Report_Selected
+            Btn2IconSelected: =Report_Selected
+            Btn2Navigate: =scrReport
+            Btn2Text: ="Berichte"
+            Btn3Enabled: =true
+            Btn3Icon: =Search_Selected
+            Btn3IconSelected: =Search_Selected
+            Btn3Navigate: =App.ActiveScreen
+            Btn3Text: ="Suchen"
+            Close_ResetNavbarCollapsed: |-
+              =UpdateContext({locSidebarOpened: !locSidebarOpened});
+            CurrentActiveButton: ="Suchen"
+            FontSize: =varFontSizeButton
+            Height: =App.Height - cmpNavbarHeader_scrExpense_Mobile.Height
+            IconSize: =20
+            SidebarOpened: =locSidebarOpened
+            SidebarWidth: =240
+            Visible: =varIsMobileView
+            Width: |-
+              =Switch(
+                  Self.SidebarOpened,
+                  true, App.Width,
+                  false, - (Self.TimerClose)*1.5,
+                  0
+              )
+            Y: =cmpNavbarHeader_scrSearch_Mobile.Height
+      - cmpModal_expenseForm_scrSearch:
+          Control: CanvasComponent
+          ComponentName: cmpModal_expenseForm
+          ComponentLibraryUniqueName: crb5e_modals_411f2
+          Properties:
+            BtnSubmitBGColor: =RGBA(0, 121, 107, 1)
+            BtnSubmitText: ="Registrieren"
+            BtnSubmitWidth: =120
+            BtnsBordderRadius: =4
+            CloseModal: =Set(locModalActived, false)
+            Height: =App.Height
+            IconBtnsSize: =16
+            IconSubmit: =SampleImage
+            IconSubmitEnabled: =false
+            IconTitle: =SampleImage
+            IconTitleEnabled: =false
+            IconTitleSize: =16
+            MobileDesignEnabled: =varIsMobileView
+            ModalActived: =locModalActived
+            ModalBGColor: =RGBA(255, 255, 255, 1)
+            ModalBorderColor: =RGBA(222, 222, 222, 1)
+            ModalBorderRadius: =10
+            ModalBorderThickness: =0.5
+            ModalGap: =varDsGap
+            ModalHeight: =If(varIsMobileView, App.Height*0.92, cntForm_expense.Height)
+            ModalPadding: =varDsGap
+            ModalShadow: =true
+            ModalWidth: =If(varIsMobileView, App.Width * 0.9, cntForm_expense.Width * 0.8)
+            SubmitModal: =
+            TitleColor: =RGBA(0, 0, 0, 1)
+            TitleFontSize: =varFontSizeCardTitle+4
+            TitleText: ="Ausgabenformular"
+            Visible: =If(Self.ModalActived && Self.BGActived, true, !Self.BGActived, false, true)
+            Width: =App.Width
+      - cmpBtnNewExp_scrSearch:
+          Control: CanvasComponent
+          ComponentName: cmpButtonIcon
+          ComponentLibraryUniqueName: crb5e_buttons_d9296
+          Properties:
+            Border: =Int(0)
+            BorderRadius: =50
+            ColorBg: =RGBA(0, 121, 107, 1)
+            Height: =65
+            IconSize: =10
+            ImageIcon: =Icon_Plus_White
+            OnSelect: =Set(locModalActived, true)
+            ShadowLg: =true
+            ShadowMd: =false
+            ShadowSm: =false
+            TooltipText: ="Neue Ausgabe"
+            Visible: =varIsMobileView
+            Width: =65
+            X: =Parent.Width - Self.Width - 20
+            Y: =Parent.Height - Self.Height - 20

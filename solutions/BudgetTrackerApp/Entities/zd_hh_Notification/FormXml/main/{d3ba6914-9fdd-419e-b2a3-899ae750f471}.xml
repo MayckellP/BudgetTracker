@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d3ba6914-9fdd-419e-b2a3-899ae750f471}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{8d749ddc-caa5-42b1-9d00-8ffc0180937c}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{f1446fa4-c4ed-4ea3-ae72-5fa13efc6a37}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b726a34f-54ac-4248-ac41-89484c33e76c}">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="zd_title" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_title" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f9b9a0c6-2738-4b3e-a9bf-c1dde9120e8a}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{40d27bc0-3d1e-4dd5-99d2-9ddb81ef140c}">
+                        <labels>
+                          <label description="Message" languagecode="1033" />
+                        </labels>
+                        <control id="zd_message" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="zd_message" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3837f69e-75e2-4975-8116-9c63e1909f41}">
+                        <labels>
+                          <label description="Expense" languagecode="1033" />
+                        </labels>
+                        <control id="zd_expense" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_expense" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{563695fe-b922-4c3e-b31a-6a76cf020da7}">
+                        <labels>
+                          <label description="Read" languagecode="1033" />
+                        </labels>
+                        <control id="zd_read" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="zd_read" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

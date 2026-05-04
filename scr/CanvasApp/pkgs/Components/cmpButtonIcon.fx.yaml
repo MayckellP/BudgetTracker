@@ -1,0 +1,142 @@
+cmpButtonIcon As CanvasComponent:
+    OnSelect():
+        ThisProperty:
+            Default: =
+    Border: =Int(0)
+    BorderRadius: =50
+    ChildTabPriority: =true
+    ColorBg: =RGBA(255, 255, 255, 1)
+    ContentLanguage: =""
+    EnableChildFocus: =true
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =70
+    IconSize: =20
+    ImageIcon: =
+    ShadowLg: =false
+    ShadowMd: =true
+    ShadowSm: =false
+    TooltipText: ="Text"
+    Visible: =true
+    Width: =70
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    ContIconBtn As groupContainer.manualLayoutContainer:
+        BorderColor: =ColorFade(Self.Fill, -20%)
+        BorderThickness: =cmpButtonIcon.Border
+        DropShadow: |-
+            =With(
+                {
+                    varShadowOpcion: true
+                },
+                Switch(
+                    varShadowOpcion,
+                    cmpButtonIcon.ShadowSm, DropShadow.Light,
+                    cmpButtonIcon.ShadowMd, DropShadow.Semilight,
+                    cmpButtonIcon.ShadowLg, DropShadow.Regular
+                )
+            )
+        Fill: =cmpButtonIcon.ColorBg
+        Height: =Parent.Height - 10
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        maximumHeight: =11360
+        maximumWidth: =640
+        RadiusBottomLeft: =cmpButtonIcon.BorderRadius
+        RadiusBottomRight: =cmpButtonIcon.BorderRadius
+        RadiusTopLeft: =cmpButtonIcon.BorderRadius
+        RadiusTopRight: =cmpButtonIcon.BorderRadius
+        Width: =Parent.Width - 10
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =Parent.Height/2 - Self.Height/2
+        ZIndex: =1
+
+        ContBgIconButtonAnimated As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Height: |-
+                =If(
+                    varIconBtnAnimated,
+                    Parent.Height * Power(tmrIconBtnAnimated.Value / tmrIconBtnAnimated.Duration, 1.5) + 35
+                )
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            maximumHeight: =11360
+            maximumWidth: =640
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: |-
+                =If(
+                    varIconBtnAnimated,
+                    Parent.Width * Power(tmrIconBtnAnimated.Value / tmrIconBtnAnimated.Duration, 1.5) + 35
+                )
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+            ZIndex: =1
+
+            BgIconButtonAnimated As rectangle:
+                Fill: =RGBA(0, 0, 0, 0.15 * (1-tmrIconBtnAnimated.Value/tmrIconBtnAnimated.Duration))
+                Height: =Parent.Height
+                HoverFill: =
+                OnSelect: =Set(varAnimationBtnPrevious, true);
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =Parent.Width
+                X: =Parent.Width/2 - Self.Width/2
+                Y: =Parent.Height/2 - Self.Height/2
+                ZIndex: =1
+
+        IcnNew As image:
+            Height: =Self.Width
+            HoverBorderColor: =Color.Black
+            HoverFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.05), RGBA(0, 0, 0, 0.0))
+            Image: =cmpButtonIcon.ImageIcon
+            ImagePosition: =ImagePosition.Stretch
+            OnSelect: |-
+                =cmpButtonIcon.OnSelect();
+                Set(varIconBtnAnimated, true);
+            PaddingBottom: |
+                =Parent.Height/2 - cmpButtonIcon.IconSize
+            PaddingLeft: =Parent.Width/2 - cmpButtonIcon.IconSize
+            PaddingRight: =Parent.Width/2 - cmpButtonIcon.IconSize
+            PaddingTop: =Parent.Height/2 - cmpButtonIcon.IconSize
+            PressedFill: =RGBA(0, 0, 0, 0.05)
+            Tooltip: =
+            Width: =Parent.Width
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+            ZIndex: =2
+
+        BgIconButton As button:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height
+            HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+            OnSelect: |
+                =Set(varIconBtnAnimated, true);
+            PressedFill: =RGBA(0, 0, 0, 0.05)
+            Size: =24
+            Text: =
+            Tooltip: =cmpButtonIcon.TooltipText
+            Width: =Parent.Width
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+            ZIndex: =3
+
+        tmrIconBtnAnimated As timer:
+            Duration: =260
+            Height: =0
+            OnTimerEnd: |-
+                =Set(varIconBtnAnimated, false);
+                Reset(Self);
+                cmpButtonIcon.OnSelect();
+            Start: =varIconBtnAnimated
+            Visible: =false
+            Width: =0
+            Y: =18
+            ZIndex: =4
+

@@ -1,0 +1,100 @@
+[
+  {
+    "DisplayName": "hh_Departments (Views)",
+    "Name": "_zd_hh_department_views",
+    "RelatedEntityName": "hh_Departments",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "29e65bda-d678-4f3b-9ebb-9f32e2918809": "hh_Department Associated View",
+      "36191037-cb20-f111-88b1-70a8a507a37b": "All Departments",
+      "4f0214d8-e7d9-4a5e-9cbd-69b013e92174": "Active hh_Departments",
+      "727b0067-0711-4da9-9c4f-2ac745e3041f": "hh_Department Lookup View",
+      "8115729d-053a-471b-a250-468490673ece": "hh_Department Advanced Find View",
+      "f853fcf3-1ec4-462c-a4b3-6309680780b4": "Inactive hh_Departments"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "zd_hh_departments",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "zd_hh_department",
+    "MaxGetRowsCount": 500,
+    "Name": "hh_Departments",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "zd_BusinessUnit": "BusinessUnit",
+      "zd_departmentname": "DepartmentName",
+      "zd_hh_budget_zd_department_zd_hh_department": "hh_Budgets",
+      "zd_hh_category_Department_zd_hh_department": "hh_Categories",
+      "zd_hh_department_AsyncOperations": "System Jobs",
+      "zd_hh_department_BulkDeleteFailures": "Bulk Delete Failures",
+      "zd_hh_department_DuplicateBaseRecord": "Duplicate Records (zd_hh_department_DuplicateBaseRecord)",
+      "zd_hh_department_DuplicateMatchingRecord": "Duplicate Records (zd_hh_department_DuplicateMatchingRecord)",
+      "zd_hh_department_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "zd_hh_department_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "zd_hh_department_ProcessSession": "Process Sessions",
+      "zd_hh_department_SyncErrors": "Sync Errors",
+      "zd_hh_departmentid": "hh_Department",
+      "zd_hh_expense_Department_zd_hh_department": "hh_Expenses",
+      "zd_Supervisor": "Supervisor"
+    },
+    "PreferredName": "hh_Departments",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (hh_Departments)",
+    "Name": "zd_hh_department_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "hh_Departments"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "hh_Departments",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (hh_Departments)",
+    "Name": "zd_hh_department_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "hh_Departments"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "hh_Departments",
+    "Type": "OptionSetInfo"
+  }
+]

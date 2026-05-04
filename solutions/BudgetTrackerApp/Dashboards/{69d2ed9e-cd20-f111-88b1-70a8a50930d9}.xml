@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Central Admin" languagecode="1033" />
+  </LocalizedNames>
+  <FormId>{69d2ed9e-cd20-f111-88b1-70a8a50930d9}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="dashboard">
+      <form>
+        <tabs>
+          <tab showlabel="false" verticallayout="true" id="{1c446495-d2e8-4447-ad27-1248bc61396f}">
+            <labels>
+              <label description="Tab" languagecode="1033" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section showlabel="false" showbar="false" columns="1111" id="{806c9b18-b706-4cd4-87ae-485688ce017d}">
+                    <labels>
+                      <label description="Section" languagecode="1033" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell id="{b8d94b74-320b-a8a7-de33-06c62ca290b0}" showlabel="false" colspan="1" auto="false" rowspan="27">
+                          <labels>
+                            <label description="All Ausgaben" languagecode="1033" />
+                          </labels>
+                          <control id="Component3432765" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{8ad2cddd-5b9b-e07b-44a0-b33db812e832}">
+                            <parameters>
+                              <ViewId>{60604258-CA20-F111-88B1-70A8A507A37B}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <RelationshipName />
+                              <TargetEntityType>zd_hh_expense</TargetEntityType>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <ViewIds>{60604258-CA20-F111-88B1-70A8A507A37B},{131A8DDC-CA20-F111-88B1-70A8A507A37B},{19E35C90-CA20-F111-88B1-70A8A507A37B},{5716C8B7-CA20-F111-88B1-70A8A507A37B}</ViewIds>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RecordsPerPage>23</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="6" showlabel="true" id="{71c5cc1b-dc86-4d5b-ad08-5d2ede71adef}" auto="false">
+                          <labels>
+                            <label description="Budgets" languagecode="1033" />
+                          </labels>
+                          <control id="Componentc35a0c3" uniqueid="{64480d59-1067-d3e5-d236-3a7290e9b8d1}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>zd_hh_budget</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>3</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                              <ViewId>{B384B7D1-CB20-F111-88B1-70A8A507A37B}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{B384B7D1-CB20-F111-88B1-70A8A507A37B}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="2" rowspan="6" showlabel="true" id="{de9e067d-3f5c-4bc8-86b2-cc34fe196107}" auto="false">
+                          <labels>
+                            <label description="Kategorienfreigabe" languagecode="1033" />
+                          </labels>
+                          <control id="Componentebf2814" uniqueid="{805ab11d-9735-9922-63ec-b13d999cbe9d}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>zd_hh_category</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>3</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                              <ViewId>{30276EAD-6125-F111-88B4-6045BD2BA07C}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{30276EAD-6125-F111-88B4-6045BD2BA07C}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row>
+                        <cell id="{6c19d05c-6b97-1ae8-6d33-569b3a87baa4}" showlabel="true" colspan="1" auto="false" rowspan="9">
+                          <labels>
+                            <label description="Abteilungen" languagecode="1033" />
+                          </labels>
+                          <control id="Component380795" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{983c6ec7-9601-378e-77dd-a4073109ac5b}">
+                            <parameters>
+                              <ViewId>{36191037-CB20-F111-88B1-70A8A507A37B}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <RelationshipName />
+                              <TargetEntityType>zd_hh_department</TargetEntityType>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <ViewIds>{36191037-CB20-F111-88B1-70A8A507A37B}</ViewIds>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RecordsPerPage>6</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{49ca8561-9c8d-91eb-9ab4-eaec674c8d67}" showlabel="false" colspan="2" auto="false" rowspan="9">
+                          <labels>
+                            <label description="Kategorien" languagecode="1033" />
+                          </labels>
+                          <control id="Component8410146" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{2ddd9859-6eb5-64c3-63e0-aec42e0c68dd}">
+                            <parameters>
+                              <ViewId>{8D28CB8F-CB20-F111-88B1-70A8A507A37B}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <RelationshipName />
+                              <TargetEntityType>zd_hh_category</TargetEntityType>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <ViewIds>{8D28CB8F-CB20-F111-88B1-70A8A507A37B},{D513FD9C-6125-F111-88B4-6045BD2BA07C},{B377CDB3-6125-F111-88B4-6045BD2BA07C}</ViewIds>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RecordsPerPage>6</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row>
+                        <cell colspan="2" rowspan="12" showlabel="true" id="{d56f0038-191f-4e6c-ab02-45657473cddc}" auto="false">
+                          <labels>
+                            <label description="Mitarbeitende Verwaltung" languagecode="1033" />
+                          </labels>
+                          <control id="Component9815f77" uniqueid="{c6ecd6ee-6c5b-a541-954a-b87e5e450e9a}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>systemuser</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                              <ViewId>{00000000-0000-0000-00AA-000010001019}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{00000000-0000-0000-00AA-000010001019}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="true" id="{534abee2-0bc1-4df2-b493-c50f8df237a8}" auto="false">
+                          <labels>
+                            <label description="Meldungen" languagecode="1033" />
+                          </labels>
+                          <control id="Componentadb9ceb" uniqueid="{6d544c87-8a36-e26e-3d70-ecd5e948dd92}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>zd_hh_notification</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>9</RecordsPerPage>
+                              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                              <ViewId>{2AFEC098-C920-F111-88B1-70A8A507A37B}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{A0DB2469-C920-F111-88B1-70A8A507A37B},{2AFEC098-C920-F111-88B1-70A8A507A37B}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{2c87d3b7-05e2-5943-3349-e50a64b5c244}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{6c1b8826-6ab0-0d54-a124-badd4abea818}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{cb16eb32-291c-d295-2745-87b5e713b0e1}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <controlDescriptions />
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</Dashboard>

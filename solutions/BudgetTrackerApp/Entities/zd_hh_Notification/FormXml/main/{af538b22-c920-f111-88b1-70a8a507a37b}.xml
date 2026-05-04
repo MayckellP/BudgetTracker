@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{af538b22-c920-f111-88b1-70a8a507a37b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{8d749ddc-caa5-42b1-9d00-8ffc0180937c}" IsUserDefined="1" name="hh_notification" labelid="{ba4ee619-1e53-462a-b178-0ce96eeb4599}">
+          <labels>
+            <label description="New Notification" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{f1446fa4-c4ed-4ea3-ae72-5fa13efc6a37}" name="hh_notification_details" labelid="{a6f74711-c0cd-406b-aa23-bcc0a7dedd28}">
+                  <labels>
+                    <label description="Notification Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f9b9a0c6-2738-4b3e-a9bf-c1dde9120e8a}" colspan="1" rowspan="1" labelid="{5ff34245-0d3a-4f68-b156-15f975394850}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b726a34f-54ac-4248-ac41-89484c33e76c}" labelid="{6961927f-a41d-48bb-89d4-6a5211db8918}">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="zd_title" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_title" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{40d27bc0-3d1e-4dd5-99d2-9ddb81ef140c}" labelid="{d0005803-1419-4852-bc20-45e82578b107}">
+                        <labels>
+                          <label description="Message" languagecode="1033" />
+                        </labels>
+                        <control id="zd_message" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="zd_message" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3837f69e-75e2-4975-8116-9c63e1909f41}" labelid="{8972cdee-ba6c-4d7c-82c4-88d9a8cc9d7b}">
+                        <labels>
+                          <label description="Expense" languagecode="1033" />
+                        </labels>
+                        <control id="zd_expense" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_expense" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="hh_notification_sstatus" id="8b962dea-dc38-4663-b233-d93bad10b3e9" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{2bb28033-78e9-494e-82d3-049abebe9de6}">
+                  <labels>
+                    <label description="Status" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{563695fe-b922-4c3e-b31a-6a76cf020da7}" colspan="1" rowspan="1" labelid="{aeacb549-2749-4b30-9204-5510cc92397c}">
+                        <labels>
+                          <label description="Read" languagecode="1033" />
+                        </labels>
+                        <control id="zd_read" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="zd_read" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{3ab533fc-5979-44bf-bb9b-c431bb290cd3}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{11b032e2-bbbf-4a1b-9a38-a81ea3cc1f37}" showlabel="false" labelid="{ccde7b48-0a48-469e-b38c-93db94f39be9}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{05bf5f29-0faf-4aca-9caa-fa532d134169}" showlabel="false" labelid="{ac2b5228-58e5-4f22-acad-fd3d3994e514}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a9bda9fd-3451-47b0-8b89-2ec67c1b0d12}" showlabel="false" labelid="{114efcb7-a35f-4abf-9675-e94eb63ebcff}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{3e07f2bf-2091-4f15-8435-e36d6a6f6ac6}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a4ad28d9-65c5-4b66-a4af-4d018089be53}" showlabel="false" labelid="{f3782332-799a-449e-907b-5bb1e71fcbc1}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3c09c550-1947-4e75-bc17-834d31fa5677}" showlabel="false" labelid="{96703237-c915-4037-8ae3-5bd289953108}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{fb3b84e5-aefa-4fb5-806c-615727e8b103}" showlabel="false" labelid="{453136f8-976c-45dc-8635-b13d1eac8312}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{f28573e3-900c-38a7-a0bd-4b508bfa517e}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Notification" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

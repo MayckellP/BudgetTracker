@@ -1,0 +1,145 @@
+[
+  {
+    "DisplayName": "hh_Notifications (Views)",
+    "Name": "_zd_hh_notification_views",
+    "RelatedEntityName": "hh_Notifications",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0fc2309c-9e8b-4d0a-b02f-9b177475dc3c": "hh_Notification Advanced Find View",
+      "2afec098-c920-f111-88b1-70a8a507a37b": "Unread Notification",
+      "441e926e-76ea-4344-b680-b3b88601facd": "hh_Notification Associated View",
+      "6f1f55c8-3f9f-45a1-a0f4-fdb97d097fd1": "Active hh_Notifications",
+      "89616b19-e382-4cd5-a33e-89c454535afc": "Inactive hh_Notifications",
+      "9a640c79-5d48-4ac4-aa0d-4f776aef832b": "hh_Notification Lookup View",
+      "a0db2469-c920-f111-88b1-70a8a507a37b": "All Notification"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "zd_hh_notifications",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "zd_hh_notification",
+    "MaxGetRowsCount": 500,
+    "Name": "hh_Notifications",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "zd_Expense": "Expense",
+      "zd_hh_notification_AsyncOperations": "System Jobs",
+      "zd_hh_notification_BulkDeleteFailures": "Bulk Delete Failures",
+      "zd_hh_notification_DuplicateBaseRecord": "Duplicate Records (zd_hh_notification_DuplicateBaseRecord)",
+      "zd_hh_notification_DuplicateMatchingRecord": "Duplicate Records (zd_hh_notification_DuplicateMatchingRecord)",
+      "zd_hh_notification_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "zd_hh_notification_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "zd_hh_notification_ProcessSession": "Process Sessions",
+      "zd_hh_notification_SyncErrors": "Sync Errors",
+      "zd_hh_notificationid": "hh_Notification",
+      "zd_message": "Message",
+      "zd_notificationstatus": "NotificationStatus",
+      "zd_read": "Read",
+      "zd_title": "Title"
+    },
+    "PreferredName": "hh_Notifications",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (hh_Notifications)",
+    "Name": "zd_hh_notification_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "hh_Notifications"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "hh_Notifications",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (hh_Notifications)",
+    "Name": "zd_hh_notification_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "hh_Notifications"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "hh_Notifications",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "NotificationStatus (hh_Notifications)",
+    "Name": "zd_hh_notification_zd_notificationstatus",
+    "OptionSetInfoNameMapping": {
+      "128580000": "Submitted",
+      "128580001": "Approved",
+      "128580002": "Rejected",
+      "128580003": "Exceeded"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zd_notificationstatus",
+        "OptionSetReferenceEntityName": "hh_Notifications"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zd_notificationstatus",
+    "RelatedEntityName": "hh_Notifications",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Read (hh_Notifications)",
+    "Name": "zd_hh_notification_zd_read",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zd_read",
+        "OptionSetReferenceEntityName": "hh_Notifications"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "zd_read",
+    "RelatedEntityName": "hh_Notifications",
+    "Type": "OptionSetInfo"
+  }
+]

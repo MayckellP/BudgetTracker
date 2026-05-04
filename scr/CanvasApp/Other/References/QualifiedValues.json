@@ -1,0 +1,63 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_zd_hh_budget_forms",
+      "Namespace": "hh_Budgets (Forms)",
+      "Values": {
+        "Budget": "5501009c-c620-f111-88b1-70a8a507a37b",
+        "Information": "84bb207b-3c80-439f-b849-c98efb6a436c"
+      }
+    },
+    {
+      "Kind": "default.cds_zd_hh_category_forms",
+      "Namespace": "hh_Categories (Forms)",
+      "Values": {
+        "Category": "c87b3e0b-c720-f111-88b1-70a8a507a37b",
+        "Information": "21987fe4-7d55-4562-a329-e57fcd0b125e"
+      }
+    },
+    {
+      "Kind": "default.cds_zd_hh_department_forms",
+      "Namespace": "hh_Departments (Forms)",
+      "Values": {
+        "Department": "4fb42c72-c720-f111-88b1-70a8a507a37b",
+        "Information": "3d352029-e8d0-4c14-82a5-ce33af15287a"
+      }
+    },
+    {
+      "Kind": "default.cds_zd_hh_expense_forms",
+      "Namespace": "hh_Expenses (Forms)",
+      "Values": {
+        "Expense-Approval": "dd59234b-da21-f111-88b1-7ced8d430217",
+        "Information": "ffa510fb-689d-4547-9c76-b5ea9587fb5b",
+        "New Expense": "b6e2eefe-c720-f111-88b1-70a8a507a37b"
+      }
+    },
+    {
+      "Kind": "default.cds_zd_hh_notification_forms",
+      "Namespace": "hh_Notifications (Forms)",
+      "Values": {
+        "Information": "b319f1aa-a35e-40ae-8c3a-ba04d67f6025",
+        "Notification": "af538b22-c920-f111-88b1-70a8a507a37b"
+      }
+    },
+    {
+      "Kind": "default.cds_role_forms",
+      "Namespace": "Security Roles (Forms)",
+      "Values": {
+        "Information": "d830b05c-0c90-4dcf-be8b-5d22a856f510"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (Forms)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    }
+  ]
+}

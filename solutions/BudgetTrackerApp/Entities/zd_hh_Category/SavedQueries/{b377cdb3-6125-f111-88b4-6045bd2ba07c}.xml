@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{b377cdb3-6125-f111-88b4-6045bd2ba07c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="zd_categoryname" select="1" icon="1" preview="1">
+        <row name="result" id="zd_hh_categoryid">
+          <cell name="zd_categoryname" width="200" />
+          <cell name="zd_categorystatus" width="200" />
+          <cell name="zd_budgetlimit" width="200" />
+          <cell name="zd_department" width="200" />
+          <cell name="createdby" width="104" />
+          <cell name="createdon" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="zd_hh_category">&lt;attribute name="zd_categoryname" /&gt;&lt;attribute name="zd_categorystatus" /&gt;&lt;attribute name="zd_budgetlimit" /&gt;&lt;attribute name="zd_department" /&gt;&lt;attribute name="createdon" /&gt;
+        
+        <attribute name="zd_categoryname" /><attribute name="zd_categorystatus" /><attribute name="zd_budgetlimit" /><attribute name="zd_department" /><attribute name="createdon" /><attribute name="zd_hh_categoryid" /><attribute name="createdby" /><filter type="and"><condition attribute="zd_categorystatus" operator="eq" value="128580001" /></filter></entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Rejected Categories" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

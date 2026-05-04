@@ -1,0 +1,123 @@
+[
+  {
+    "DisplayName": "hh_Budgets (Views)",
+    "Name": "_zd_hh_budget_views",
+    "RelatedEntityName": "hh_Budgets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3acc9a74-0c06-464d-9fe8-9ccf96a2ea81": "hh_Budget Associated View",
+      "3b96dd18-0fd2-45f4-a908-1f9526e3e647": "hh_Budget Advanced Find View",
+      "6b1d5198-e221-4a4a-a255-215196f0f10e": "Active hh_Budgets",
+      "b384b7d1-cb20-f111-88b1-70a8a507a37b": "All Budgets",
+      "f24787bc-4086-4291-a2ff-5f733c89204b": "hh_Budget Lookup View",
+      "fa97a2b3-20c2-4499-b11e-01f95bc6be6c": "Inactive hh_Budgets"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "zd_hh_budgets",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "zd_hh_budget",
+    "MaxGetRowsCount": 500,
+    "Name": "hh_Budgets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "zd_budgetname": "BudgetName",
+      "zd_budgetstatus": "BudgetStatus",
+      "zd_Department": "Department",
+      "zd_hh_budget_AsyncOperations": "System Jobs",
+      "zd_hh_budget_BulkDeleteFailures": "Bulk Delete Failures",
+      "zd_hh_budget_DuplicateBaseRecord": "Duplicate Records (zd_hh_budget_DuplicateBaseRecord)",
+      "zd_hh_budget_DuplicateMatchingRecord": "Duplicate Records (zd_hh_budget_DuplicateMatchingRecord)",
+      "zd_hh_budget_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "zd_hh_budget_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "zd_hh_budget_ProcessSession": "Process Sessions",
+      "zd_hh_budget_SyncErrors": "Sync Errors",
+      "zd_hh_budgetid": "hh_Budget",
+      "zd_hh_category_zd_budget_zd_hh_budget": "hh_Categories",
+      "zd_totalbudget": "TotalBudget",
+      "zd_totalbudget_base": "TotalBudget (Base)",
+      "zd_year": "Year"
+    },
+    "PreferredName": "hh_Budgets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (hh_Budgets)",
+    "Name": "zd_hh_budget_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "hh_Budgets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "hh_Budgets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (hh_Budgets)",
+    "Name": "zd_hh_budget_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "hh_Budgets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "hh_Budgets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "BudgetStatus (hh_Budgets)",
+    "Name": "zd_hh_budget_zd_budgetstatus",
+    "OptionSetInfoNameMapping": {
+      "128580000": "Active",
+      "128580001": "Closed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zd_budgetstatus",
+        "OptionSetReferenceEntityName": "hh_Budgets"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zd_budgetstatus",
+    "RelatedEntityName": "hh_Budgets",
+    "Type": "OptionSetInfo"
+  }
+]

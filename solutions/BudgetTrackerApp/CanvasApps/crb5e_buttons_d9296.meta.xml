@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>crb5e_buttons_d9296</Name>
+  <AppVersion>2026-02-05T01:35:57Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.26014.6.0</CreatedByClientVersion>
+  <MinClientVersion>3.26014.6.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","showStatusBar":"false","publisherVersion":"3.26014.6","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false","sienaVersion":"20260203T212217Z-3.26014.6.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(251,101,60,1)</BackgroundColor>
+  <DisplayName>Buttons</DisplayName>
+  <Description>Modal - Micky</Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[{"appComponentName":"ce4528c2cba94bbe8db205f01da5c4bb","displayName":"cmpButton","appName":"dba62d78-6e4e-47ea-958b-38b587a345bb","appVersion":"2026-02-05T01:35:57Z","appComponentLibraryLogicalName":"crb5e_buttons_d9296","appDisplayName":"Buttons","environmentName":"bf48fb96-28d7-e3ff-9553-9030d062144b","owner":{"id":"d5fa9a37-555e-41ef-acdf-d3f5d8e38f38","displayName":"Mayckell Perez","email":"MayckellPerez@zueridev.onmicrosoft.com","type":"User","tenantId":"1b52714d-f2aa-4428-b152-fb8ada084b24","userPrincipalName":"MayckellPerez@zueridev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2025-11-13T13:30:18.211Z","lastModifiedOn":"2026-02-05T01:34:19.201Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"f03d14cb653b46e48ade74833c3bb999","displayName":"cmpButtonIcon","appName":"dba62d78-6e4e-47ea-958b-38b587a345bb","appVersion":"2026-02-05T01:35:57Z","appComponentLibraryLogicalName":"crb5e_buttons_d9296","appDisplayName":"Buttons","environmentName":"bf48fb96-28d7-e3ff-9553-9030d062144b","owner":{"id":"d5fa9a37-555e-41ef-acdf-d3f5d8e38f38","displayName":"Mayckell Perez","email":"MayckellPerez@zueridev.onmicrosoft.com","type":"User","tenantId":"1b52714d-f2aa-4428-b152-fb8ada084b24","userPrincipalName":"MayckellPerez@zueridev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2025-11-13T13:30:18.211Z","lastModifiedOn":"2026-02-05T01:34:19.201Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"ee032c43d11c4f17b3cb129a2652440b","displayName":"cmpPowerButtonIcon","appName":"dba62d78-6e4e-47ea-958b-38b587a345bb","appVersion":"2026-02-05T01:35:57Z","appComponentLibraryLogicalName":"crb5e_buttons_d9296","appDisplayName":"Buttons","environmentName":"bf48fb96-28d7-e3ff-9553-9030d062144b","owner":{"id":"d5fa9a37-555e-41ef-acdf-d3f5d8e38f38","displayName":"Mayckell Perez","email":"MayckellPerez@zueridev.onmicrosoft.com","type":"User","tenantId":"1b52714d-f2aa-4428-b152-fb8ada084b24","userPrincipalName":"MayckellPerez@zueridev.onmicrosoft.com"},"allowCustomization":false,"createdOn":"2025-11-13T13:30:18.211Z","lastModifiedOn":"2026-02-05T01:34:19.201Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"e2db3ba16ebb4aa38ff6ced44b9b03c0","displayName":"cmpInput","appName":"dba62d78-6e4e-47ea-958b-38b587a345bb","appVersion":"2026-02-05T01:35:57Z","appComponentLibraryLogicalName":"crb5e_buttons_d9296","appDisplayName":"Buttons","environmentName":"bf48fb96-28d7-e3ff-9553-9030d062144b","owner":{"id":"d5fa9a37-555e-41ef-acdf-d3f5d8e38f38","displayName":"Mayckell Perez","email":"MayckellPerez@zueridev.onmicrosoft.com","type":"User","tenantId":"1b52714d-f2aa-4428-b152-fb8ada084b24","userPrincipalName":"MayckellPerez@zueridev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2025-11-13T13:30:18.211Z","lastModifiedOn":"2026-02-05T01:34:19.201Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"520a4e1ca7ba4e159fc32c2fe23e2a67","displayName":"cmpModal","appName":"dba62d78-6e4e-47ea-958b-38b587a345bb","appVersion":"2026-02-05T01:35:57Z","appComponentLibraryLogicalName":"crb5e_buttons_d9296","appDisplayName":"Buttons","environmentName":"bf48fb96-28d7-e3ff-9553-9030d062144b","owner":{"id":"d5fa9a37-555e-41ef-acdf-d3f5d8e38f38","displayName":"Mayckell Perez","email":"MayckellPerez@zueridev.onmicrosoft.com","type":"User","tenantId":"1b52714d-f2aa-4428-b152-fb8ada084b24","userPrincipalName":"MayckellPerez@zueridev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2025-11-13T13:30:18.211Z","lastModifiedOn":"2026-02-05T01:34:19.201Z","connectionReferences":{},"databaseReferences":{}}]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>1</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/crb5e_buttons_d9296_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/crb5e_buttons_d9296_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/crb5e_buttons_d9296_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>

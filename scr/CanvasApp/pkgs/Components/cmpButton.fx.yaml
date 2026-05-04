@@ -1,0 +1,200 @@
+cmpButton As CanvasComponent:
+    OnSelect():
+        ThisProperty:
+            Default: =
+    Border: =0.5
+    BorderRadius: =10
+    ChildTabPriority: =true
+    ColorBg: =RGBA(100, 215, 153, 1)
+    ColorText: =RGBA(255, 255, 255, 1)
+    ContentLanguage: =""
+    DisplayDisabled: =false
+    EnableChildFocus: =true
+    Fill: =RGBA(0, 0, 0, 0)
+    FontBold: =true
+    FontSize: =14
+    Height: =70
+    IconLeft: =false
+    IconRight: =false
+    IconSize: =20
+    ImageIconLeft: =SampleImage
+    ImageIconRight: =SampleImage
+    MarginHeight: =20
+    MarginWidth: =20
+    ShadowLg: =false
+    ShadowMd: =true
+    ShadowSm: =false
+    TextButton: ="Text Button"
+    VerticalDirection: =false
+    Visible: =true
+    Width: =170
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    ContButton As groupContainer.manualLayoutContainer:
+        BorderColor: =ColorFade(Self.Fill, -20%)
+        BorderThickness: =cmpButton.Border
+        DropShadow: |-
+            =With(
+                {
+                    varShadowOpcion: true
+                },
+                Switch(
+                    varShadowOpcion,
+                    cmpButton.ShadowSm, DropShadow.Light,
+                    cmpButton.ShadowMd, DropShadow.Semilight,
+                    cmpButton.ShadowLg, DropShadow.Regular
+                )
+            )
+        Fill: =cmpButton.ColorBg
+        Height: =Parent.Height - cmpButton.MarginHeight
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        maximumHeight: =11360
+        maximumWidth: =640
+        RadiusBottomLeft: =cmpButton.BorderRadius
+        RadiusBottomRight: =cmpButton.BorderRadius
+        RadiusTopLeft: =cmpButton.BorderRadius
+        RadiusTopRight: =cmpButton.BorderRadius
+        Width: =Parent.Width - cmpButton.MarginWidth
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =Parent.Height/2 - Self.Height/2
+        ZIndex: =1
+
+        ContButtonDetails_5 As groupContainer.horizontalAutoLayoutContainer:
+            BorderColor: =
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =If(cmpButton.VerticalDirection, LayoutDirection.Vertical, LayoutDirection.Horizontal)
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMode: =LayoutMode.Auto
+            maximumHeight: =11360
+            maximumWidth: =640
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Width: =Parent.Width
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+            ZIndex: =1
+
+            IcnLeft_5 As image:
+                Height: =cmpButton.IconSize
+                Image: =cmpButton.ImageIconLeft
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =320
+                LayoutMinWidth: =320
+                Visible: =cmpButton.IconLeft
+                Width: =Self.Height
+                Y: =Parent.Height/2 - Self.Height/2
+                ZIndex: =1
+
+            LblName_5 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =cmpButton.ColorText
+                FillPortions: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(cmpButton.FontBold, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Parent.Height
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =0
+                LayoutMinWidth: =
+                Size: =cmpButton.FontSize
+                Text: =cmpButton.TextButton
+                Width: =Parent.Width
+                ZIndex: =2
+
+            IcnRicht_5 As image:
+                Height: =cmpButton.IconSize
+                Image: =cmpButton.ImageIconRight
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =320
+                LayoutMinWidth: =320
+                Visible: =cmpButton.IconRight
+                Width: =Self.Height
+                Y: =Parent.Height/2 - Self.Height/2
+                ZIndex: =3
+
+        ContBgAnimated_5 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Height: |-
+                =If(
+                    varBtnAnimated,
+                    Parent.Height * Power(tmrBtnBgAnimated_5.Value / tmrBtnBgAnimated_5.Duration, 1.5) + 35
+                )
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            maximumHeight: =11360
+            maximumWidth: =640
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: |-
+                =If(
+                    varBtnAnimated,
+                    Parent.Width * Power(tmrBtnBgAnimated_5.Value / tmrBtnBgAnimated_5.Duration, 2.5) + Self.Height
+                    )
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+            ZIndex: =2
+
+            BgAnimated_5 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =
+                Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_5.Value/tmrBtnBgAnimated_5.Duration))
+                HoverFill: =
+                PressedFill: =
+                ZIndex: =1
+
+        BgButtonn_5 As button:
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: |-
+                =If(
+                    cmpButton.DisplayDisabled,
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Segoe UI'
+            Height: =Parent.Height
+            HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+            OnSelect: =Set(varBtnAnimated, true);
+            PressedFill: =RGBA(0, 0, 0, 0.05)
+            Size: =24
+            Text: =
+            Width: =Parent.Width
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+            ZIndex: =3
+
+        tmrBtnBgAnimated_5 As timer:
+            Duration: =280
+            Height: =0
+            OnTimerEnd: |-
+                =Set(varBtnAnimated, false);
+                Reset(Self);
+                cmpButton.OnSelect();
+            Start: =varBtnAnimated
+            Visible: =false
+            Width: =0
+            X: =40
+            Y: =40
+            ZIndex: =4
+

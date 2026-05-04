@@ -1,0 +1,24 @@
+// APPROVE
+function approveExpense(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Change Status
+    formContext.getAttribute("expensestatus").setValue(128580001); // Approved
+
+    // New ApprovalDate
+    formContext.getAttribute("approvaldate").setValue(new Date());
+
+    // ApprovedBy
+    var userSettings = Xrm.Utility.getGlobalContext().userSettings;
+
+    var userLookup = [{
+        id: userSettings.userId,
+        name: userSettings.userName,
+        entityType: "systemuser"
+    }];
+
+    formContext.getAttribute("approvedby").setValue(userLookup);
+
+    // Save
+    formContext.data.entity.save();
+}

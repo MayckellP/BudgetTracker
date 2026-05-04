@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4fb42c72-c720-f111-88b1-70a8a507a37b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{e5f2c53c-dcd9-4e0a-ab4f-769ff9412813}" IsUserDefined="1" name="hh_department" labelid="{5bafee0f-633a-488f-81e8-072e0999cc76}">
+          <labels>
+            <label description="New Department" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{cb0e72bc-a5c1-489c-8500-5e5e64b0cf68}" name="hh_department_details" labelid="{28ce4598-8341-426d-8243-ccbb1335c509}">
+                  <labels>
+                    <label description="Department Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b91cd2c1-4ba9-4c86-ab33-390a60544d01}" labelid="{b0d7ff2b-f319-4d15-b5f4-cb51e2f26988}">
+                        <labels>
+                          <label description="DepartmentName" languagecode="1033" />
+                        </labels>
+                        <control id="zd_departmentname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_departmentname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ca1df21-39f0-4d61-aee6-5262d01f187a}" labelid="{a614c67f-fac5-4222-8aa9-dc80e28e2fda}">
+                        <labels>
+                          <label description="Supervisor" languagecode="1033" />
+                        </labels>
+                        <control id="zd_supervisor" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_supervisor" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cf27f039-7b66-4a0b-b95f-f50699f90458}" labelid="{cbed1b67-6991-4d81-8427-0e25991fc437}">
+                        <labels>
+                          <label description="BusinessUnit" languagecode="1033" />
+                        </labels>
+                        <control id="zd_businessunit" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_businessunit" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{f65a8acc-9dd2-4a21-a936-7fcff0a2e92e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{417fb447-0758-4135-bbd6-cf12527af6c9}" showlabel="false" labelid="{62c181de-7563-4ccf-9341-ab0ad647b54c}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2ea78e6b-5580-464f-af9e-b0e921c8bda5}" showlabel="false" labelid="{22554ea2-579a-435f-a366-dfcef158d3e1}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{95bda6fb-bd57-411d-bcb1-dc7f9731c4a5}" showlabel="false" labelid="{92ee6bd2-fe38-4698-a72b-0833a234243a}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{8ee8bf5f-fc52-400e-8a19-fc13aceca6d9}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{f3e01995-a693-425c-8875-1f0e09487f9d}" showlabel="false" labelid="{60130a7a-2029-4b37-8127-de0c42d8fddb}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{19b604ba-5f9b-457f-be17-6f97e7e853cf}" showlabel="false" labelid="{e4f4c5f6-8a95-452d-899d-c786e2ea9fe1}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8f39075f-0b6a-49e6-82fe-265af4f94e00}" showlabel="false" labelid="{a2f6144f-dd59-4c43-b7fc-781dc0df5c6b}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{f28573e3-900c-38a7-a0bd-4b508bfa517e}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Department" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

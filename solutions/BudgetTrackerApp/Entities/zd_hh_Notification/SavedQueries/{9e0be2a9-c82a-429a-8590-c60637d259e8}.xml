@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9e0be2a9-c82a-429a-8590-c60637d259e8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="zd_title" select="1" icon="1" preview="1">
+        <row name="result" id="zd_hh_notificationid">
+          <cell name="zd_title" width="300" />
+          <cell name="createdon" width="125" />
+          <cell name="ownerid" width="100" />
+          <cell name="zd_message" width="100" />
+          <cell name="zd_read" width="100" />
+          <cell name="zd_expense" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="zd_hh_notification">
+          <attribute name="zd_hh_notificationid" />
+          <attribute name="zd_title" />
+          <attribute name="createdon" />
+          <order attribute="zd_title" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="zd_title" operator="like" value="{0}" />
+          </filter>
+          <attribute name="ownerid" />
+          <attribute name="zd_message" />
+          <attribute name="zd_read" />
+          <attribute name="zd_expense" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active hh_Notifications" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

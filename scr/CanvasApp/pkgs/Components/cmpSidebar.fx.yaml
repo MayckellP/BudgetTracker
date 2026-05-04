@@ -1,0 +1,1118 @@
+cmpSidebar As CanvasComponent:
+    OnSelectBtnNewRecord():
+        ThisProperty:
+            Default: =
+    BackgroundColor: =RGBA(255, 255, 255, 1)
+    Btn1Icon: =Dashboard_Black
+    Btn1IconSelected: =Dashboard_Selected
+    Btn1Navigate: =App.ActiveScreen
+    Btn1Text: ="Dashboard"
+    Btn1Visible: =true
+    Btn2Icon: =Search_Black
+    Btn2IconSelected: =Search_Selected
+    Btn2Navigate: =App.ActiveScreen
+    Btn2Text: ="Suchen"
+    Btn2Visible: =true
+    Btn3Icon: =Administration_Black
+    Btn3IconSelected: =Administration_Selected
+    Btn3Navigate: =App.ActiveScreen
+    Btn3Text: ="Verwaltung"
+    Btn3Visible: =true
+    Btn4Icon: =Support_Black
+    Btn4IconSelected: =Support_Selected
+    Btn4Navigate: =App.ActiveScreen
+    Btn4Text: ="Einstellung"
+    Btn4Visible: =true
+    BtnNewRecordIcon: =Plus
+    BtnNewRecordText: ="Ausgaben erfassen"
+    BtnNewRecordVisible: =true
+    ClientImage: =ClientExample
+    ClientName: ="Hospital AG"
+    Fill: =RGBA(0, 0, 0, 0)
+    FontSize: =10
+    Height: =App.Height
+    PrimaryColor: =RGBA(0, 121, 107, 1)
+    SelectedPage: ="Dashboard"
+    SelectedTextColor: =RGBA(255, 255, 255, 1)
+    TextColor: =RGBA(0, 0, 0, 1)
+    TitleFontSize: =16
+    Width: =Max(1728, App.Width) * 0.15
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    ContSidebar As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =cmpSidebar.BackgroundColor
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =35
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =15
+        PaddingLeft: =15
+        PaddingRight: =15
+        PaddingTop: =15
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =Parent.Height/2 - Self.Height/2
+        ZIndex: =1
+
+        ContClientName As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =Parent.Height * 0.2
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            ContImage As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =RGBA(230, 230, 230, 1)
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: |
+                    =Parent.Height * 0.75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =Parent.Width * 0.7
+                ZIndex: =1
+
+                ImgCliientPhoto As image:
+                    Height: =Parent.Height
+                    Image: =cmpSidebar.ClientImage
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+            LblClientName As label:
+                Align: =Align.Center
+                Color: =cmpSidebar.TextColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                Height: =Parent.Height * 0.2
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =cmpSidebar.TitleFontSize
+                Text: =cmpSidebar.ClientName
+                Width: =Parent.Width
+                ZIndex: =2
+
+        ContNavigationButtons As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =Parent.Height * 0.55
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            maximumHeight: =11360
+            maximumWidth: =640
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            BtnNewRecord As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =ColorFade(Self.Fill, -20%)
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(194, 255, 244, 1)
+                FillPortions: =0
+                Height: =40
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                maximumHeight: =11360
+                maximumWidth: =640
+                RadiusBottomLeft: =6
+                RadiusBottomRight: =6
+                RadiusTopLeft: =6
+                RadiusTopRight: =6
+                Visible: =cmpSidebar.BtnNewRecordVisible
+                Width: =Parent.Width
+                X: =Parent.Width/2 - Self.Width/2
+                Y: =Parent.Height/2 - Self.Height/2
+                ZIndex: =1
+
+                ContButtonDetails As groupContainer.horizontalAutoLayoutContainer:
+                    BorderColor: =
+                    DropShadow: =DropShadow.None
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMode: =LayoutMode.Auto
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+                    IcnLeft As image:
+                        Height: =20
+                        Image: =cmpSidebar.BtnNewRecordIcon
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =320
+                        LayoutMinWidth: =320
+                        PaddingBottom: =3
+                        PaddingLeft: =3
+                        PaddingRight: =3
+                        PaddingTop: =3
+                        Width: =Self.Height
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                    LblName As label:
+                        AlignInContainer: =AlignInContainer.Center
+                        Color: =RGBA(6, 95, 70, 1)
+                        FillPortions: =1
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =Parent.Height
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =
+                        PaddingBottom: =0
+                        PaddingLeft: =3
+                        PaddingRight: =3
+                        PaddingTop: =0
+                        Size: =cmpSidebar.FontSize
+                        Text: =cmpSidebar.BtnNewRecordText
+                        Width: =Parent.Width
+                        ZIndex: =2
+
+                    IcnRicht As image:
+                        Height: =20
+                        Image: =
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =320
+                        LayoutMinWidth: =320
+                        Visible: =false
+                        Width: =Self.Height
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =3
+
+                ContBgAnimated As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: |-
+                        =If(
+                            varBtnAnimatedNewRecord,
+                            Parent.Height * Power(tmrBtnBgAnimated.Value / tmrBtnBgAnimated.Duration, 1.5) + 35
+                        )
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Width: |-
+                        =If(
+                            varBtnAnimatedNewRecord,
+                            Parent.Width * Power(tmrBtnBgAnimated.Value / tmrBtnBgAnimated.Duration, 2.5) + Self.Height
+                            )
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =2
+
+                    BgAnimated As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =
+                        Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated.Value/tmrBtnBgAnimated.Duration))
+                        HoverFill: =
+                        PressedFill: =
+                        ZIndex: =1
+
+                BgButtonn As button:
+                    Color: =RGBA(6, 95, 70, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Font: =Font.'Segoe UI'
+                    Height: =Parent.Height
+                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                    OnSelect: =Set(varBtnAnimatedNewRecord, true);
+                    PressedFill: =RGBA(0, 0, 0, 0.05)
+                    Size: =24
+                    Text: =
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =3
+
+                tmrBtnBgAnimated As timer:
+                    Duration: =280
+                    Height: =0
+                    OnTimerEnd: |-
+                        =Set(varBtnAnimatedNewRecord, false);
+                        cmpSidebar.OnSelectBtnNewRecord();
+                        Reset(Self);
+                    Start: =varBtnAnimatedNewRecord
+                    Visible: =false
+                    Width: =0
+                    X: =40
+                    Y: =40
+                    ZIndex: =4
+
+            ContButtons As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                Height: =225
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =20
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =8
+                PaddingLeft: =8
+                PaddingRight: =8
+                PaddingTop: =8
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =Parent.Width
+                ZIndex: =2
+
+                BtnDashboard As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =ColorFade(Self.Fill, -20%)
+                    DropShadow: =DropShadow.None
+                    Fill: |-
+                        =If(
+                            cmpSidebar.SelectedPage = cmpSidebar.Btn1Text,
+                            cmpSidebar.PrimaryColor,
+                            RGBA(0, 0, 0, 0)
+                        )
+                    FillPortions: =0
+                    Height: =40
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =6
+                    RadiusBottomRight: =6
+                    RadiusTopLeft: =6
+                    RadiusTopRight: =6
+                    Visible: |
+                        =cmpSidebar.Btn1Visible
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+                    ContButtonDetails_1 As groupContainer.horizontalAutoLayoutContainer:
+                        BorderColor: =
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMode: =LayoutMode.Auto
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                        IcnLeft_1 As image:
+                            Height: =20
+                            Image: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn1Text,
+                                    cmpSidebar.Btn1IconSelected,
+                                    cmpSidebar.Btn1Icon
+                                )
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            PaddingBottom: =1
+                            PaddingLeft: =1
+                            PaddingRight: =1
+                            PaddingTop: =1
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =1
+
+                        LblName_1 As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Color: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn1Text,
+                                    cmpSidebar.SelectedTextColor,
+                                    cmpSidebar.TextColor
+                                )
+                            FillPortions: =1
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =
+                            PaddingBottom: =0
+                            PaddingLeft: =3
+                            PaddingRight: =3
+                            PaddingTop: =0
+                            Size: =cmpSidebar.FontSize
+                            Text: =cmpSidebar.Btn1Text
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        IcnRicht_1 As image:
+                            Height: =20
+                            Image: =
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            Visible: =false
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =3
+
+                    ContBgAnimated_1 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: |-
+                            =If(
+                                varBtnAnimatedDashboard,
+                                Parent.Height * Power(tmrBtnBgAnimated_1.Value / tmrBtnBgAnimated_1.Duration, 1.5) + 35
+                            )
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Width: |-
+                            =If(
+                                varBtnAnimatedDashboard,
+                                Parent.Width * Power(tmrBtnBgAnimated_1.Value / tmrBtnBgAnimated_1.Duration, 2.5) + Self.Height
+                                )
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =2
+
+                        BgAnimated_1 As rectangle:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =
+                            Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_1.Value/tmrBtnBgAnimated_1.Duration))
+                            HoverFill: =
+                            PressedFill: =
+                            ZIndex: =1
+
+                    BgButtonn_1 As button:
+                        Color: =RGBA(6, 95, 70, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Segoe UI'
+                        Height: =Parent.Height
+                        HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                        OnSelect: =Set(varBtnAnimatedDashboard, true);
+                        PressedFill: =RGBA(0, 0, 0, 0.05)
+                        Size: =24
+                        Text: =""
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =3
+
+                    tmrBtnBgAnimated_1 As timer:
+                        Duration: =280
+                        Height: =0
+                        OnTimerEnd: |-
+                            =Set(varBtnAnimatedDashboard, false);
+                            Reset(Self);
+                            Navigate(cmpSidebar.Btn1Navigate);
+                        Start: =varBtnAnimatedDashboard
+                        Visible: =false
+                        Width: =0
+                        X: =40
+                        Y: =40
+                        ZIndex: =4
+
+                BtnSearch As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =ColorFade(Self.Fill, -20%)
+                    DropShadow: =DropShadow.None
+                    Fill: |-
+                        =If(
+                            cmpSidebar.SelectedPage = cmpSidebar.Btn2Text,
+                            cmpSidebar.PrimaryColor,
+                            RGBA(0, 0, 0, 0)
+                        )
+                    FillPortions: =0
+                    Height: =40
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =6
+                    RadiusBottomRight: =6
+                    RadiusTopLeft: =6
+                    RadiusTopRight: =6
+                    Visible: =cmpSidebar.Btn2Visible
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =2
+
+                    ContButtonDetails_2 As groupContainer.horizontalAutoLayoutContainer:
+                        BorderColor: =
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMode: =LayoutMode.Auto
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                        IcnLeft_2 As image:
+                            Height: =20
+                            Image: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn2Text,
+                                    cmpSidebar.Btn2IconSelected,
+                                    cmpSidebar.Btn2Icon
+                                )
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            PaddingBottom: =1
+                            PaddingLeft: =1
+                            PaddingRight: =1
+                            PaddingTop: =1
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =1
+
+                        LblName_2 As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Color: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn2Text,
+                                    cmpSidebar.SelectedTextColor,
+                                    cmpSidebar.TextColor
+                                )
+                            FillPortions: =1
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =
+                            PaddingBottom: =0
+                            PaddingLeft: =3
+                            PaddingRight: =3
+                            PaddingTop: =0
+                            Size: =cmpSidebar.FontSize
+                            Text: =cmpSidebar.Btn2Text
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        IcnRicht_2 As image:
+                            Height: =20
+                            Image: =
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            Visible: =false
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =3
+
+                    ContBgAnimated_2 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: |-
+                            =If(
+                                varBtnAnimatedSearch,
+                                Parent.Height * Power(tmrBtnBgAnimated_2.Value / tmrBtnBgAnimated_2.Duration, 1.5) + 35
+                            )
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Width: |-
+                            =If(
+                                varBtnAnimatedSearch,
+                                Parent.Width * Power(tmrBtnBgAnimated_2.Value / tmrBtnBgAnimated_2.Duration, 2.5) + Self.Height
+                                )
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =2
+
+                        BgAnimated_2 As rectangle:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =
+                            Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_2.Value/tmrBtnBgAnimated_2.Duration))
+                            HoverFill: =
+                            PressedFill: =
+                            ZIndex: =1
+
+                    BgButtonn_2 As button:
+                        Color: =RGBA(6, 95, 70, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Segoe UI'
+                        Height: =Parent.Height
+                        HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                        OnSelect: =Set(varBtnAnimatedSearch, true);
+                        PressedFill: =RGBA(0, 0, 0, 0.05)
+                        Size: =24
+                        Text: =""
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =3
+
+                    tmrBtnBgAnimated_2 As timer:
+                        Duration: =280
+                        Height: =0
+                        OnTimerEnd: |-
+                            =Set(varBtnAnimatedSearch, false);
+                            Reset(Self);
+                            Navigate(cmpSidebar.Btn2Navigate);
+                        Start: =varBtnAnimatedSearch
+                        Visible: =false
+                        Width: =0
+                        X: =40
+                        Y: =40
+                        ZIndex: =4
+
+                BtnReport As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =ColorFade(Self.Fill, -20%)
+                    DropShadow: =DropShadow.None
+                    Fill: |-
+                        =If(
+                            cmpSidebar.SelectedPage = cmpSidebar.Btn3Text,
+                            cmpSidebar.PrimaryColor,
+                            RGBA(0, 0, 0, 0)
+                        )
+                    FillPortions: =0
+                    Height: =40
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =6
+                    RadiusBottomRight: =6
+                    RadiusTopLeft: =6
+                    RadiusTopRight: =6
+                    Visible: =cmpSidebar.Btn3Visible
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =3
+
+                    ContButtonDetails_3 As groupContainer.horizontalAutoLayoutContainer:
+                        BorderColor: =
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMode: =LayoutMode.Auto
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                        IcnLeft_3 As image:
+                            Height: =20
+                            Image: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn3Text,
+                                    cmpSidebar.Btn3IconSelected,
+                                    cmpSidebar.Btn3Icon
+                                )
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            PaddingBottom: =1
+                            PaddingLeft: =1
+                            PaddingRight: =1
+                            PaddingTop: =1
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =1
+
+                        LblName_3 As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Color: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn3Text,
+                                    cmpSidebar.SelectedTextColor,
+                                    cmpSidebar.TextColor
+                                )
+                            FillPortions: =1
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =
+                            PaddingBottom: =0
+                            PaddingLeft: =3
+                            PaddingRight: =3
+                            PaddingTop: =0
+                            Size: =cmpSidebar.FontSize
+                            Text: =cmpSidebar.Btn3Text
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        IcnRicht_3 As image:
+                            Height: =20
+                            Image: =
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            Visible: =false
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =3
+
+                    ContBgAnimated_3 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: |-
+                            =If(
+                                varBtnAnimatedReport,
+                                Parent.Height * Power(tmrBtnBgAnimated_3.Value / tmrBtnBgAnimated_3.Duration, 1.5) + 35
+                            )
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Width: |-
+                            =If(
+                                varBtnAnimatedReport,
+                                Parent.Width * Power(tmrBtnBgAnimated_3.Value / tmrBtnBgAnimated_3.Duration, 2.5) + Self.Height
+                                )
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =2
+
+                        BgAnimated_3 As rectangle:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =
+                            Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_3.Value/tmrBtnBgAnimated_3.Duration))
+                            HoverFill: =
+                            PressedFill: =
+                            ZIndex: =1
+
+                    BgButtonn_3 As button:
+                        Color: =RGBA(6, 95, 70, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Segoe UI'
+                        Height: =Parent.Height
+                        HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                        OnSelect: =Set(varBtnAnimatedReport, true);
+                        PressedFill: =RGBA(0, 0, 0, 0.05)
+                        Size: =24
+                        Text: =""
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =3
+
+                    tmrBtnBgAnimated_3 As timer:
+                        Duration: =280
+                        Height: =0
+                        OnTimerEnd: |-
+                            =Set(varBtnAnimatedReport, false);
+                            Reset(Self);
+                            Navigate(cmpSidebar.Btn3Navigate);
+                        Start: =varBtnAnimatedReport
+                        Visible: =false
+                        Width: =0
+                        X: =40
+                        Y: =40
+                        ZIndex: =4
+
+                BtnSupport As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =ColorFade(Self.Fill, -20%)
+                    DropShadow: =DropShadow.None
+                    Fill: |-
+                        =If(
+                            cmpSidebar.SelectedPage = cmpSidebar.Btn4Text,
+                            cmpSidebar.PrimaryColor,
+                            RGBA(0, 0, 0, 0)
+                        )
+                    FillPortions: =0
+                    Height: =40
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =6
+                    RadiusBottomRight: =6
+                    RadiusTopLeft: =6
+                    RadiusTopRight: =6
+                    Visible: =cmpSidebar.Btn4Visible
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =4
+
+                    ContButtonDetails_4 As groupContainer.horizontalAutoLayoutContainer:
+                        BorderColor: =
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMode: =LayoutMode.Auto
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                        IcnLeft_4 As image:
+                            Height: =20
+                            Image: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn4Text,
+                                    cmpSidebar.Btn4IconSelected,
+                                    cmpSidebar.Btn4Icon
+                                )
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            PaddingBottom: =1
+                            PaddingLeft: =1
+                            PaddingRight: =1
+                            PaddingTop: =1
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =1
+
+                        LblName_4 As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Color: |-
+                                =If(
+                                    cmpSidebar.SelectedPage = cmpSidebar.Btn4Text,
+                                    cmpSidebar.SelectedTextColor,
+                                    cmpSidebar.TextColor
+                                )
+                            FillPortions: =1
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =
+                            PaddingBottom: =0
+                            PaddingLeft: =3
+                            PaddingRight: =3
+                            PaddingTop: =0
+                            Size: =cmpSidebar.FontSize
+                            Text: =cmpSidebar.Btn4Text
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        IcnRicht_4 As image:
+                            Height: =20
+                            Image: =
+                            LayoutMaxHeight: =
+                            LayoutMaxWidth: =
+                            LayoutMinHeight: =320
+                            LayoutMinWidth: =320
+                            Visible: =false
+                            Width: =Self.Height
+                            Y: =Parent.Height/2 - Self.Height/2
+                            ZIndex: =3
+
+                    ContBgAnimated_4 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: |-
+                            =If(
+                                varBtnAnimatedSupport,
+                                Parent.Height * Power(tmrBtnBgAnimated_4.Value / tmrBtnBgAnimated_4.Duration, 1.5) + 35
+                            )
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Width: |-
+                            =If(
+                                varBtnAnimatedSupport,
+                                Parent.Width * Power(tmrBtnBgAnimated_4.Value / tmrBtnBgAnimated_4.Duration, 2.5) + Self.Height
+                                )
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =2
+
+                        BgAnimated_4 As rectangle:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =
+                            Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_4.Value/tmrBtnBgAnimated_4.Duration))
+                            HoverFill: =
+                            PressedFill: =
+                            ZIndex: =1
+
+                    BgButtonn_4 As button:
+                        Color: =RGBA(6, 95, 70, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Segoe UI'
+                        Height: =Parent.Height
+                        HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                        OnSelect: =Set(varBtnAnimatedSupport, true);
+                        PressedFill: =RGBA(0, 0, 0, 0.05)
+                        Size: =24
+                        Text: =""
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =3
+
+                    tmrBtnBgAnimated_4 As timer:
+                        Duration: =280
+                        Height: =0
+                        OnTimerEnd: |-
+                            =Set(varBtnAnimatedSupport, false);
+                            Reset(Self);
+                            Navigate(cmpSidebar.Btn4Navigate);
+                        Start: =varBtnAnimatedSupport
+                        Visible: =false
+                        Width: =0
+                        X: =40
+                        Y: =40
+                        ZIndex: =4
+
+        ContLogoZueriDev As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height * 0.15
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            maximumHeight: =11360
+            maximumWidth: =640
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            LblDevelopedBy As label:
+                Align: =Align.Center
+                Color: =cmpSidebar.TextColor
+                Font: =Font.'Segoe UI'
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =12
+                Text: ="Developed by"
+                Width: =Parent.Width
+                ZIndex: =1
+
+            ImgLogoWhite As image:
+                AlignInContainer: =AlignInContainer.Stretch
+                Height: =Parent.Height * 0.12
+                Image: =Logo_White
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                Width: =320
+                ZIndex: =2
+

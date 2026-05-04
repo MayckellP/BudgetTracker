@@ -1,0 +1,32 @@
+<appaction uniquename="zd__AproveExpense!df3c076515ee479dbc48042ded35fc9e!zd_hh_expense!0">
+  <buttonlabeltext default="Aprove Expense">
+    <label description="Aprove Expense" languagecode="1033" />
+  </buttonlabeltext>
+  <buttontooltiptitle default="Approve Expense">
+    <label description="Approve Expense" languagecode="1033" />
+  </buttontooltiptitle>
+  <context>1</context>
+  <contextentity>
+    <logicalname>zd_hh_expense</logicalname>
+  </contextentity>
+  <contextvalue>zd_hh_expense</contextvalue>
+  <fonticon>$clientsvg:Accept</fonticon>
+  <hidden>1</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>AproveExpense!df3c076515ee479dbc48042ded35fc9e</name>
+  <onclickeventjavascriptfunctionname>ApproveExpense</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>33a6b034-ea21-f111-88b1-7ced8d430217</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100105040.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

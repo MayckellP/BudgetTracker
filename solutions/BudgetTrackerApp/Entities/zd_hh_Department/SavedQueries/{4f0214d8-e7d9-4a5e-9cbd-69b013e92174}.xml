@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4f0214d8-e7d9-4a5e-9cbd-69b013e92174}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="zd_departmentname" select="1" icon="1" preview="1">
+        <row name="result" id="zd_hh_departmentid">
+          <cell name="zd_departmentname" width="300" />
+          <cell name="zd_supervisor" width="150" />
+          <cell name="zd_businessunit" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="zd_hh_department">
+          <attribute name="zd_hh_departmentid" />
+          <attribute name="zd_departmentname" />
+          <attribute name="createdon" />
+          <order attribute="zd_departmentname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="zd_supervisor" />
+          <attribute name="zd_businessunit" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active hh_Departments" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>crb5e_modals_411f2</Name>
+  <AppVersion>2026-03-19T14:28:41Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.26032.12.0</CreatedByClientVersion>
+  <MinClientVersion>3.26032.12.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1200","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","showStatusBar":"false","publisherVersion":"3.26032.12","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false","m365CopilotSettingValue":"0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(251,101,60,1)</BackgroundColor>
+  <DisplayName>Modals</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[{"appComponentName":"57e88c49c11145b7b321c6749c7a9510","displayName":"cmpModal_expenseForm","appName":"213cc80d-3a79-424b-b544-f061408e1760","appVersion":"2026-03-19T14:28:41Z","appComponentLibraryLogicalName":"crb5e_modals_411f2","appDisplayName":"Modals","environmentName":"bf48fb96-28d7-e3ff-9553-9030d062144b","owner":{"id":"d5fa9a37-555e-41ef-acdf-d3f5d8e38f38","displayName":"Mayckell Perez","email":"MayckellPerez@zueridev.onmicrosoft.com","type":"User","tenantId":"1b52714d-f2aa-4428-b152-fb8ada084b24","userPrincipalName":"MayckellPerez@zueridev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2026-03-19T09:13:27.503Z","lastModifiedOn":"2026-03-19T14:27:52.025Z","connectionReferences":{},"databaseReferences":{}}]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>1</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/crb5e_modals_411f2_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/crb5e_modals_411f2_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/crb5e_modals_411f2_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>

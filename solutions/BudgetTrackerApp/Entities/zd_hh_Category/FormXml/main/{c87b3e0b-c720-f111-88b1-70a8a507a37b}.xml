@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{c87b3e0b-c720-f111-88b1-70a8a507a37b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{df1f7494-24c7-4b62-9f4b-739d0e25250d}" IsUserDefined="1" name="hh_new_category" labelid="{a74e5e31-4bab-4d02-b3d2-35093e7e253b}">
+          <labels>
+            <label description="New Category" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{73a65918-2f96-4287-9152-49e5d893b91e}" name="hh_category_details" labelid="{74ca5749-d375-4fd1-9720-2f40e457c048}">
+                  <labels>
+                    <label description="Category Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{632041a4-bf9f-4c4e-a974-24e47845b4ae}" colspan="1" rowspan="1" labelid="{83a93ce5-525c-4cf5-945c-747440ca28b0}">
+                        <labels>
+                          <label description="Budget" languagecode="1033" />
+                        </labels>
+                        <control id="zd_budget" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_budget" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4a679bee-fb61-4c35-aad6-e5d8dcecc682}" labelid="{e1165f9c-ceb9-4360-80d3-e4da80a8645c}">
+                        <labels>
+                          <label description="CategoryName" languagecode="1033" />
+                        </labels>
+                        <control id="zd_categoryname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_categoryname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bffff0d7-a62c-4ff4-8165-76a1567288d9}" labelid="{483ed5b0-93c0-4e3d-a1fc-cff74987bd97}">
+                        <labels>
+                          <label description="BudgetLimit" languagecode="1033" />
+                        </labels>
+                        <control id="zd_budgetlimit" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="zd_budgetlimit" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="hh_new_category_status" id="61221809-f5ce-45ba-ba8e-410498919bdc" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{bc5de0de-59fc-41cb-b284-d76440b85944}">
+                  <labels>
+                    <label description="Status" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{814c4704-11d9-4248-9c8c-cfc48c2e8e60}" colspan="1" rowspan="1" labelid="{c546dbc3-f35b-4161-8398-deeeda3d170a}">
+                        <labels>
+                          <label description="CategoryStatus" languagecode="1033" />
+                        </labels>
+                        <control id="zd_categorystatus" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="zd_categorystatus" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{d7b7d266-65bd-4c2d-954e-2c6c000ead8b}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{390fb45e-f49d-4475-8d1d-269fd1191985}" showlabel="false" labelid="{d1a9ebfb-9839-4ca6-a0f5-9ffb8d5fdd77}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{157b02b3-82d9-4e07-9674-c00884d124c0}" showlabel="false" labelid="{a76fc8d5-42f4-41e2-b146-2a3f3a11bb5d}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{f73fa616-18ef-4adb-a8b6-e45bb999f351}" showlabel="false" labelid="{45adaec6-0b66-4a34-b00d-cb56efee6984}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{55fd8e0a-662e-4ee2-a925-31c443841ce2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{2ee661d7-0f68-471d-b409-a3bcab421d2f}" showlabel="false" labelid="{af85a2bf-2bc2-4d58-b9bf-a988d6dee828}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{c2de46bb-2fe0-4381-aa58-dc10fcdc3a49}" showlabel="false" labelid="{a5953954-e9b2-4c18-9191-e8ab2210ddfb}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a672a219-a7a1-483e-8be8-53682124273f}" showlabel="false" labelid="{07a796df-6c5c-4f62-bdd1-acbd0ed2ad49}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{f28573e3-900c-38a7-a0bd-4b508bfa517e}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Category" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

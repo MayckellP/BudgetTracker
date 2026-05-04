@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>zd_HospitalBudgetManagement</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="systemuser" />
+    <AppModuleComponent type="1" schemaName="zd_hh_budget" />
+    <AppModuleComponent type="1" schemaName="zd_hh_category" />
+    <AppModuleComponent type="1" schemaName="zd_hh_department" />
+    <AppModuleComponent type="1" schemaName="zd_hh_expense" />
+    <AppModuleComponent type="1" schemaName="zd_hh_notification" />
+    <AppModuleComponent type="26" id="{ca72a153-0210-4c4c-a3a7-14197fb24ccf}" />
+    <AppModuleComponent type="26" id="{3b96dd18-0fd2-45f4-a908-1f9526e3e647}" />
+    <AppModuleComponent type="26" id="{727b0067-0711-4da9-9c4f-2ac745e3041f}" />
+    <AppModuleComponent type="26" id="{dea18413-4b1f-48e8-a4dc-36da8a48a218}" />
+    <AppModuleComponent type="26" id="{111e9dbe-8ab5-4b03-bc1c-3edf8c11aefc}" />
+    <AppModuleComponent type="26" id="{7c47e5ad-886b-43c2-bb0c-45fd676c4e82}" />
+    <AppModuleComponent type="26" id="{8115729d-053a-471b-a250-468490673ece}" />
+    <AppModuleComponent type="26" id="{9a640c79-5d48-4ac4-aa0d-4f776aef832b}" />
+    <AppModuleComponent type="26" id="{f24787bc-4086-4291-a2ff-5f733c89204b}" />
+    <AppModuleComponent type="26" id="{a0db2469-c920-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{2afec098-c920-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{0a83de2a-ca20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{60604258-ca20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{19e35c90-ca20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{5716c8b7-ca20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{131a8ddc-ca20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{36191037-cb20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{8d28cb8f-cb20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{b384b7d1-cb20-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="26" id="{fbaeab17-8951-4042-b24a-7eb4d8288fa0}" />
+    <AppModuleComponent type="26" id="{f96eee49-035d-41dd-ae7d-83141321682c}" />
+    <AppModuleComponent type="26" id="{25a84436-5d84-41b4-9c1c-85c0029615ed}" />
+    <AppModuleComponent type="26" id="{0fc2309c-9e8b-4d0a-b02f-9b177475dc3c}" />
+    <AppModuleComponent type="26" id="{3acc9a74-0c06-464d-9fe8-9ccf96a2ea81}" />
+    <AppModuleComponent type="26" id="{29e65bda-d678-4f3b-9ebb-9f32e2918809}" />
+    <AppModuleComponent type="26" id="{cc59ce83-696b-4e7e-8875-a265f4e00ace}" />
+    <AppModuleComponent type="26" id="{441e926e-76ea-4344-b680-b3b88601facd}" />
+    <AppModuleComponent type="26" id="{9e0be2a9-c82a-429a-8590-c60637d259e8}" />
+    <AppModuleComponent type="26" id="{5c432681-6922-4a5d-bba3-d19e3b424bcc}" />
+    <AppModuleComponent type="26" id="{3cd51b9f-a046-4dd0-ac72-eb965e721514}" />
+    <AppModuleComponent type="60" id="{d5a0878b-4a9f-4cd8-a0de-0cff45c06fc0}" />
+    <AppModuleComponent type="60" id="{f395b519-5cff-4148-8d86-1bbd4f171175}" />
+    <AppModuleComponent type="60" id="{5501009c-c620-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="60" id="{c87b3e0b-c720-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="60" id="{4fb42c72-c720-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="60" id="{b6e2eefe-c720-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="60" id="{af538b22-c920-f111-88b1-70a8a507a37b}" />
+    <AppModuleComponent type="60" id="{69d2ed9e-cd20-f111-88b1-70a8a50930d9}" />
+    <AppModuleComponent type="60" id="{dd59234b-da21-f111-88b1-7ced8d430217}" />
+    <AppModuleComponent type="60" id="{57054058-7b20-4286-ba92-938cb79ef2f2}" />
+    <AppModuleComponent type="60" id="{bae8654e-5f4a-4215-88ea-9994cfc419d1}" />
+    <AppModuleComponent type="60" id="{3d352029-e8d0-4c14-82a5-ce33af15287a}" />
+    <AppModuleComponent type="62" schemaName="zd_HospitalBudgetManagement" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Hospital Budget Management" languagecode="1033" />
+  </LocalizedNames>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

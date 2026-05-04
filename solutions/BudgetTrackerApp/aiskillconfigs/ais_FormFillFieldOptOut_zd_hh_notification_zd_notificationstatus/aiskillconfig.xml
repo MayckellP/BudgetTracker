@@ -1,0 +1,15 @@
+<aiskillconfig uniquename="ais_FormFillFieldOptOut_zd_hh_notification_zd_notificationstatus">
+  <aiskill>FormFillFieldOptOut</aiskill>
+  <attribute>
+    <entityid.logicalname>zd_hh_notification</entityid.logicalname>
+    <logicalname>zd_notificationstatus</logicalname>
+  </attribute>
+  <description>zd_hh_notification - NotificationStatus Form fill opt out</description>
+  <entity>
+    <logicalname>zd_hh_notification</logicalname>
+  </entity>
+  <iscustomizable>1</iscustomizable>
+  <scope>1</scope>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</aiskillconfig>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{dd59234b-da21-f111-88b1-7ced8d430217}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{ad2b435e-9f77-417d-9f66-9d7a92e5e1e4}" IsUserDefined="1" name="hh_expense" labelid="{b7a32683-c759-4273-ad49-cc4a761fe12b}">
+          <labels>
+            <label description="Expense Check" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="hh_expense_status" id="9a8b7bfd-8137-40c7-95e4-b8c8678c614a" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{191eef46-e545-4465-b0e6-d928920dbfe8}">
+                  <labels>
+                    <label description="Status" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{ccda7b66-c9cb-47ae-89e7-d59155954d7e}" colspan="1" rowspan="1" labelid="{7c95087f-d1af-49df-9b91-bf47a49a1fe9}">
+                        <labels>
+                          <label description="ExpenseStatus" languagecode="1033" />
+                        </labels>
+                        <control id="zd_expensestatus" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="zd_expensestatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c5b3e4cc-84b8-4a00-8c61-88693296bcd7}" colspan="1" rowspan="1" labelid="{a15cd87e-7069-4d9d-b120-ea6805fc5130}" visible="false">
+                        <labels>
+                          <label description="ApprovedBy" languagecode="1033" />
+                        </labels>
+                        <control id="zd_approvedby" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_approvedby" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3c906367-7755-488b-b7f6-0e9daf7d9766}" colspan="1" rowspan="1" labelid="{f7c61728-8b9c-4720-8451-09e6a577884f}" showlabel="true" visible="false">
+                        <labels>
+                          <label description="ApprovalDate" languagecode="1033" />
+                        </labels>
+                        <control id="zd_approvaldate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="zd_approvaldate" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{1e6e20f0-376c-41ac-b7a0-7aee14d57a68}" name="hh_expense_details" labelid="{c392b120-bf50-4058-8bcd-716dd69e2f43}">
+                  <labels>
+                    <label description="Expense Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d7c7e47a-e8cc-4912-8a6d-b638ad69d7fa}" labelid="{d0837c55-8396-456b-81b4-56de071d6b99}">
+                        <labels>
+                          <label description="ExpenseTitle" languagecode="1033" />
+                        </labels>
+                        <control id="zd_expensetitle" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_expensetitle" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{180809bb-4ffc-463e-a575-33b09bf7ecb1}" labelid="{acd48ff6-5ca4-459e-a410-f65c176e9986}">
+                        <labels>
+                          <label description="Amount" languagecode="1033" />
+                        </labels>
+                        <control id="zd_amount" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="zd_amount" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ccb137a7-b4a1-4ac7-9287-0016cf29c740}" labelid="{cee8fd99-ba9b-4571-ba5c-bdc4785878ca}">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="zd_description" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="zd_description" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d16bf73d-980d-4a85-aa1f-5159070e36e1}" labelid="{c22187b2-1358-4f29-9b4e-195fb1e7330c}">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="zd_category" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_category" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="hh_expense_organization" id="9c40843d-1a91-4978-8e45-72aea7a3d769" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{51a7cce4-76b0-4acf-b7ff-f4a648ff60ed}">
+                  <labels>
+                    <label description="Organization" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{50c87a8e-cdf7-48d1-9ca8-9e9d99480a1e}" colspan="1" rowspan="1" labelid="{2d63db5b-9a20-43d4-aa8c-c0c386e35c78}">
+                        <labels>
+                          <label description="Department" languagecode="1033" />
+                        </labels>
+                        <control id="zd_department" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_department" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{de88409d-c916-4d11-a094-de3782ab42e6}" colspan="1" rowspan="1" labelid="{c307e4f8-f77d-457f-81ed-7a6b44b55206}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{0081eb0a-e6d7-48d5-8b42-6adfa77fde44}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7cc2b23d-1fac-419f-9905-2dbcc7c51665}" showlabel="false" labelid="{fa5a9696-dacb-4c24-88b8-04148fe81e88}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ae3eba3b-a874-4471-b099-7070d9236b3e}" showlabel="false" labelid="{8bd20f17-f171-4e2b-bb9d-63159e31a3e9}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3a1f7746-be12-4beb-9397-69cb0f9623ca}" showlabel="false" labelid="{008777ce-e24a-4c11-bd2d-036fca4f0cdf}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{8919d6b7-282c-4cca-baa0-57c9b722426c}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{615f698a-13aa-4d76-898b-4df45a9072da}" showlabel="false" labelid="{64ee55cf-a9c5-432a-b198-8e3c16aab6b5}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{189dc336-dc03-4380-bf1a-ae998dad7efd}" showlabel="false" labelid="{f9c29009-641e-49c5-b4a8-284b58226f03}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{82497adb-0423-4ff6-a5ab-c89d78bd62dc}" showlabel="false" labelid="{ff2e5b09-7c58-4529-a869-e68fd778ab03}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{A10BE01A-C120-F111-88B1-70A8A507A37B}" />
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Expense-Approval" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,135 @@
+[
+  {
+    "DisplayName": "hh_Expenses (Views)",
+    "Name": "_zd_hh_expense_views",
+    "RelatedEntityName": "hh_Expenses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0a83de2a-ca20-f111-88b1-70a8a507a37b": "My Expense",
+      "131a8ddc-ca20-f111-88b1-70a8a507a37b": "Approved Expenses",
+      "19e35c90-ca20-f111-88b1-70a8a507a37b": "Pending Expenses",
+      "1a62f699-c137-4829-8752-540a4303fbef": "Inactive hh_Expenses",
+      "23a53467-fb80-41df-90a9-3e4f601bb933": "Active hh_Expenses",
+      "25a84436-5d84-41b4-9c1c-85c0029615ed": "hh_Expense Lookup View",
+      "5716c8b7-ca20-f111-88b1-70a8a507a37b": "Rejected Expenses",
+      "5c432681-6922-4a5d-bba3-d19e3b424bcc": "hh_Expense Advanced Find View",
+      "60604258-ca20-f111-88b1-70a8a507a37b": "All Expenses",
+      "f96eee49-035d-41dd-ae7d-83141321682c": "hh_Expense Associated View"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "zd_hh_expenses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "zd_hh_expense",
+    "MaxGetRowsCount": 500,
+    "Name": "hh_Expenses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "zd_amount": "Amount",
+      "zd_amount_base": "Amount (Base)",
+      "zd_approvaldate": "ApprovalDate",
+      "zd_ApprovedBy": "ApprovedBy",
+      "zd_Category": "Category",
+      "zd_Department": "Department",
+      "zd_description": "Description",
+      "zd_expensestatus": "ExpenseStatus",
+      "zd_expensetitle": "ExpenseTitle",
+      "zd_hh_expense_AsyncOperations": "System Jobs",
+      "zd_hh_expense_BulkDeleteFailures": "Bulk Delete Failures",
+      "zd_hh_expense_DuplicateBaseRecord": "Duplicate Records (zd_hh_expense_DuplicateBaseRecord)",
+      "zd_hh_expense_DuplicateMatchingRecord": "Duplicate Records (zd_hh_expense_DuplicateMatchingRecord)",
+      "zd_hh_expense_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "zd_hh_expense_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "zd_hh_expense_ProcessSession": "Process Sessions",
+      "zd_hh_expense_SyncErrors": "Sync Errors",
+      "zd_hh_expenseid": "hh_Expense",
+      "zd_hh_notification_Expense_zd_hh_expense": "hh_Notifications",
+      "zd_submitteddate": "SubmittedDate"
+    },
+    "PreferredName": "hh_Expenses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (hh_Expenses)",
+    "Name": "zd_hh_expense_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "hh_Expenses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "hh_Expenses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (hh_Expenses)",
+    "Name": "zd_hh_expense_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "hh_Expenses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "hh_Expenses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ExpenseStatus (hh_Expenses)",
+    "Name": "zd_hh_expense_zd_expensestatus",
+    "OptionSetInfoNameMapping": {
+      "128580000": "Pending",
+      "128580001": "Approved",
+      "128580002": "Rejected"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zd_expensestatus",
+        "OptionSetReferenceEntityName": "hh_Expenses"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zd_expensestatus",
+    "RelatedEntityName": "hh_Expenses",
+    "Type": "OptionSetInfo"
+  }
+]

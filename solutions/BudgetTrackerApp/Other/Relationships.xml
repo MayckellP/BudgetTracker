@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_zd_hh_expense" />
+  <EntityRelationship Name="business_unit_zd_hh_notification" />
+  <EntityRelationship Name="lk_zd_hh_budget_createdby" />
+  <EntityRelationship Name="lk_zd_hh_budget_modifiedby" />
+  <EntityRelationship Name="lk_zd_hh_category_createdby" />
+  <EntityRelationship Name="lk_zd_hh_category_modifiedby" />
+  <EntityRelationship Name="lk_zd_hh_department_createdby" />
+  <EntityRelationship Name="lk_zd_hh_department_modifiedby" />
+  <EntityRelationship Name="lk_zd_hh_expense_createdby" />
+  <EntityRelationship Name="lk_zd_hh_expense_modifiedby" />
+  <EntityRelationship Name="lk_zd_hh_notification_createdby" />
+  <EntityRelationship Name="lk_zd_hh_notification_modifiedby" />
+  <EntityRelationship Name="organization_zd_hh_budget" />
+  <EntityRelationship Name="organization_zd_hh_category" />
+  <EntityRelationship Name="organization_zd_hh_department" />
+  <EntityRelationship Name="owner_zd_hh_expense" />
+  <EntityRelationship Name="owner_zd_hh_notification" />
+  <EntityRelationship Name="team_zd_hh_expense" />
+  <EntityRelationship Name="team_zd_hh_notification" />
+  <EntityRelationship Name="TransactionCurrency_zd_hh_Budget" />
+  <EntityRelationship Name="TransactionCurrency_zd_hh_Category" />
+  <EntityRelationship Name="TransactionCurrency_zd_hh_Expense" />
+  <EntityRelationship Name="user_zd_hh_expense" />
+  <EntityRelationship Name="user_zd_hh_notification" />
+  <EntityRelationship Name="zd_hh_budget_zd_department_zd_hh_department" />
+  <EntityRelationship Name="zd_hh_category_Department_zd_hh_department" />
+  <EntityRelationship Name="zd_hh_category_zd_budget_zd_hh_budget" />
+  <EntityRelationship Name="zd_hh_department_BusinessUnit_businessunit" />
+  <EntityRelationship Name="zd_hh_department_Supervisor_systemuser" />
+  <EntityRelationship Name="zd_hh_expense_ApprovedBy_systemuser" />
+  <EntityRelationship Name="zd_hh_expense_Category_zd_hh_category" />
+  <EntityRelationship Name="zd_hh_expense_Department_zd_hh_department" />
+  <EntityRelationship Name="zd_hh_notification_Expense_zd_hh_expense" />
+</EntityRelationships>

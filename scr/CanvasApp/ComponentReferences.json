@@ -1,0 +1,72 @@
+[
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "60e63403-8a6d-4b21-b3e3-35c94e842a01",
+    "LibraryLogicalName": "crb5e_navigation_a8e64",
+    "LibraryVersion": "2026-03-24T11:16:18Z",
+    "OriginalComponentDefinitionTemplateId": "e0393f8f37ef414ea50e492c372738bb",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-03-24T11:16:21.356+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 7,
+    "LibraryId": "dba62d78-6e4e-47ea-958b-38b587a345bb",
+    "LibraryLogicalName": "crb5e_buttons_d9296",
+    "LibraryVersion": "2026-02-05T01:35:57Z",
+    "OriginalComponentDefinitionTemplateId": "ce4528c2cba94bbe8db205f01da5c4bb",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-02-06T00:25:13.809+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "1dd6c07b-d00d-400d-a5c8-e49ecbcf21b9",
+    "LibraryLogicalName": "crb5e_headers_07abe",
+    "LibraryVersion": "2026-03-20T22:32:38Z",
+    "OriginalComponentDefinitionTemplateId": "26cc609411304bfe9417d14fd81dee4c",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-03-20T22:32:40.991+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "60e63403-8a6d-4b21-b3e3-35c94e842a01",
+    "LibraryLogicalName": "crb5e_navigation_a8e64",
+    "LibraryVersion": "2026-03-24T11:16:18Z",
+    "OriginalComponentDefinitionTemplateId": "20377d0b96db463aa559f88540c89d55",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-03-24T11:16:21.356+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "60e63403-8a6d-4b21-b3e3-35c94e842a01",
+    "LibraryLogicalName": "crb5e_navigation_a8e64",
+    "LibraryVersion": "2026-03-24T11:16:18Z",
+    "OriginalComponentDefinitionTemplateId": "6243b495b94f4603bf715ef2d13b2380",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-03-24T11:16:21.356+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "213cc80d-3a79-424b-b544-f061408e1760",
+    "LibraryLogicalName": "crb5e_modals_411f2",
+    "LibraryVersion": "2026-03-19T14:28:41Z",
+    "OriginalComponentDefinitionTemplateId": "57e88c49c11145b7b321c6749c7a9510",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-03-19T14:28:46.759+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "dba62d78-6e4e-47ea-958b-38b587a345bb",
+    "LibraryLogicalName": "crb5e_buttons_d9296",
+    "LibraryVersion": "2026-02-05T01:35:57Z",
+    "OriginalComponentDefinitionTemplateId": "f03d14cb653b46e48ade74833c3bb999",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2026-02-06T00:25:13.809+00:00"
+  }
+]

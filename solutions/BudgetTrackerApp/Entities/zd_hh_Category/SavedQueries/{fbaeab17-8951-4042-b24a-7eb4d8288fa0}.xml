@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{fbaeab17-8951-4042-b24a-7eb4d8288fa0}</savedqueryid>
+    <layoutxml>
+      <grid name="zd_hh_categories" jump="zd_categoryname" select="1" icon="1" preview="1">
+        <row name="zd_hh_category" id="zd_hh_categoryid">
+          <cell name="zd_categoryname" width="300" />
+          <cell name="createdon" width="125" />
+          <cell name="zd_budgetlimit" width="112" />
+          <cell name="zd_budget" width="100" />
+          <cell name="zd_categorystatus" width="126" />
+          <cell name="zd_department" width="107" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="zd_hh_category">
+          <attribute name="zd_hh_categoryid" />
+          <attribute name="zd_categoryname" />
+          <attribute name="createdon" />
+          <order attribute="zd_categoryname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="zd_budgetlimit" />
+          <attribute name="zd_budget" />
+          <attribute name="zd_categorystatus" />
+          <attribute name="zd_department" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="hh_Category Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

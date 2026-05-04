@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.26043.151" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26043.151" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26043.00151">
+  <SolutionManifest>
+    <UniqueName>hospitalh_budgetmanagement</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="HospitalH_BudgetManagement" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.1</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>ZuriDevPublisher</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="ZüriDev Publisher" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>zd</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>12858</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="businessunit" behavior="1" />
+      <RootComponent type="1" schemaName="role" behavior="2" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="1" schemaName="zd_hh_budget" behavior="0" />
+      <RootComponent type="1" schemaName="zd_hh_category" behavior="0" />
+      <RootComponent type="1" schemaName="zd_hh_department" behavior="0" />
+      <RootComponent type="1" schemaName="zd_hh_expense" behavior="0" />
+      <RootComponent type="1" schemaName="zd_hh_notification" behavior="0" />
+      <RootComponent type="20" id="{a10be01a-c120-f111-88b1-70a8a507a37b}" behavior="0" />
+      <RootComponent type="20" id="{d2abaea1-bc22-f111-8341-70a8a508241e}" behavior="0" />
+      <RootComponent type="20" id="{ebd8bca5-bb22-f111-8341-70a8a508241e}" behavior="0" />
+      <RootComponent type="29" id="{0cda5b1c-ec25-f111-88b4-7ced8d436121}" behavior="0" />
+      <RootComponent type="29" id="{2a8c3f69-df21-f111-88b1-7ced8d430217}" behavior="0" />
+      <RootComponent type="29" id="{41a4af5e-d921-f111-88b1-7ced8d430217}" behavior="0" />
+      <RootComponent type="29" id="{53251632-b124-f111-88b4-7ced8d42f43c}" behavior="0" />
+      <RootComponent type="300" schemaName="crb5e_buttons_d9296" behavior="0" />
+      <RootComponent type="300" schemaName="crb5e_headers_07abe" behavior="0" />
+      <RootComponent type="300" schemaName="crb5e_modals_411f2" behavior="0" />
+      <RootComponent type="300" schemaName="crb5e_navigation_a8e64" behavior="0" />
+      <RootComponent type="300" schemaName="zd_expenseportal_ad7a0" behavior="0" />
+      <RootComponent type="60" id="{69d2ed9e-cd20-f111-88b1-70a8a50930d9}" behavior="0" />
+      <RootComponent type="61" schemaName="zd_hh_expenseCommands" behavior="0" />
+      <RootComponent type="62" schemaName="zd_HospitalBudgetManagement" behavior="0" />
+      <RootComponent type="66" schemaName="zd_UI.Library.CanvasChartPieRechart" behavior="0" />
+      <RootComponent type="80" schemaName="zd_HospitalBudgetManagement" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="businessunit" displayName="BusinessUnit" parentSchemaName="" solution="System (5.0)" />
+        <Dependent type="1" schemaName="businessunit" displayName="BusinessUnit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="role" displayName="Role" parentSchemaName="" solution="AuthorizationCore (1.131.0.0)" />
+        <Dependent type="1" schemaName="role" displayName="Role" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="systemuser" displayName="SystemUser" parentSchemaName="" solution="msdyn_PowerAdminSettingsEmail (2.2.3390.2)" />
+        <Dependent type="1" schemaName="systemuser" displayName="SystemUser" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="zd_HospitalBudgetManagement" displayName="Hospital Budget Management" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_CopilotIcon.svg" displayName="msdyn_CopilotIcon.svg" solution="msdyn_AppCopilotFeatures (9.2.2026033.260316057)">
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.4">msdyn_M365CopilotAppInfraSettings (9.2.0.4)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_CopilotSummarizeLibrary.js" displayName="msdyn_CopilotSummarizeLibrary.js" solution="msdyn_AppCopilotFeatures (9.2.2026033.260316057)">
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.4">msdyn_M365CopilotAppInfraSettings (9.2.0.4)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Activate!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Activate!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Activate!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Activate!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Assign!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Assign!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Assign!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Assign!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Close!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Close!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Close!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Close!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Deactivate!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Deactivate!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Deactivate!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Deactivate!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Delete!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Delete!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Delete!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Delete!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecord!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecord!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecord!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecord!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecordForBPFEntity!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecordForBPFEntity!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.OpenActiveStage!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.OpenActiveStage!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.OpenActiveStage!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.OpenActiveStage!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" solution="msdyn_AppCopilotFeatures (9.2.2026033.260316057)" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0">
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.4">msdyn_M365CopilotAppInfraSettings (9.2.0.4)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.16)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=zd_HospitalBudgetManagement,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="zd_HospitalBudgetManagement" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

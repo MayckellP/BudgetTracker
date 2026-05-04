@@ -1,0 +1,1502 @@
+cmpModal_expenseForm As CanvasComponent:
+    CloseModal():
+        ThisProperty:
+            Default: =
+    SubmitModal():
+        ThisProperty:
+            Default: =
+    BGActived: =BackgroundValidate
+    BtnsBordderRadius: =4
+    BtnSubmitBGColor: =RGBA(0, 121, 107, 1)
+    BtnSubmitText: ="Registrieren"
+    BtnSubmitWidth: =120
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =App.Height
+    IconBtnsSize: =16
+    IconSubmit: =SampleImage
+    IconSubmitEnabled: =false
+    IconTitle: =SampleImage
+    IconTitleEnabled: =false
+    IconTitleSize: =16
+    MobileDesignEnabled: =false
+    ModalActived: =true
+    ModalBGColor: =RGBA(255, 255, 255, 1)
+    ModalBorderColor: =RGBA(222, 222, 222, 1)
+    ModalBorderRadius: =10
+    ModalBorderThickness: =0.5
+    ModalGap: =10
+    ModalHeight: =400
+    ModalPadding: =20
+    ModalShadow: =true
+    ModalWidth: =800
+    TitleColor: =RGBA(0, 0, 0, 1)
+    TitleFontSize: =14
+    TitleText: ="Ausgabenformular"
+    UploadData: |-
+        ={
+            Title: txtName_expenseForm.Text, 
+            Description: txtDescripction_expenseForm.Text, 
+            Amount: txtCurrency_expenseForm.Text,
+            File: mdaPhoto_FileDetails.Media,
+            Category: DdCategory_expenseForm.SelectedText,
+            Date: DpDatum_expenseForm.SelectedDate
+        }
+    Width: =Max(App.Width, 1200)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Bg_expenseForm As rectangle:
+        Fill: =If(cmpModal_expenseForm.ModalActived && cmpModal_expenseForm.BGActived, RGBA(0, 0, 0, .2), !cmpModal_expenseForm.BGActived, RGBA(255, 255, 255, 0), RGBA(0, 0, 0, .2))
+        Height: =Parent.Height
+        OnSelect: =cmpModal_expenseForm.CloseModal();
+        Width: =Parent.Width
+        X: =Parent.Height/2 - Self.Height/2
+        Y: =Parent.Height/2 - Self.Height/2
+        ZIndex: =1
+
+    cntBodyModal_expenseForm As groupContainer.verticalAutoLayoutContainer:
+        BorderColor: =cmpModal_expenseForm.ModalBorderColor
+        BorderThickness: =cmpModal_expenseForm.ModalBorderThickness
+        DropShadow: =If(cmpModal_expenseForm.ModalShadow, DropShadow.Semibold, DropShadow.None)
+        Fill: =cmpModal_expenseForm.ModalBGColor
+        Height: =cmpModal_expenseForm.ModalHeight
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =cmpModal_expenseForm.ModalGap
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =cmpModal_expenseForm.ModalPadding
+        PaddingLeft: =cmpModal_expenseForm.ModalPadding
+        PaddingRight: =cmpModal_expenseForm.ModalPadding
+        PaddingTop: =cmpModal_expenseForm.ModalPadding
+        RadiusBottomLeft: =cmpModal_expenseForm.ModalBorderRadius
+        RadiusBottomRight: =cmpModal_expenseForm.ModalBorderRadius
+        RadiusTopLeft: =cmpModal_expenseForm.ModalBorderRadius
+        RadiusTopRight: =cmpModal_expenseForm.ModalBorderRadius
+        Width: =cmpModal_expenseForm.ModalWidth
+        X: =Parent.Width/2 - Self.Width/2
+        Y: |-
+            =With(
+               {
+                truePosition: (-Self.Height) + ((App.Height * 0.5 + Self.Height / 2) * (tmrOpen_expenseForm.Value / tmrOpen_expenseForm.Duration)),
+                falsePosition: ((-Self.Height - App.Height * 0.5) * (tmrClose_expenseForm.Value / tmrClose_expenseForm.Duration))
+            
+               },
+               If(
+                   cmpModal_expenseForm.ModalActived,
+                   truePosition,
+                   falsePosition
+               )
+            )
+        ZIndex: =2
+
+        cntTitle_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0.8
+            Height: =225
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =5
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            icnTitle_expenseForm As image:
+                AlignInContainer: =AlignInContainer.Center
+                Height: =cmpModal_expenseForm.IconTitleSize
+                Image: =cmpModal_expenseForm.IconTitle
+                LayoutMaxHeight: =cmpModal_expenseForm.IconTitleSize
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =cmpModal_expenseForm.IconTitleSize
+                LayoutMinWidth: =16
+                Visible: =cmpModal_expenseForm.IconTitleEnabled
+                Width: =Self.Height
+                ZIndex: =1
+
+            lblTitle_expenseForm As label:
+                FillPortions: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =cmpModal_expenseForm.TitleFontSize
+                Text: =cmpModal_expenseForm.TitleText
+                Width: =560
+                ZIndex: =2
+
+            cntIconClose_expenseForm As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =Parent.Height
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                maximumHeight: =11360
+                maximumWidth: =640
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =Parent.Height
+                X: =40
+                Y: =40
+                ZIndex: =5
+
+                cntBg_IconClose_expenseForm As groupContainer.manualLayoutContainer:
+                    Height: |-
+                        =If(
+                            varAnimationBtnHamburger,
+                            Parent.Height * Power(tmrAnimationIconClose_expenseForm.Value / tmrAnimationIconClose_expenseForm.Duration, 1.5) + 35
+                        )
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Width: |-
+                        =If(
+                            varAnimationBtnHamburger,
+                            Parent.Width * Power(tmrAnimationIconClose_expenseForm.Value / tmrAnimationIconClose_expenseForm.Duration, 1.5) + 35
+                        )
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+                    bt_IconClose_expenseForm As rectangle:
+                        Fill: =RGBA(0, 0, 0, 0.15 * (1-tmrAnimationIconClose_expenseForm.Value/tmrAnimationIconClose_expenseForm.Duration))
+                        Height: =Parent.Height
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnSelect: =Set(varAnimationBtnHamburger, true);
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                icnClose_expenseForm As image:
+                    Height: =Self.Width
+                    HoverBorderColor: =Color.Black
+                    HoverFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.1), RGBA(0, 0, 0, 0.0))
+                    Image: =Icon_Close_Black
+                    OnSelect: |
+                        =Set(varAnimationBtnHamburger, true);
+                        //cmpNavbarHeader.ShowNavbarSidebar();
+                    PressedFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.1), RGBA(0, 0, 0, 0.0))
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Tooltip: ="Vorheriger Mitarbeiter"
+                    Width: =cmpModal_expenseForm.IconTitleSize
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =2
+
+                btnBg_IconClose_expenseForm As button:
+                    BorderThickness: =0
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Parent.Height
+                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.1))
+                    OnSelect: =Set(varAnimationBtnHamburger, true);
+                    PressedFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.1))
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =24
+                    Text: =
+                    Tooltip: =
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =3
+
+                tmrAnimationIconClose_expenseForm As timer:
+                    Duration: =260
+                    Height: =0
+                    OnTimerEnd: |-
+                        =Set(varAnimationBtnHamburger, false);
+                        cmpModal_expenseForm.CloseModal();
+                        Reset(Self);
+                    Start: =varAnimationBtnHamburger
+                    Visible: =false
+                    Width: =0
+                    ZIndex: =4
+
+        cntBody_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =8.2
+            Height: =225
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =If(cmpModal_expenseForm.MobileDesignEnabled, LayoutDirection.Vertical, LayoutDirection.Horizontal)
+            LayoutGap: =cmpModal_expenseForm.ModalGap
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            maximumHeight: =11360
+            maximumWidth: =640
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            cntBodyLeft_expenseForm As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =Parent.Height/2
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =cmpModal_expenseForm.ModalGap
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                cntInput_Currency_expenseForm As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0.7
+                    Height: =225
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =1
+
+                    lblCurreny_expenseForm As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =0.3
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="Betrag"
+                        Width: =560
+                        ZIndex: =1
+
+                    cntInput_CurrencyDetails As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =1.3
+                        Height: =225
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        ZIndex: =2
+
+                        txtCurrency_expenseForm As text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderThickness: =0
+                            Default: =
+                            FillPortions: =3
+                            FocusedBorderThickness: =
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Format: =TextFormat.Number
+                            Height: =70
+                            HintText: ="00.0"
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LineHeight: =0
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =10
+                            PressedFill: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =If(cmpModal_expenseForm.MobileDesignEnabled, 20, 30)
+                            Width: =560
+                            ZIndex: =1
+
+                        cntCurrencyType_expenseForm As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =2
+                            Height: =225
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =2
+
+                            lblCurrencyInfo_expenseForm As label:
+                                Align: =Align.Right
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FillPortions: =0.5
+                                Font: =Font.'Segoe UI'
+                                Height: =70
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =9
+                                Text: ="Währung"
+                                Width: =560
+                                ZIndex: =1
+
+                            lblCurrencyType_expenseForm As label:
+                                Align: =Align.Right
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FillPortions: =1
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =70
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =If(cmpModal_expenseForm.MobileDesignEnabled, 18, 26)
+                                Text: ="CHF"
+                                Width: =560
+                                ZIndex: =7
+
+                    dvd_expenseForm As rectangle:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        Fill: =RGBA(91, 91, 91, 1)
+                        Height: =0.5
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =1
+                        LayoutMinWidth: =16
+                        ZIndex: =8
+
+                    lblLegende_InputCurrency As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        Color: =RGBA(170, 170, 170, 1)
+                        FillPortions: =0.3
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =70
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =8
+                        Text: ="Geben Sie den Transaktionsbetrag ein."
+                        Width: =560
+                        ZIndex: =9
+
+                cntInput_File_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =1.2
+                    Height: =225
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =10
+
+                    lblFile_expenseForm As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =0.3
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="Beleg anfügen"
+                        Width: =560
+                        ZIndex: =1
+
+                    cntInput_FileDetails As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(245, 245, 245, 1)
+                        FillPortions: =1.7
+                        Height: =225
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        PaddingBottom: =15
+                        PaddingTop: =15
+                        ZIndex: =2
+
+                        IcnLoad_FileDetails As image:
+                            AlignInContainer: =AlignInContainer.Center
+                            FillPortions: =0.9
+                            Height: =320
+                            Image: =Icon_FileLoad_Black
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =14
+                            LayoutMinWidth: =16
+                            Width: =320
+                            X: =40
+                            Y: =40
+                            ZIndex: =1
+
+                        lblInstructions_FileDetails As label:
+                            Align: =Align.Center
+                            AlignInContainer: =AlignInContainer.Center
+                            FillPortions: =1.2
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =70
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =16
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =8
+                            Text: ="Wählen Sie die Datei aus und laden Sie sie hier hoch."
+                            Width: =Parent.Width * 0.65
+                            ZIndex: =2
+
+                        lblType_FileDetails As label:
+                            Align: =Align.Center
+                            AlignInContainer: =AlignInContainer.Center
+                            Color: =RGBA(152, 152, 152, 1)
+                            FillPortions: =0.9
+                            Font: =Font.'Segoe UI'
+                            Height: =70
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =0
+                            LayoutMinWidth: =16
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =8
+                            Text: ="docx, pdf, jpeg - Weniger als 10 MB"
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Parent.Width * 0.65
+                            ZIndex: =3
+
+                        cntBtnFiles_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Center
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =30
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =15
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =15
+                            PaddingRight: =15
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Width: =Parent.Width * 0.6
+                            ZIndex: =5
+
+                            cntBtn_PhotoDetails As groupContainer.manualLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Center
+                                BorderColor: =RGBA(222, 222, 222, 1)
+                                BorderThickness: =0.5
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0.5
+                                Height: =29
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =112
+                                LayoutMinWidth: =0
+                                maximumHeight: =11360
+                                maximumWidth: =640
+                                RadiusBottomLeft: =cmpModal_expenseForm.BtnsBordderRadius
+                                RadiusBottomRight: =cmpModal_expenseForm.BtnsBordderRadius
+                                RadiusTopLeft: =cmpModal_expenseForm.BtnsBordderRadius
+                                RadiusTopRight: =cmpModal_expenseForm.BtnsBordderRadius
+                                Visible: =false
+                                Width: =Parent.Width * 0.48
+                                X: =Parent.Width/2 - Self.Width/2
+                                Y: =Parent.Height/2 - Self.Height/2
+                                ZIndex: =1
+
+                                ContButtonDetails_PhotoDetails As groupContainer.horizontalAutoLayoutContainer:
+                                    BorderColor: =
+                                    DropShadow: =DropShadow.None
+                                    Height: =Parent.Height
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutGap: =5
+                                    LayoutGridColumnMinWidth: =0
+                                    LayoutGridColumns: =6
+                                    LayoutGridRowMinHeight: =0
+                                    LayoutGridRows: =6
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMode: =LayoutMode.Auto
+                                    maximumHeight: =11360
+                                    maximumWidth: =640
+                                    PaddingLeft: =10
+                                    PaddingRight: =10
+                                    Width: =Parent.Width
+                                    X: =Parent.Width/2 - Self.Width/2
+                                    Y: =Parent.Height/2 - Self.Height/2
+                                    ZIndex: =1
+
+                                    IcnLeft_PhotoDetails As image:
+                                        Height: =20
+                                        Image: =Icon_Camera_Gray
+                                        LayoutMaxHeight: =
+                                        LayoutMaxWidth: =
+                                        LayoutMinHeight: =320
+                                        LayoutMinWidth: =320
+                                        PaddingBottom: =1
+                                        PaddingLeft: =1
+                                        PaddingRight: =1
+                                        PaddingTop: =1
+                                        Width: =cmpModal_expenseForm.IconBtnsSize
+                                        Y: =Parent.Height/2 - Self.Height/2
+                                        ZIndex: =1
+
+                                    LblName_PhotoDetails As label:
+                                        Align: =Align.Center
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        Color: =RGBA(91, 91, 91, 1)
+                                        FillPortions: =1
+                                        Font: =Font.'Segoe UI'
+                                        FontWeight: =FontWeight.Semibold
+                                        Height: =Parent.Height
+                                        LayoutMaxHeight: =
+                                        LayoutMaxWidth: =
+                                        LayoutMinHeight: =0
+                                        LayoutMinWidth: =
+                                        PaddingBottom: =0
+                                        PaddingLeft: =3
+                                        PaddingRight: =3
+                                        PaddingTop: =0
+                                        Size: =9
+                                        Text: =
+                                        Visible: =false
+                                        Width: =Parent.Width
+                                        ZIndex: =2
+
+                                ContBgAnimated_PhotoDetails As groupContainer.manualLayoutContainer:
+                                    DropShadow: =DropShadow.None
+                                    Height: |-
+                                        =If(
+                                            varBtnUploadPhoto,
+                                            Parent.Height * Power(tmrBtnBgAnimated_PhotoDetails.Value / tmrBtnBgAnimated_PhotoDetails.Duration, 1.5) + 35
+                                        )
+                                    LayoutGridColumnMinWidth: =0
+                                    LayoutGridColumns: =6
+                                    LayoutGridRowMinHeight: =0
+                                    LayoutGridRows: =6
+                                    maximumHeight: =11360
+                                    maximumWidth: =640
+                                    RadiusBottomLeft: =50
+                                    RadiusBottomRight: =50
+                                    RadiusTopLeft: =50
+                                    RadiusTopRight: =50
+                                    Width: |-
+                                        =If(
+                                            varBtnUploadPhoto,
+                                            Parent.Width * Power(tmrBtnBgAnimated_PhotoDetails.Value / tmrBtnBgAnimated_PhotoDetails.Duration, 2.5) + Self.Height
+                                            )
+                                    X: =Parent.Width/2 - Self.Width/2
+                                    Y: =Parent.Height/2 - Self.Height/2
+                                    ZIndex: =2
+
+                                    BgAnimated_expenseSubmit_2 As rectangle:
+                                        BorderColor: =RGBA(0, 0, 0, 0)
+                                        DisabledFill: =
+                                        Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_PhotoDetails.Value/tmrBtnBgAnimated_PhotoDetails.Duration))
+                                        HoverFill: =
+                                        PressedFill: =
+                                        ZIndex: =1
+
+                                BgButtonn_PhotoDetails As button:
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                                    OnSelect: =Set(varBtnUploadPhoto, true);
+                                    PressedFill: =RGBA(0, 0, 0, 0.05)
+                                    Size: =24
+                                    Text: =""
+                                    Width: =Parent.Width
+                                    X: =Parent.Width/2 - Self.Width/2
+                                    Y: =Parent.Height/2 - Self.Height/2
+                                    ZIndex: =3
+
+                                tmrBtnBgAnimated_PhotoDetails As timer:
+                                    Duration: =280
+                                    Height: =0
+                                    OnTimerEnd: |-
+                                        =Set(varBtnUploadPhoto, false);
+                                        Reset(Self);
+                                    Start: =varBtnUploadPhoto
+                                    Visible: =false
+                                    Width: =0
+                                    X: =40
+                                    Y: =40
+                                    ZIndex: =4
+
+                            cntBtn_FileDetails As groupContainer.manualLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Center
+                                BorderColor: =RGBA(222, 222, 222, 1)
+                                BorderThickness: =0.5
+                                DropShadow: =DropShadow.None
+                                FillPortions: =1.5
+                                Height: =29
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =112
+                                LayoutMinWidth: =0
+                                maximumHeight: =11360
+                                maximumWidth: =640
+                                RadiusBottomLeft: =cmpModal_expenseForm.BtnsBordderRadius
+                                RadiusBottomRight: =cmpModal_expenseForm.BtnsBordderRadius
+                                RadiusTopLeft: =cmpModal_expenseForm.BtnsBordderRadius
+                                RadiusTopRight: =cmpModal_expenseForm.BtnsBordderRadius
+                                Width: =Parent.Width * 0.48
+                                X: =Parent.Width/2 - Self.Width/2
+                                Y: =Parent.Height/2 - Self.Height/2
+                                ZIndex: =2
+
+                                ContButtonDetails_FileDetails As groupContainer.horizontalAutoLayoutContainer:
+                                    BorderColor: =
+                                    DropShadow: =DropShadow.None
+                                    Height: =Parent.Height
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutGap: =5
+                                    LayoutGridColumnMinWidth: =0
+                                    LayoutGridColumns: =6
+                                    LayoutGridRowMinHeight: =0
+                                    LayoutGridRows: =6
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMode: =LayoutMode.Auto
+                                    maximumHeight: =11360
+                                    maximumWidth: =640
+                                    PaddingLeft: =10
+                                    PaddingRight: =10
+                                    Width: =Parent.Width
+                                    X: =Parent.Width/2 - Self.Width/2
+                                    Y: =Parent.Height/2 - Self.Height/2
+                                    ZIndex: =1
+
+                                    IcnLeft_FileDetails As image:
+                                        Height: =20
+                                        LayoutMaxHeight: =
+                                        LayoutMaxWidth: =
+                                        LayoutMinHeight: =320
+                                        LayoutMinWidth: =320
+                                        PaddingBottom: =1
+                                        PaddingLeft: =1
+                                        PaddingRight: =1
+                                        PaddingTop: =1
+                                        Visible: =cmpModal_expenseForm.IconSubmitEnabled
+                                        Width: =cmpModal_expenseForm.IconBtnsSize
+                                        Y: =Parent.Height/2 - Self.Height/2
+                                        ZIndex: =1
+
+                                    LblName_FileDetails As label:
+                                        Align: =Align.Center
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        Color: =RGBA(91, 91, 91, 1)
+                                        FillPortions: =1
+                                        Font: =Font.'Segoe UI'
+                                        FontWeight: =FontWeight.Semibold
+                                        Height: =Parent.Height
+                                        LayoutMaxHeight: =
+                                        LayoutMaxWidth: =
+                                        LayoutMinHeight: =0
+                                        LayoutMinWidth: =
+                                        PaddingBottom: =0
+                                        PaddingLeft: =3
+                                        PaddingRight: =3
+                                        PaddingTop: =0
+                                        Size: =9
+                                        Text: ="Datei hochladen"
+                                        Width: =Parent.Width
+                                        ZIndex: =2
+
+                                ContBgAnimated_FileDetails As groupContainer.manualLayoutContainer:
+                                    DropShadow: =DropShadow.None
+                                    Height: |-
+                                        =If(
+                                            varBtnUploadFile,
+                                            Parent.Height * Power(tmrBtnBgAnimated_FileDetails.Value / tmrBtnBgAnimated_FileDetails.Duration, 1.5) + 35
+                                        )
+                                    LayoutGridColumnMinWidth: =0
+                                    LayoutGridColumns: =6
+                                    LayoutGridRowMinHeight: =0
+                                    LayoutGridRows: =6
+                                    maximumHeight: =11360
+                                    maximumWidth: =640
+                                    RadiusBottomLeft: =50
+                                    RadiusBottomRight: =50
+                                    RadiusTopLeft: =50
+                                    RadiusTopRight: =50
+                                    Width: |-
+                                        =If(
+                                            varBtnUploadFile,
+                                            Parent.Width * Power(tmrBtnBgAnimated_FileDetails.Value / tmrBtnBgAnimated_FileDetails.Duration, 2.5) + Self.Height
+                                            )
+                                    X: =Parent.Width/2 - Self.Width/2
+                                    Y: =Parent.Height/2 - Self.Height/2
+                                    ZIndex: =2
+
+                                    BgAnimated_expenseSubmit_1 As rectangle:
+                                        BorderColor: =RGBA(0, 0, 0, 0)
+                                        DisabledFill: =
+                                        Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_FileDetails.Value/tmrBtnBgAnimated_FileDetails.Duration))
+                                        HoverFill: =
+                                        PressedFill: =
+                                        ZIndex: =1
+
+                                BgButtonn_FileDetails As button:
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                                    OnSelect: =Set(varBtnUploadFile, true);
+                                    PressedFill: =RGBA(0, 0, 0, 0.05)
+                                    Size: =24
+                                    Text: =""
+                                    Visible: =false
+                                    Width: =Parent.Width
+                                    X: =Parent.Width/2 - Self.Width/2
+                                    Y: =Parent.Height/2 - Self.Height/2
+                                    ZIndex: =3
+
+                                mdaPhoto_FileDetails As addMedia:
+                                    ChangePictureText: =
+                                    Color: =
+                                    DisabledColor: =
+                                    DisabledFill: =
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =0
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverFill: =
+                                    OnSelect: |-
+                                        =Set(varBtnUploadFile, true);
+                                        Select(BgButtonn_FileDetails);
+                                    PlaceholderText: ="Tap or click to add a picture"
+                                    PressedFill: =
+                                    Size: =0
+                                    Text: =
+                                    Width: =Parent.Width
+                                    ZIndex: =4
+
+                                tmrBtnBgAnimated_FileDetails As timer:
+                                    Duration: =280
+                                    Height: =0
+                                    OnTimerEnd: |-
+                                        =Set(varBtnUploadFile, false);
+                                        Reset(Self);
+                                    Start: =varBtnUploadFile
+                                    Visible: =false
+                                    Width: =0
+                                    X: =40
+                                    Y: =40
+                                    ZIndex: =5
+
+            cntBodyRight_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =Parent.Height/2
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =cmpModal_expenseForm.ModalGap
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                maximumHeight: =11360
+                maximumWidth: =640
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =11
+
+                cntCategory_Date_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =1.2
+                    Height: =225
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =1.5
+                    PaddingRight: =1.5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =1
+
+                    cntCategory_espenseForm As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =1.2
+                        Height: =225
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: |
+                            =Parent.Width * 0.5
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =1
+                        PaddingLeft: =1
+                        PaddingRight: =1
+                        PaddingTop: =1
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        ZIndex: =1
+
+                        lblCategory_expenseForm As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =0.3
+                            Font: =Font.'Segoe UI'
+                            Height: =70
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =10
+                            Text: ="Category"
+                            Width: =560
+                            ZIndex: =18
+
+                        cntDdCategory_expenseForm As groupContainer.manualLayoutContainer:
+                            BorderColor: =RGBA(222, 222, 222, 1)
+                            BorderThickness: =0.5
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =35
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            PaddingBottom: =1
+                            PaddingLeft: =1
+                            PaddingRight: =1
+                            PaddingTop: =1
+                            RadiusBottomLeft: =5
+                            RadiusBottomRight: =5
+                            RadiusTopLeft: =5
+                            RadiusTopRight: =5
+                            ZIndex: =19
+
+                            DdCategory_expenseForm As dropdown:
+                                BorderColor: =RGBA(222, 222, 222, 1)
+                                BorderThickness: =0
+                                ChevronBackground: =RGBA(255, 255, 255, 1)
+                                ChevronFill: =RGBA(222, 222, 222, 1)
+                                ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+                                ChevronHoverFill: =RGBA(222, 222, 222, 1)
+                                ChevronWidth: =50
+                                FlyoutMaximumHeight: =700
+                                FocusedBorderThickness: =0
+                                Font: =Font.'Segoe UI'
+                                Height: |
+                                    =Parent.Height
+                                HoverFill: =RGBA(230, 230, 230, 0.5)
+                                Items: =DropDownSample
+                                PressedColor: =RGBA(0, 0, 0, 1)
+                                PressedFill: =RGBA(230, 230, 230, 0.75)
+                                SelectionColor: =RGBA(0, 0, 0, 1)
+                                SelectionFill: =RGBA(222, 222, 222, 1)
+                                Size: =10
+                                Width: =Parent.Width
+                                ZIndex: =20
+
+                    cntDate_espenseForm As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =1.2
+                        Height: =225
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: |
+                            =Parent.Width * 0.5
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        maximumHeight: =11360
+                        maximumWidth: =640
+                        PaddingBottom: =1
+                        PaddingTop: =1
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        ZIndex: =21
+
+                        lblDate_expenseForm As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =0.3
+                            Font: =Font.'Segoe UI'
+                            Height: =70
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =10
+                            Text: ="Datum"
+                            Width: =560
+                            ZIndex: =1
+
+                        cntDpDatum_expenseForm As groupContainer.manualLayoutContainer:
+                            BorderColor: =RGBA(222, 222, 222, 1)
+                            BorderThickness: =0.5
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =35
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            maximumHeight: =11360
+                            maximumWidth: =640
+                            PaddingBottom: =1
+                            PaddingLeft: =1
+                            PaddingRight: =1
+                            PaddingTop: =1
+                            RadiusBottomLeft: =5
+                            RadiusBottomRight: =5
+                            RadiusTopLeft: =5
+                            RadiusTopRight: =5
+                            ZIndex: =2
+
+                            DpDatum_expenseForm As modernDatePicker:
+                                Appearance: =Appearance.FilledLighter
+                                BasePaletteColor: =RGBA(189, 178, 176, 1)
+                                Color: =RGBA(0, 0, 0, 1)
+                                DefaultDate: =Today()
+                                DisplayMode: =DisplayMode.View
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Font: =Font.'Segoe UI'
+                                Format: =DatePickerFormat.Short
+                                Height: =Parent.Height
+                                IsEditable: =true
+                                Placeholder: ="Select a date"
+                                Size: =11
+                                ValidationState: =ValidationState.None
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                cntName_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =1.2
+                    Height: =225
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    PaddingLeft: =1
+                    PaddingRight: =1
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =12
+
+                    lblName_expenseForm As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =0.3
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="Transaktionsname"
+                        Width: =560
+                        ZIndex: =14
+
+                    txtName_expenseForm As text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        BorderThickness: =0.5
+                        Default: =
+                        Fill: =RGBA(230, 230, 230, 0.2)
+                        FillPortions: =1
+                        FocusedBorderThickness: =0.5
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Title der Ausgabe"
+                        HoverBorderColor: =RGBA(222, 222, 222, 1)
+                        HoverFill: =RGBA(230, 230, 230, 0.5)
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        Size: =10
+                        Width: =560
+                        ZIndex: =15
+
+                cntDescription_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =2.6
+                    Height: =225
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    PaddingBottom: =1
+                    PaddingLeft: =1
+                    PaddingRight: =1
+                    PaddingTop: =1
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =13
+
+                    lblDescription_expenseForm As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =0.3
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="Beschreibung"
+                        Width: =560
+                        ZIndex: =16
+
+                    txtDescripction_expenseForm As text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        BorderThickness: =0.5
+                        Default: =
+                        Fill: =RGBA(230, 230, 230, 0.2)
+                        FillPortions: =1
+                        FocusedBorderThickness: =0.5
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Details der Ausgabe"
+                        HoverBorderColor: =RGBA(222, 222, 222, 1)
+                        HoverFill: =RGBA(230, 230, 230, 0.5)
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        Mode: =TextMode.MultiLine
+                        Size: =10
+                        Width: =560
+                        ZIndex: =17
+
+        cntFooter_expenseForm As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =35
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            maximumHeight: =11360
+            maximumWidth: =640
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            cntBtn_expenseSubmit As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =ColorFade(Self.Fill, -20%)
+                DropShadow: =DropShadow.None
+                Fill: =cmpModal_expenseForm.BtnSubmitBGColor
+                FillPortions: =0
+                Height: =Parent.Height
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                maximumHeight: =11360
+                maximumWidth: =640
+                RadiusBottomLeft: =cmpModal_expenseForm.BtnsBordderRadius
+                RadiusBottomRight: =cmpModal_expenseForm.BtnsBordderRadius
+                RadiusTopLeft: =cmpModal_expenseForm.BtnsBordderRadius
+                RadiusTopRight: =cmpModal_expenseForm.BtnsBordderRadius
+                Width: =cmpModal_expenseForm.BtnSubmitWidth
+                X: =Parent.Width/2 - Self.Width/2
+                Y: =Parent.Height/2 - Self.Height/2
+                ZIndex: =6
+
+                ContButtonDetails_expenseSubmit As groupContainer.horizontalAutoLayoutContainer:
+                    BorderColor: =
+                    DropShadow: =DropShadow.None
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =5
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMode: =LayoutMode.Auto
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+                    IcnLeft_expenseSubmit As image:
+                        Height: =20
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =320
+                        LayoutMinWidth: =320
+                        PaddingBottom: =1
+                        PaddingLeft: =1
+                        PaddingRight: =1
+                        PaddingTop: =1
+                        Visible: =cmpModal_expenseForm.IconSubmitEnabled
+                        Width: =cmpModal_expenseForm.IconBtnsSize
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                    LblName_expenseSubmit As label:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Stretch
+                        Color: =Color.White
+                        FillPortions: =1
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =Parent.Height
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =
+                        PaddingBottom: =0
+                        PaddingLeft: =3
+                        PaddingRight: =3
+                        PaddingTop: =0
+                        Size: |
+                            =10
+                        Text: =cmpModal_expenseForm.BtnSubmitText
+                        Width: =Parent.Width
+                        ZIndex: =2
+
+                ContBgAnimated_expenseSubmit As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: |-
+                        =If(
+                            varBtnAnimatedDashboard,
+                            Parent.Height * Power(tmrBtnBgAnimated_expenseSubmit.Value / tmrBtnBgAnimated_expenseSubmit.Duration, 1.5) + 35
+                        )
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Width: |-
+                        =If(
+                            varBtnAnimatedDashboard,
+                            Parent.Width * Power(tmrBtnBgAnimated_expenseSubmit.Value / tmrBtnBgAnimated_expenseSubmit.Duration, 2.5) + Self.Height
+                            )
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =2
+
+                    BgAnimated_expenseSubmit As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =
+                        Fill: =RGBA(0, 0, 0, 0.1 * (1 - tmrBtnBgAnimated_expenseSubmit.Value/tmrBtnBgAnimated_expenseSubmit.Duration))
+                        HoverFill: =
+                        PressedFill: =
+                        ZIndex: =1
+
+                BgButtonn_expenseSubmit As button:
+                    Color: =RGBA(6, 95, 70, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Font: =Font.'Segoe UI'
+                    Height: =Parent.Height
+                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.05))
+                    OnSelect: =Set(varBtnAnimatedDashboard, true);
+                    PressedFill: =RGBA(0, 0, 0, 0.05)
+                    Size: =24
+                    Text: =""
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =3
+
+                tmrBtnBgAnimated_expenseSubmit As timer:
+                    Duration: =280
+                    Height: =0
+                    OnTimerEnd: |-
+                        =Set(varBtnAnimatedDashboard, false);
+                        Reset(Self);
+                        cmpModal_expenseForm.SubmitModal();
+                        cmpModal_expenseForm.CloseModal();
+                    Start: =varBtnAnimatedDashboard
+                    Visible: =false
+                    Width: =0
+                    X: =40
+                    Y: =40
+                    ZIndex: =4
+
+    tmrOpen_expenseForm As timer:
+        Duration: =300
+        Height: =50
+        OnTimerStart: |-
+            =Reset(tmrClose_expenseForm);
+            Set(BackgroundValidate, true);
+        Start: =cmpModal_expenseForm.ModalActived
+        Visible: =false
+        Width: =142
+        X: =220
+        Y: =180
+        ZIndex: =3
+
+    tmrClose_expenseForm As timer:
+        Duration: =300
+        Height: =42
+        OnTimerEnd: =Set(BackgroundValidate, false);
+        OnTimerStart: =Reset(tmrOpen_expenseForm);
+        Start: =!cmpModal_expenseForm.ModalActived
+        Visible: =false
+        Width: =97
+        X: =220
+        Y: =267
+        ZIndex: =4
+

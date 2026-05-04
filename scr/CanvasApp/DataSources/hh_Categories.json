@@ -1,0 +1,128 @@
+[
+  {
+    "DisplayName": "hh_Categories (Views)",
+    "Name": "_zd_hh_category_views",
+    "RelatedEntityName": "hh_Categories",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "30276ead-6125-f111-88b4-6045bd2ba07c": "Pending Categories",
+      "76d74928-6125-f111-88b4-6045bd2ba07c": "My Categories",
+      "8d28cb8f-cb20-f111-88b1-70a8a507a37b": "All Categories",
+      "91e1eeb5-1ffa-4dc5-9f7a-d11a390d58a4": "Inactive hh_Categories",
+      "9fe74e8d-cb0b-4c3f-8150-1ef3913e386a": "Active hh_Categories",
+      "b377cdb3-6125-f111-88b4-6045bd2ba07c": "Rejected Categories",
+      "ca72a153-0210-4c4c-a3a7-14197fb24ccf": "hh_Category Advanced Find View",
+      "d513fd9c-6125-f111-88b4-6045bd2ba07c": "Approved Categories",
+      "dea18413-4b1f-48e8-a4dc-36da8a48a218": "hh_Category Lookup View",
+      "fbaeab17-8951-4042-b24a-7eb4d8288fa0": "hh_Category Associated View"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "zd_hh_categories",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "zd_hh_category",
+    "MaxGetRowsCount": 500,
+    "Name": "hh_Categories",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "zd_Budget": "Budget",
+      "zd_budgetlimit": "BudgetLimit",
+      "zd_budgetlimit_base": "BudgetLimit (Base)",
+      "zd_categoryname": "CategoryName",
+      "zd_categorystatus": "CategoryStatus",
+      "zd_Department": "Department",
+      "zd_hh_category_AsyncOperations": "System Jobs",
+      "zd_hh_category_BulkDeleteFailures": "Bulk Delete Failures",
+      "zd_hh_category_DuplicateBaseRecord": "Duplicate Records (zd_hh_category_DuplicateBaseRecord)",
+      "zd_hh_category_DuplicateMatchingRecord": "Duplicate Records (zd_hh_category_DuplicateMatchingRecord)",
+      "zd_hh_category_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "zd_hh_category_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "zd_hh_category_ProcessSession": "Process Sessions",
+      "zd_hh_category_SyncErrors": "Sync Errors",
+      "zd_hh_categoryid": "hh_Category",
+      "zd_hh_expense_Category_zd_hh_category": "hh_Expenses"
+    },
+    "PreferredName": "hh_Categories",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (hh_Categories)",
+    "Name": "zd_hh_category_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "hh_Categories"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "hh_Categories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (hh_Categories)",
+    "Name": "zd_hh_category_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "hh_Categories"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "hh_Categories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "CategoryStatus (hh_Categories)",
+    "Name": "zd_hh_category_zd_categorystatus",
+    "OptionSetInfoNameMapping": {
+      "128580000": "Approved",
+      "128580001": "Rejected",
+      "128580002": "Pending"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zd_categorystatus",
+        "OptionSetReferenceEntityName": "hh_Categories"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zd_categorystatus",
+    "RelatedEntityName": "hh_Categories",
+    "Type": "OptionSetInfo"
+  }
+]

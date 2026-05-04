@@ -1,0 +1,404 @@
+cmpNavbarHeader As CanvasComponent:
+    ShowNavbarSidebar():
+        ThisProperty:
+            Default: =
+    BackgroundColor: =RGBA(0, 121, 107, 1)
+    Fill: =RGBA(0, 0, 0, 0)
+    HamburguerIconSize: =45
+    Height: =80
+    IconRefresh: =SampleImage
+    MarginContainer: =10
+    PageName: ="Finanz Übersicht"
+    SidebarActived: =false
+    TextDetails: =User().FullName
+    TextDetailsColor: =RGBA(255, 255, 255, 1)
+    TextDetailsFontSize: =9
+    TitleFontSize: =16
+    TitleTextColor: =RGBA(255, 255, 255, 1)
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    cntNavbarHeader As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =cmpNavbarHeader.BackgroundColor
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =cmpNavbarHeader.MarginContainer
+        PaddingLeft: =cmpNavbarHeader.MarginContainer
+        PaddingRight: =cmpNavbarHeader.MarginContainer
+        PaddingTop: =cmpNavbarHeader.MarginContainer
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =Parent.Height/2 - Self.Height/2
+        ZIndex: =1
+
+        cntHamburger_navbarHeader As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0.3
+            Height: =225
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            cntHamburguer_Button_navbarHeader As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =Parent.Height
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                maximumHeight: =11360
+                maximumWidth: =640
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =Parent.Height
+                X: =40
+                Y: =40
+                ZIndex: =5
+
+                cnntBgHamburger_navbarHeader As groupContainer.manualLayoutContainer:
+                    Height: |-
+                        =If(
+                            varAnimationBtnHamburger,
+                            Parent.Height * Power(tmrAnimationHamburger_navbarHeader.Value / tmrAnimationHamburger_navbarHeader.Duration, 1.5) + 35
+                        )
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Width: |-
+                        =If(
+                            varAnimationBtnHamburger,
+                            Parent.Width * Power(tmrAnimationHamburger_navbarHeader.Value / tmrAnimationHamburger_navbarHeader.Duration, 1.5) + 35
+                        )
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+                    btnBgHamburger_navbarHeader As rectangle:
+                        Fill: =RGBA(0, 0, 0, 0.15 * (1-tmrAnimationHamburger_navbarHeader.Value/tmrAnimationHamburger_navbarHeader.Duration))
+                        Height: =Parent.Height
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnSelect: =Set(varAnimationBtnHamburger, true);
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                icnHamburguer_navbarHeader As image:
+                    Height: =Self.Width
+                    HoverBorderColor: =Color.Black
+                    HoverFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.1), RGBA(0, 0, 0, 0.0))
+                    Image: |-
+                        =Switch(
+                            cmpNavbarHeader.SidebarActived,
+                            true,
+                            Icon_HamburgerClosed_White,
+                            false,
+                            Icon_Hamburger_White,
+                            Icon_Hamburger_White
+                        )
+                    OnSelect: |
+                        =Set(varAnimationBtnHamburger, true);
+                        cmpNavbarHeader.ShowNavbarSidebar();
+                    PressedFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.1), RGBA(0, 0, 0, 0.0))
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Tooltip: ="Vorheriger Mitarbeiter"
+                    Width: =cmpNavbarHeader.HamburguerIconSize
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =2
+
+                btnBg_navbarHeader As button:
+                    BorderThickness: =0
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Parent.Height
+                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.1))
+                    OnSelect: |-
+                        =Set(varAnimationBtnHamburger, true);
+                        cmpNavbarHeader.ShowNavbarSidebar();
+                    PressedFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.1))
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =24
+                    Text: =
+                    Tooltip: =
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =3
+
+                tmrAnimationHamburger_navbarHeader As timer:
+                    Duration: =260
+                    Height: =0
+                    OnTimerEnd: |-
+                        =Set(varAnimationBtnHamburger, false);
+                        Reset(Self);
+                    Start: =varAnimationBtnHamburger
+                    Visible: =false
+                    Width: =0
+                    ZIndex: =4
+
+        cntUserDetails_navbarHeader As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =1.7
+            Height: =225
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =15
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            LayoutMode: =LayoutMode.Auto
+            maximumHeight: =11360
+            maximumWidth: =640
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            cntRefresh_Button_navbarHeader As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =Parent.Height
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =112
+                LayoutMinWidth: =250
+                maximumHeight: =11360
+                maximumWidth: =640
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Visible: =false
+                Width: =Parent.Height
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+                cnntBgRefresh_navbarHeader As groupContainer.manualLayoutContainer:
+                    Height: |-
+                        =If(
+                            varAnimationBtnRefresh,
+                            Parent.Height * Power(tmrAnimationRefresh_navbarHeader.Value / tmrAnimationRefresh_navbarHeader.Duration, 1.5) + 35
+                        )
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    maximumHeight: =11360
+                    maximumWidth: =640
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Width: |-
+                        =If(
+                            varAnimationBtnRefresh,
+                            Parent.Width * Power(tmrAnimationRefresh_navbarHeader.Value / tmrAnimationRefresh_navbarHeader.Duration, 1.5) + 35
+                        )
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =1
+
+                    btnRefreshBg_navbarHeader As rectangle:
+                        Fill: =RGBA(0, 0, 0, 0.15 * (1-tmrAnimationRefresh_navbarHeader.Value/tmrAnimationRefresh_navbarHeader.Duration))
+                        Height: =Parent.Height
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnSelect: =Set(varAnimationBtnHamburger, true);
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =Parent.Width
+                        X: =Parent.Width/2 - Self.Width/2
+                        Y: =Parent.Height/2 - Self.Height/2
+                        ZIndex: =1
+
+                icnRefresh_navbarHeader As image:
+                    Height: =Self.Width
+                    HoverBorderColor: =Color.Black
+                    HoverFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.1), RGBA(0, 0, 0, 0.0))
+                    Image: =Icon_Refresh_White
+                    OnSelect: |
+                        =Set(varAnimationBtnHamburger, true);
+                        cmpNavbarHeader.ShowNavbarSidebar();
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    PressedFill: =If(App.Width > 1500, RGBA(0, 0, 0, 0.1), RGBA(0, 0, 0, 0.0))
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Tooltip: ="Vorheriger Mitarbeiter"
+                    Width: =cmpNavbarHeader.HamburguerIconSize
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =2
+
+                btnBgRefresh_navbarHeader As button:
+                    BorderThickness: =0
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Parent.Height
+                    HoverFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.1))
+                    OnSelect: |-
+                        =Set(varAnimationBtnRefresh, true);
+                        cmpNavbarHeader.ShowNavbarSidebar();
+                    PressedFill: =If(App.Width < 1300, RGBA(0, 0, 0, 0.0), RGBA(0, 0, 0, 0.1))
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =24
+                    Text: =
+                    Tooltip: ="Daten aktualisieren"
+                    Width: =Parent.Width
+                    X: =Parent.Width/2 - Self.Width/2
+                    Y: =Parent.Height/2 - Self.Height/2
+                    ZIndex: =3
+
+                tmrAnimationRefresh_navbarHeader As timer:
+                    Duration: =260
+                    Height: =0
+                    OnTimerEnd: |-
+                        =Set(varAnimationBtnRefresh, false);
+                        Reset(Self);
+                    Start: =varAnimationBtnRefresh
+                    Visible: =false
+                    Width: =0
+                    ZIndex: =4
+
+            cntUserInfoDetails_navbarHeader As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =225
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =175
+                ZIndex: =2
+
+                lblPageName_navbarHeader As label:
+                    Align: =Align.Right
+                    AlignInContainer: =AlignInContainer.Stretch
+                    Color: =cmpNavbarHeader.TitleTextColor
+                    FillPortions: =1
+                    FontWeight: =FontWeight.Semibold
+                    Height: =70
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =0
+                    LayoutMinWidth: =16
+                    LineHeight: =0.8
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =cmpNavbarHeader.TitleFontSize
+                    Text: =cmpNavbarHeader.PageName
+                    Width: =560
+                    ZIndex: =6
+
+                lblUsername_navbarHeader As label:
+                    Align: =Align.Right
+                    AlignInContainer: =AlignInContainer.Stretch
+                    Color: =cmpNavbarHeader.TextDetailsColor
+                    FillPortions: =1
+                    Height: =70
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =0
+                    LayoutMinWidth: =16
+                    LineHeight: =0.8
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =cmpNavbarHeader.TextDetailsFontSize
+                    Text: =cmpNavbarHeader.TextDetails
+                    Width: =560
+                    ZIndex: =7
+
+            imgUserPhoto_navbarHeader As image:
+                AlignInContainer: =AlignInContainer.Stretch
+                Height: =320
+                Image: =User().Image
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                RadiusBottomLeft: =100
+                RadiusBottomRight: =100
+                RadiusTopLeft: =100
+                RadiusTopRight: =100
+                Width: =Self.Height
+                ZIndex: =3
+

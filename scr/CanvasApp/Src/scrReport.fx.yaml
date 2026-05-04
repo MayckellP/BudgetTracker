@@ -1,0 +1,2638 @@
+scrReport As screen:
+    ContentLanguage: =""
+    Fill: =Color.White
+    LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    OnVisible: |-
+        =UpdateContext({locSidebarOpened: Blank()});
+
+    cntMain_scrReport As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =App.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =If(varIsMobileView, LayoutDirection.Vertical, LayoutDirection.Horizontal)
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =App.Width
+        X: =App.Width/2 - Self.Width/2
+        Y: =App.Height/2 - Self.Height/2
+        ZIndex: =1
+
+        cmpNavbarHeader_scrReport_Mobile As cmpNavbarHeader:
+            ChildTabPriority: =true
+            ContentLanguage: =""
+            EnableChildFocus: =true
+            FillPortions: =0.34
+            HamburguerIconSize: =30
+            LayoutMaxHeight: =65
+            LayoutMaxWidth: =0
+            LayoutMinHeight: =60
+            LayoutMinWidth: =640
+            PageName: ="Berichte"
+            ShowNavbarSidebar: |-
+                =UpdateContext({locSidebarOpened: !locSidebarOpened});
+            SidebarActived: =locSidebarOpened
+            TextDetailsColor: =RGBA(214, 221, 224, 1)
+            TextDetailsFontSize: =8
+            TitleFontSize: =12
+            Visible: =varIsMobileView
+
+        cmpSidebar_scrReport As cmpSidebar:
+            AlignInContainer: =AlignInContainer.Stretch
+            Btn1Icon: =If(varIsDarkModusActived, Dashboard_Selected, Dashboard_Black)
+            Btn1Navigate: =scrExpense
+            Btn1Text: ="Finanz Übersicht"
+            Btn2Icon: =If(varIsDarkModusActived, Report_Selected, Report_Black)
+            Btn2IconSelected: =Report_Selected
+            Btn2Text: ="Berichte"
+            Btn3Icon: =If(varIsDarkModusActived, Search_Selected, Search_Black)
+            Btn3IconSelected: =Search_Selected
+            Btn3Navigate: =scrSearch
+            Btn3Text: ="Suchen"
+            Btn4Visible: =false
+            ChildTabPriority: =true
+            ContentLanguage: =""
+            EnableChildFocus: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0.8
+            FontSize: =varFontSizeButton
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =varDsSidebarWidth
+            LayoutMinHeight: =640
+            LayoutMinWidth: =120
+            OnSelectBtnNewRecord: =
+            PrimaryColor: =varDsColorPrimaryButton
+            SelectedPage: ="Berichte"
+            TextColor: =varDsColorGeneralText
+            TitleFontSize: =12
+            Visible: =!varIsMobileView
+            Width: =varDsSidebarWidth
+            ZIndex: =2
+
+        cntMainRight_scrReport As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =varDsBackgroundApp
+            FillPortions: =4
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =varDsGap
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =If(varBreakpoint = "Mobile", Parent.Width, 0)
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =varDsGap
+            PaddingLeft: =varDsGap
+            PaddingRight: =varDsGap
+            PaddingTop: =varDsGap
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            X: =cmpSidebar_scrReport.Width
+            ZIndex: =3
+
+            cmpHeader_scrReport As cmpHeaderSimple:
+                AlignInContainer: =AlignInContainer.Stretch
+                ChildTabPriority: =true
+                ContentLanguage: =""
+                DarkModusInput: =varIsDarkModusActived
+                DetailsColor: =varDsColorGeneralLegend
+                DetailsFontSize: =varFontSizeNormalText
+                DetailsText: ="Übersicht & Export der Finanzdaten"
+                EnableChildFocus: =true
+                FillPortions: =0.85
+                IconsSize: =12
+                LayoutMaxHeight: =varDsHeaderHeight
+                LayoutMaxWidth: =Parent.Width
+                LayoutMinHeight: =0
+                LayoutMinWidth: =0
+                OnSelect_RefreshData: |-
+                    =ClearCollect(ColMain_Expense, hh_Expenses);
+                    ClearCollect(ColMain_Department, hh_Departments);
+                    ClearCollect(ColMain_Category, hh_Categories);
+                TitelColor: =varDsColorTitlePage
+                TitelFontSize: =varFontSizePageTitle
+                TitelText: ="Berichte"
+                TitelWidth: =120
+                Visible: =!varIsMobileView
+
+            cntBody_scrReport As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(222, 222, 222, 1)
+                DropShadow: =DropShadow.None
+                FillPortions: =13
+                Height: =Parent.Height * 0.1
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =varDsGap
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                cntBodyTop_scrReport As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =1.65
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =If(varIsMobileView, LayoutDirection.Vertical, LayoutDirection.Horizontal)
+                    LayoutGap: =varDsGap
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =Parent.Height
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =0
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =Parent.Width * 0.65
+                    ZIndex: =1
+
+                    cntGal_CategoryAnalysis_Mobile As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: =35 + 12
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =6
+                        PaddingLeft: =6
+                        PaddingRight: =6
+                        PaddingTop: =6
+                        RadiusBottomLeft: =6
+                        RadiusBottomRight: =6
+                        RadiusTopLeft: =6
+                        RadiusTopRight: =6
+                        Visible: =varIsMobileView
+                        ZIndex: =1
+
+                        cntGalTitle_CategoryAnalysis_Mobile As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            DropShadow: =DropShadow.None
+                            Height: =35
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingBottom: =
+                            PaddingLeft: =
+                            PaddingRight: =
+                            PaddingTop: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =1
+
+                            lblGalTitle_CategoryAnalysis_Mobile As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FillPortions: =1
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PaddingBottom: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =varFontSizeCardTitle
+                                Text: ="Ausgabenanalyse"
+                                ZIndex: =1
+
+                            cmpButton_allCategory_Mobile As cmpButton:
+                                Border: =0
+                                BorderRadius: =6
+                                ColorBg: =RGBA(245, 245, 245, 1)
+                                ColorText: =RGBA(152, 152, 152, 1)
+                                FontBold: =false
+                                FontSize: =varFontSizeButton
+                                Height: =Parent.Height - 1
+                                IconRight: =true
+                                IconSize: =10
+                                ImageIconRight: =ArrowRight_Grau
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =640
+                                LayoutMinWidth: =640
+                                MarginHeight: =0
+                                MarginWidth: =0
+                                OnSelect: =
+                                ShadowMd: =false
+                                TextButton: ="Alle anzeigen"
+                                Width: =If(varBreakpoint = "XL" || varBreakpoint = "LG" , 130, 110)
+                                ZIndex: =2
+
+                    cntBarChart_report As groupContainer.horizontalAutoLayoutContainer:
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        BorderStyle: =If(varIsDarkModusActived, BorderStyle.None, BorderStyle.Solid)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Fill: =varDsBGCardContainer
+                        FillPortions: =5.5
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =Parent.Height * 0.1
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =10
+                        PaddingLeft: =varDsContainerPaddingX
+                        PaddingRight: =varDsContainerPaddingX
+                        PaddingTop: =10
+                        RadiusBottomLeft: =6
+                        RadiusBottomRight: =6
+                        RadiusTopLeft: =6
+                        RadiusTopRight: =6
+                        ZIndex: =2
+
+                        cntBarChartTitle_report As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =varDsContainerHeader
+                            LayoutGap: =15
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =1
+
+                            lblBarChartTitle_report As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varDsColorGeneralText
+                                FillPortions: =1
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PaddingBottom: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =varFontSizeCardTitle
+                                Text: ="Ausgabenentwicklung"
+                                ZIndex: =1
+
+                            cntDdChart_report As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGap: =5
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Visible: |-
+                                    =With(
+                                        {
+                                            varIsMobile: Parent.Width <= 450
+                                        },
+                                        !varIsMobile
+                                    )
+                                Width: =200
+                                ZIndex: =2
+
+                                lblPeriode_report As label:
+                                    Align: =Align.Right
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =10
+                                    Text: ="Periode"
+                                    Width: =80
+                                    ZIndex: =5
+
+                                ddPeriode_report As Dropdown.pcfdataset:
+                                    AccessibleLabel: =""
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                    BorderColor: =RGBA(222, 222, 222, 1)
+                                    BorderRadius: =6
+                                    BorderStyle: =""
+                                    BorderThickness: =0.5
+                                    ContentLanguage: =""
+                                    DefaultSelectedItems: =["Jährlich"]
+                                    DisplayMode: =DisplayMode.Edit
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =1.8
+                                    FontSize: =11
+                                    Height: =32
+                                    Items: =["Jährlich", "Halbjährlich", "Vierteljährlich"]
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    Required: =false
+                                    TabIndex: =0
+                                    Tooltip: =""
+                                    ValidationState: ="None"
+                                    Visible: =true
+                                    Width: =150
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =6
+
+                                    Value1 As PowerApps_CoreControls_DropdownCanvasTemplate_dataField.textualColumn:
+                                        FieldDisplayName: ="Value"
+                                        FieldName: ="Value"
+                                        FieldType: ="s"
+                                        Order: =1
+                                        Type: ="s"
+                                        ZIndex: =1
+
+                            cmpButton_export As cmpButton:
+                                Border: =0
+                                BorderRadius: =6
+                                ColorBg: =varDsColorPrimaryButton
+                                ColorText: =RGBA(194, 255, 244, 1)
+                                FontBold: =false
+                                FontSize: =varFontSizeButton
+                                Height: =Parent.Height - 1
+                                IconLeft: =true
+                                IconSize: =16
+                                ImageIconLeft: =Icon_Download_LigthGreen
+                                ImageIconRight: =
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =640
+                                LayoutMinWidth: =640
+                                MarginHeight: =0
+                                MarginWidth: =0
+                                OnSelect: =
+                                ShadowMd: =false
+                                TextButton: ="Exportieren"
+                                Visible: |-
+                                    =With(
+                                        {
+                                            varIsMobile: Parent.Width <= 450
+                                        },
+                                        !varIsMobile
+                                    )
+                                Width: =If(varBreakpoint = "XL" || varBreakpoint = "LG" , 140, 110)
+                                ZIndex: =3
+
+                        cntLegende_chartReport_Mobile As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =If(varIsMobileView, 35, 20)
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =15
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.End
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Visible: |-
+                                =With(
+                                    {
+                                        varIsMobile: Parent.Width <= 450
+                                    },
+                                    varIsMobile
+                                )
+                            ZIndex: =2
+
+                            cntDdChart_report_Mobile As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGap: =5
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Width: =200
+                                ZIndex: =1
+
+                                lblPeriode_report_Mobile As label:
+                                    Align: =Align.Right
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =RGBA(91, 91, 91, 1)
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =10
+                                    Text: ="Periode"
+                                    Width: =80
+                                    ZIndex: =1
+
+                                ddPeriode_report_Mobile As Dropdown.pcfdataset:
+                                    AccessibleLabel: =""
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                    BorderColor: =RGBA(222, 222, 222, 1)
+                                    BorderRadius: =6
+                                    BorderStyle: =""
+                                    BorderThickness: =0.5
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1.8
+                                    FontSize: =11
+                                    Height: =32
+                                    Items: =["Jährlich", "Halbjährlich", "Vierteljährlich"]
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    Required: =false
+                                    TabIndex: =0
+                                    Tooltip: =""
+                                    ValidationState: ="None"
+                                    Visible: =true
+                                    Width: =150
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =2
+
+                                    Value1_1 As PowerApps_CoreControls_DropdownCanvasTemplate_dataField.textualColumn:
+                                        FieldDisplayName: ="Value"
+                                        FieldName: ="Value"
+                                        FieldType: ="s"
+                                        Order: =1
+                                        Type: ="s"
+                                        ZIndex: =1
+
+                            cmpButton_export_Mobile As cmpButton:
+                                Border: =0
+                                BorderRadius: =6
+                                ColorBg: =RGBA(0, 121, 107, 1)
+                                ColorText: =RGBA(194, 255, 244, 1)
+                                FontBold: =false
+                                FontSize: =varFontSizeButton
+                                Height: =Parent.Height - 1
+                                IconLeft: =true
+                                IconSize: =16
+                                ImageIconLeft: =Icon_Download_LigthGreen
+                                ImageIconRight: =
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =640
+                                LayoutMinWidth: =640
+                                MarginHeight: =0
+                                MarginWidth: =0
+                                OnSelect: =
+                                ShadowMd: =false
+                                TextButton: ="Exportieren"
+                                Width: =If(varBreakpoint = "XL" || varBreakpoint = "LG" , 130, 110)
+                                ZIndex: =2
+
+                        cntLegende_chartReport As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =20
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.End
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =3
+
+                            cntlegende_Budget_1 As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGap: =5
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =160
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                ZIndex: =1
+
+                                Rectangle2_1 As rectangle:
+                                    AlignInContainer: =AlignInContainer.Center
+                                    BorderColor: =RGBA(190, 228, 222, 1)
+                                    BorderThickness: =0.5
+                                    Fill: =RGBA(237, 255, 251, 1)
+                                    Height: =Parent.Height * 0.6
+                                    LayoutMaxHeight: =Parent.Height * 0.6
+                                    LayoutMaxWidth: =Self.LayoutMaxHeight
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Width: =Self.Height
+                                    ZIndex: =1
+
+                                Label4_1 As label:
+                                    AlignInContainer: =AlignInContainer.Center
+                                    AutoHeight: =true
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeLegend
+                                    Text: ="Zugewiesenes Budget"
+                                    ZIndex: =2
+
+                            cntlegende_Budget As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGap: =5
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =100
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                ZIndex: =2
+
+                                Rectangle2 As rectangle:
+                                    AlignInContainer: =AlignInContainer.Center
+                                    Fill: =RGBA(0, 121, 107, 1)
+                                    Height: =Parent.Height * 0.6
+                                    LayoutMaxHeight: =Parent.Height * 0.6
+                                    LayoutMaxWidth: =Self.LayoutMaxHeight
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Width: =Self.Height
+                                    ZIndex: =2
+
+                                Label4 As label:
+                                    AlignInContainer: =AlignInContainer.Center
+                                    AutoHeight: =true
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeLegend
+                                    Text: ="Ausgaben"
+                                    ZIndex: =3
+
+                        cntChartReport As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingRight: |-
+                                =With(
+                                    {
+                                        varIsMobile: Parent.Width <= 450
+                                    },
+                                    If(varIsMobile, 25, 30)
+                                )
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =4
+
+                            CanvasChartBar_expenseView As CanvasChartPieRechart:
+                                AlignInContainer: =AlignInContainer.End
+                                chartType: ="bar"
+                                colors: =""
+                                data: |-
+                                    =With(
+                                        {
+                                            selectedPeriod: ddPeriode_report.Selected.Value,
+                                            totalBudget: gblCurrentBudget
+                                        },
+                                        
+                                        With(
+                                            {
+                                                baseData:
+                                                    AddColumns(
+                                                        Filter(
+                                                            ColMain_Expense,
+                                                            Department.DepartmentName = gblCurrentDepartment.DepartmentName &&
+                                                            Year(SubmittedDate) = Year(Today()) &&
+                                                            ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Approved
+                                                        ),
+                                                        periodIndex,
+                                                        Switch(
+                                                            selectedPeriod,
+                                    
+                                                            "Jährlich",
+                                                            Month(SubmittedDate),
+                                    
+                                                            "Halbjährlich",
+                                                            If(Month(SubmittedDate) <= 6, 1, 2),
+                                    
+                                                            "Vierteljährlich",
+                                                            RoundUp(Month(SubmittedDate) / 3, 0)
+                                                        )
+                                                    ),
+                                    
+                                                periods:
+                                                    Switch(
+                                                        selectedPeriod,
+                                    
+                                                        "Jährlich",
+                                                        AddColumns(
+                                                            Sequence(12),
+                                                            name, Text(Date(Year(Today()), Value, 1), "[$-en-US]mmm"),
+                                                            periodIndex, Value
+                                                        ),
+                                    
+                                                        "Halbjährlich",
+                                                        AddColumns(
+                                                            Sequence(2),
+                                                            name,
+                                                                If(
+                                                                    Value = 1,
+                                                                    "H1 (Jan-Jun)",
+                                                                    "H2 (Jul-Dec)"
+                                                                ),
+                                                            periodIndex, Value
+                                                        ),
+                                    
+                                                        "Vierteljährlich",
+                                                        AddColumns(
+                                                            Sequence(4),
+                                                            name, "Q" & Value,
+                                                            periodIndex, Value
+                                                        )
+                                                    ),
+                                    
+                                                divisor:
+                                                    Switch(
+                                                        selectedPeriod,
+                                                        "Jährlich", 12,
+                                                        "Halbjährlich", 2,
+                                                        "Vierteljährlich", 4
+                                                    )
+                                            },
+                                    
+                                            JSON(
+                                                ForAll(
+                                                    periods,
+                                                    With(
+                                                        {
+                                                            currentPeriod: periodIndex
+                                                        },
+                                                        {
+                                                            name: name,
+                                    
+                                                            budget: totalBudget,
+                                    
+                                                            actual:
+                                                                Coalesce(
+                                                                    Sum(
+                                                                        Filter(
+                                                                            baseData,
+                                                                            periodIndex = currentPeriod
+                                                                        ),
+                                                                        Amount
+                                                                    ),
+                                                                    0
+                                                                )
+                                                        }
+                                                    )
+                                                ),
+                                                JSONFormat.Compact
+                                            )
+                                        )
+                                    )
+                                    
+                                    /*With(
+                                        {
+                                            selectedPeriod: ddPeriode_report.Selected.Value,
+                                            totalBudget: gblCurrentBudget
+                                        },
+                                        
+                                        With(
+                                            {
+                                                baseData:
+                                                    AddColumns(
+                                                        Filter(
+                                                            ColMain_Expense,
+                                                            Department.DepartmentName = gblCurrentDepartment.DepartmentName &&
+                                                            Year(SubmittedDate) = Year(Today()) &&
+                                                            ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Approved
+                                                        ),
+                                                        periodIndex,
+                                                        Switch(
+                                                            selectedPeriod,
+                                                            "Jährlich", Month(SubmittedDate),
+                                                            "Halbjährlich", If(Month(SubmittedDate) <= 6, 1, 2),
+                                                            "Vierteljährlich", RoundUp(Month(SubmittedDate) / 3, 0)
+                                                        )
+                                                    ),
+                                    
+                                                periods:
+                                                    Switch(
+                                                        selectedPeriod,
+                                    
+                                                        "Jährlich",
+                                                        AddColumns(
+                                                            Sequence(12),
+                                                            name, Text(Date(Year(Today()), Value, 1), "[$-en-US]mmm"),
+                                                            periodIndex, Value
+                                                        ),
+                                    
+                                                        "Halbjährlich",
+                                                        AddColumns(
+                                                            Sequence(6),
+                                                            name, Text(Date(Year(Today()), Value, 1), "[$-en-US]mmm"),
+                                                            periodIndex, Value
+                                                        ),
+                                    
+                                                        "Vierteljährlich",
+                                                        AddColumns(
+                                                            Sequence(4),
+                                                            name, Text(Date(Year(Today()), Value, 1), "[$-en-US]mmm"),
+                                                            periodIndex, Value
+                                                        )
+                                                    ),
+                                    
+                                                divisor:
+                                                    Switch(
+                                                        selectedPeriod,
+                                                        "Jährlich", 12,
+                                                        "Halbjährlich", 6,
+                                                        "Vierteljährlich", 4
+                                                    )
+                                            },
+                                    
+                                            JSON(
+                                                ForAll(
+                                        periods,
+                                        With(
+                                            {
+                                                currentPeriod: periodIndex
+                                            },
+                                            {
+                                                name: name,
+                                                budget: totalBudget,
+                                                actual:
+                                                    Coalesce(
+                                                        Sum(
+                                                            Filter(
+                                                                baseData,
+                                                                periodIndex = currentPeriod
+                                                            ),
+                                                            Amount
+                                                        ),
+                                                        0
+                                                    )
+                                            }
+                                        )
+                                    ),
+                                                JSONFormat.Compact
+                                            )
+                                        )
+                                    )*/
+                                dataKey: ="actual"
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =Self.Width / 2.5 - 10
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =200
+                                LayoutMinWidth: =200
+                                nameKey: ="name"
+                                OnChange: =false
+                                TabIndex: =0
+                                Tooltip: ="CanvasChartPieRechart description"
+                                Visible: =true
+                                Width: =Parent.Width * 0.80
+                                X: =0
+                                Y: =0
+                                ZIndex: =1
+
+                    cntGal_CategoryAnalysis As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        BorderStyle: =If(varIsDarkModusActived, BorderStyle.None, BorderStyle.Solid)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Fill: =varDsBGCardContainer
+                        FillPortions: =2.5
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =Parent.Height * 0.1
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =10
+                        PaddingLeft: =varDsContainerPaddingX
+                        PaddingRight: =varDsContainerPaddingX
+                        PaddingTop: =10
+                        RadiusBottomLeft: =6
+                        RadiusBottomRight: =6
+                        RadiusTopLeft: =6
+                        RadiusTopRight: =6
+                        Visible: =!varIsMobileView
+                        ZIndex: =3
+
+                        cntGalTitle_CategoryAnalysis As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =varDsContainerHeader
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingBottom: =
+                            PaddingLeft: =
+                            PaddingRight: =
+                            PaddingTop: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =1
+
+                            lblGalTitle_CategoryAnalysis As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varDsColorGeneralText
+                                FillPortions: =1
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PaddingBottom: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =varFontSizeCardTitle
+                                Text: ="Kategorienanalyse"
+                                ZIndex: =1
+
+                            cmpButton_allCategory As cmpButton:
+                                Border: =0
+                                BorderRadius: =6
+                                ColorBg: =RGBA(245, 245, 245, 1)
+                                ColorText: =RGBA(152, 152, 152, 1)
+                                FontBold: =false
+                                FontSize: =varFontSizeButton
+                                Height: =Parent.Height - 1
+                                IconRight: =true
+                                IconSize: =10
+                                ImageIconRight: =ArrowRight_Grau
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =640
+                                LayoutMinWidth: =640
+                                MarginHeight: =0
+                                MarginWidth: =0
+                                OnSelect: =
+                                ShadowMd: =false
+                                TextButton: ="Alle anzeigen"
+                                Visible: =false
+                                Width: =If(varBreakpoint = "XL" || varBreakpoint = "LG" , 130, 110)
+                                ZIndex: =2
+
+                        cntLegendCategory As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =25
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =5
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.End
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =2
+
+                            cntLegendeFull As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =1.2
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =35
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                ZIndex: =1
+
+                                rctLegendeFull As rectangle:
+                                    DisplayMode: =DisplayMode.View
+                                    Fill: =RGBA(218, 59, 1, 1)
+                                    Height: =Parent.Height * 0.6
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Width: =Self.Height 
+                                    ZIndex: =1
+
+                                lblLegendeFull As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeLegend
+                                    Text: ="Ausgeschöpft"
+                                    ZIndex: =2
+
+                            cntLegendeFastFull As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                ZIndex: =12
+
+                                rctLegendeFastFull As rectangle:
+                                    DisplayMode: =DisplayMode.View
+                                    Fill: =RGBA(158, 74, 45, 1)
+                                    Height: =Parent.Height * 0.6
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Width: =Self.Height
+                                    ZIndex: =1
+
+                                lblLegendeFastFull As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeLegend
+                                    Text: ="Fast voll"
+                                    ZIndex: =2
+
+                            cntLegendeFree As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                ZIndex: =13
+
+                                rctLegendeFree As rectangle:
+                                    DisplayMode: =DisplayMode.View
+                                    Fill: =RGBA(16, 124, 16, 1)
+                                    Height: =Parent.Height * 0.6
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Width: =Self.Height
+                                    ZIndex: =1
+
+                                lblLegendeFree As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeLegend
+                                    Text: ="Verfügbar"
+                                    ZIndex: =2
+
+                        "galCategories As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                            DelayItemLoading: =true
+                            Items: =ColMain_Category
+                            Layout: =Layout.Vertical
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LoadingSpinner: =LoadingSpinner.Data
+                            ShowScrollbar: =false
+                            TemplatePadding: =0
+                            TemplateSize: =100
+                            ZIndex: =3
+
+                            cntCategories_Row As groupContainer.verticalAutoLayoutContainer:
+                                BorderColor: =RGBA(222, 222, 222, 1)
+                                BorderThickness: =0.5
+                                DropShadow: =DropShadow.None
+                                Height: =Parent.TemplateHeight * 0.8
+                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                LayoutDirection: =LayoutDirection.Vertical
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMode: =LayoutMode.Auto
+                                PaddingBottom: =8
+                                PaddingLeft: =8
+                                PaddingRight: =8
+                                PaddingTop: =8
+                                RadiusBottomLeft: =6
+                                RadiusBottomRight: =6
+                                RadiusTopLeft: =6
+                                RadiusTopRight: =6
+                                Width: =Parent.TemplateWidth - 2
+                                X: =1
+                                Y: =10
+                                ZIndex: =3
+
+                                lblCategoryName As label:
+                                    Color: =varDsColorGeneralText
+                                    FillPortions: =1
+                                    FontWeight: =FontWeight.Semibold
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeNormalText
+                                    Text: =ThisItem.CategoryName
+                                    ZIndex: =1
+
+                                "prgCategoryExpense As 'Progress Bar'":
+                                    BasePaletteColor: =RGBA(246, 142, 104, 1)
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1
+                                    Height: =45
+                                    Indeterminate: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Max: =ThisItem.BudgetLimit
+                                    ProgressColor: |-
+                                        =With(
+                                            {
+                                                varWarningPrecent: Self.Max * 0.3,
+                                                varAlertPrecent: Self.Max * 0.1
+                                            },
+                                            If(
+                                                Self.Value < Self.Max - varWarningPrecent,
+                                                'Progress.ProgressColor'.Success,
+                                                If(
+                                                    Self.Value < Self.Max - varAlertPrecent,
+                                                    'Progress.ProgressColor'.Brand,
+                                                    'Progress.ProgressColor'.Warning
+                                                )
+                                            )
+                                        )
+                                    Thickness: ='Progress.Thickness'.Large
+                                    Value: =Sum(Filter(ColMain_Expense, ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Approved && Category.CategoryName = ThisItem.CategoryName), Amount)
+                                    Width: =450
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =2
+
+                                lblCategoryName_1 As label:
+                                    Align: =Align.Right
+                                    AutoHeight: =true
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeLegend
+                                    Text: |-
+                                        =With(
+                                            {
+                                                varCurrentExpense: Substitute(Text(prgCategoryExpense.Value, "#,##0"), ",","'"),
+                                                varCurrentBudget: Substitute(Text(ThisItem.BudgetLimit, "#,##0"), ",","'") & "CHF ",
+                                                varCurrentPrecent: Text((prgCategoryExpense.Value/Coalesce(ThisItem.BudgetLimit, 1))*100, "0.00")
+                                            },
+                                            varCurrentExpense & "/" & varCurrentBudget & "("& varCurrentPrecent &"%)"
+                                        )
+                                    ZIndex: =11
+
+                cntBodyBottom_scrReport As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: |-
+                        =With(
+                            {
+                                varIsMobile: Parent.Width <= 450
+                            },
+                            If(varIsMobile, 2, 1.5)
+                        )
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =varDsGap
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =Parent.Height
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =16
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =varDsBorderSizeContainer
+                    PaddingLeft: =varDsBorderSizeContainer
+                    PaddingRight: =varDsBorderSizeContainer
+                    PaddingTop: =varDsBorderSizeContainer
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =Parent.Width * 0.65
+                    ZIndex: =3
+
+                    cntGal_departmentExpense As groupContainer.horizontalAutoLayoutContainer:
+                        BorderColor: =RGBA(222, 222, 222, 1)
+                        BorderStyle: =If(varIsDarkModusActived, BorderStyle.None, BorderStyle.Solid)
+                        BorderThickness: =varDsBorderSizeContainer
+                        DropShadow: =DropShadow.None
+                        Fill: =varDsBGCardContainer
+                        Height: =Parent.Height * 0.55
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutGridColumnMinWidth: =0
+                        LayoutGridColumns: =6
+                        LayoutGridRowMinHeight: =0
+                        LayoutGridRows: =6
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =10
+                        PaddingLeft: =varDsContainerPaddingX
+                        PaddingRight: =varDsContainerPaddingX
+                        PaddingTop: =10
+                        RadiusBottomLeft: =6
+                        RadiusBottomRight: =6
+                        RadiusTopLeft: =6
+                        RadiusTopRight: =6
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                        cntGalTitle_departmentExpense As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =varDsContainerHeader
+                            LayoutGap: =10
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =16
+                            LayoutMinWidth: =16
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingBottom: =
+                            PaddingLeft: =
+                            PaddingRight: =
+                            PaddingTop: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =1
+
+                            lblGalTitle_departmentExpense As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varDsColorGeneralText
+                                FillPortions: =1
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PaddingBottom: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =varFontSizeCardTitle
+                                Text: ="Abteilungsausgaben"
+                                ZIndex: =1
+
+                            BtnRset_report As Button:
+                                AccessibleLabel: ="Daten zurücksetzen"
+                                AlignInContainer: =AlignInContainer.Center
+                                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                BorderColor: =
+                                DisplayMode: =If(IsBlank(ddExpStatus_report.Selected) && IsBlank(ddExpUser_report.Selected), DisplayMode.Disabled, DisplayMode.Edit)
+                                FontColor: =
+                                Height: =Parent.Height
+                                Icon: ="ArrowClockwise"
+                                Layout: ='ButtonCanvas.Layout'.IconOnly
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                OnSelect: |-
+                                    =Set(gblExpenseStatusByNotify, false);
+                                    Reset(ddExpStatus_report); Reset(ddExpUser_report); Reset(GalExp);
+                                Text: =
+                                Width: =Self.Height
+                                X: =0
+                                Y: =0
+                                ZIndex: =2
+
+                            cntDdExpUser_report As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGap: =5
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Visible: |-
+                                    =With(
+                                        {
+                                            varIsMobile: Parent.Width <= 450
+                                        },
+                                        !varIsMobile
+                                    )
+                                Width: =200
+                                ZIndex: =3
+
+                                lblExpUser_report As label:
+                                    Align: =Align.Right
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeInputLabel
+                                    Text: ="Benutzer"
+                                    Width: =80
+                                    ZIndex: =1
+
+                                ddExpUser_report As Dropdown.pcfdataset:
+                                    AccessibleLabel: =""
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                    BorderColor: =RGBA(222, 222, 222, 1)
+                                    BorderRadius: =6
+                                    BorderStyle: =""
+                                    BorderThickness: =0.5
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1.8
+                                    FontSize: =varFontSizeInputLabel + 2
+                                    Height: =32
+                                    Items: =Distinct(hh_Expenses, 'Created By'.'Full Name')
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    Required: =false
+                                    TabIndex: =0
+                                    Tooltip: =""
+                                    ValidationState: ="None"
+                                    Visible: =true
+                                    Width: =320
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =10
+
+                            cntDdExpStatus_report As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGap: =5
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Visible: |-
+                                    =With(
+                                        {
+                                            varIsMobile: Parent.Width <= 450
+                                        },
+                                        !varIsMobile
+                                    )
+                                Width: =200
+                                ZIndex: =4
+
+                                lblExpStatus_report As label:
+                                    Align: =Align.Right
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Color: =varDsColorGeneralLegend
+                                    FillPortions: =1
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    Size: =varFontSizeInputLabel
+                                    Text: ="Status"
+                                    Width: =80
+                                    ZIndex: =1
+
+                                ddExpStatus_report As Dropdown.pcfdataset:
+                                    AccessibleLabel: =
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(0, 121, 107, 1)
+                                    BorderColor: =RGBA(222, 222, 222, 1)
+                                    BorderRadius: =6
+                                    BorderStyle: =""
+                                    BorderThickness: =0.5
+                                    ContentLanguage: =""
+                                    DefaultSelectedItems: |
+                                        =If(gblExpenseStatusByNotify, ['ExpenseStatus (hh_Expenses)'.Pending], [])
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1.8
+                                    FontSize: =varFontSizeInputLabel + 2
+                                    Height: =32
+                                    Items: =Distinct(ColMain_Expense, ExpenseStatus)
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    Required: =false
+                                    TabIndex: =0
+                                    Tooltip: =""
+                                    ValidationState: ="None"
+                                    Visible: =true
+                                    Width: =320
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =9
+
+                        ConExp_Table As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGridColumnMinWidth: =0
+                            LayoutGridColumns: =6
+                            LayoutGridRowMinHeight: =0
+                            LayoutGridRows: =6
+                            LayoutMaxHeight: =0
+                            LayoutMaxWidth: =0
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            X: =40
+                            Y: =40
+                            ZIndex: =7
+
+                            ContGal_TitleExpense As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                Fill: =RGBA(237, 255, 251, 1)
+                                FillPortions: =0
+                                Height: =35
+                                LayoutAlignItems: =LayoutAlignItems.Center
+                                LayoutGridColumnMinWidth: =0
+                                LayoutGridColumns: =6
+                                LayoutGridRowMinHeight: =0
+                                LayoutGridRows: =6
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                ZIndex: =1
+
+                                LblExpTitle_name As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =true
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1.2
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =20
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Title"
+                                    TextRole: ='Label.TextRole'.Default
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =true
+                                    Width: =Parent.Width * 0.3
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =1
+
+                                LblExpTitle_date As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =0.6
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Datum"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =true
+                                    Width: =Parent.Width * 0.2
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =2
+
+                                LblExpTitle_amount As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =0.65
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Betrag"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =true
+                                    Width: =Parent.Width * 0.2
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =3
+
+                                LblExpTitle_category As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =0.9
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Kategorie"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =true
+                                    Width: =Parent.Width * 0.15
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =4
+
+                                LblExpTitle_description As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =2.1
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Beschreibung"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =!(App.Width <= 450)
+                                    Width: =Parent.Width * 0.15
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =5
+
+                                LblExpTitle_user As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Benutzer"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =!(App.Width <= 450)
+                                    Width: =Parent.Width * 0.15
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =6
+
+                                LblExpTitle_state As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Left
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =0.55
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Status"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =true
+                                    Width: =Parent.Width * 0.15
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =7
+
+                                LblExpTitle_action As Label:
+                                    AcceptsFocus: =false
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: =Align.Center
+                                    AutoHeight: =false
+                                    Color: =RGBA(6, 95, 70, 1)
+                                    ContentLanguage: =""
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =0.5
+                                    Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                    FontSize: =varFontSizeNormalText
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =
+                                    Italic: =false
+                                    LayoutMaxHeight: =0
+                                    LayoutMaxWidth: =0
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    OnChange: =false
+                                    OnSelect: =false
+                                    Overflow: ="Hidden"
+                                    PaddingBottom: =0
+                                    PaddingEnd: =0
+                                    PaddingStart: =2
+                                    PaddingTop: =0
+                                    Strikethrough: =false
+                                    TabIndex: =0
+                                    Text: ="Aktion"
+                                    TextRole: ="Default"
+                                    Tooltip: =""
+                                    Underline: =false
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =true
+                                    Width: =Parent.Width * 0.15
+                                    Wrap: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =8
+
+                            DvdEmp_Title As rectangle:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =RGBA(166, 166, 166, 1)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                DisabledFill: =RGBA(166, 166, 166, 1)
+                                Fill: =RGBA(0, 121, 107, 0.5)
+                                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                Height: =1
+                                HoverFill: =RGBA(0, 120, 212, 1)
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                PressedFill: =RGBA(0, 120, 212, 1)
+                                ZIndex: =2
+
+                            GalExp As gallery.BrowseLayout_Vertical_TwoTextOneImageVariant_pcfCore:
+                                '#CopilotOverlayLabel': ="Filtered"
+                                BorderColor: =RGBA(166, 166, 166, 1)
+                                DelayItemLoading: =true
+                                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                FocusedBorderThickness: =2
+                                Items: |-
+                                    =Filter(
+                                        hh_Expenses,
+                                        'hh_Expenses (Views)'.'All Expenses',
+                                        
+                                        IsBlank(ddExpUser_report.Selected) || 
+                                        'Created By'.'Full Name' = ddExpUser_report.Selected.Value,
+                                    
+                                        IsBlank(ddExpStatus_report.Selected) || 
+                                        ExpenseStatus = ddExpStatus_report.Selected.Value
+                                    )
+                                Layout: =Layout.Vertical
+                                LayoutMaxHeight: =0
+                                LayoutMaxWidth: =0
+                                LayoutMinHeight: =16
+                                LayoutMinWidth: =16
+                                LoadingSpinner: =LoadingSpinner.Data
+                                ShowScrollbar: =false
+                                TemplatePadding: =0
+                                TemplateSize: =40
+                                ZIndex: =3
+
+                                DvdEmp_Row As rectangle:
+                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledFill: =RGBA(166, 166, 166, 1)
+                                    Fill: =RGBA(230, 230, 230, 1)
+                                    FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                    Height: =1
+                                    HoverFill: =RGBA(0, 120, 212, 1)
+                                    PressedFill: =RGBA(0, 120, 212, 1)
+                                    Width: =ContEmp_Row.Width - ContEmp_Row.PaddingLeft*2
+                                    X: =Parent.TemplateWidth/2 - Self.Width/2
+                                    Y: =Parent.TemplateHeight - Self.Height
+                                    ZIndex: =2
+
+                                ContEmp_Row As groupContainer.horizontalAutoLayoutContainer:
+                                    DropShadow: =DropShadow.None
+                                    Height: =Parent.TemplateHeight
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutGridColumnMinWidth: =0
+                                    LayoutGridColumns: =6
+                                    LayoutGridRowMinHeight: =0
+                                    LayoutGridRows: =6
+                                    LayoutMode: =LayoutMode.Auto
+                                    PaddingBottom: =4
+                                    PaddingTop: =4
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Width: =Parent.Width
+                                    ZIndex: =3
+
+                                    LblExp_name As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =ThisItem.ExpenseTitle
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: ="middle"
+                                        Visible: =true
+                                        Width: =LblExpTitle_name.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    LblExp_date As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =Text(ThisItem.'Created On', "dd mmm")
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: =VerticalAlign.Middle
+                                        Visible: =true
+                                        Width: =LblExpTitle_date.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =2
+
+                                    LblExp_amount As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =ThisItem.Amount & " CHF"
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: ="middle"
+                                        Visible: =true
+                                        Width: =LblExpTitle_amount.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =3
+
+                                    LblExp_category As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =ThisItem.Category.CategoryName
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: ="middle"
+                                        Visible: =true
+                                        Width: =LblExpTitle_category.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =4
+
+                                    LblExp_description As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =ThisItem.Description
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: ="middle"
+                                        Visible: =!(App.Width <= 450)
+                                        Width: =LblExpTitle_description.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =5
+
+                                    LblExp_user As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =ThisItem.'Created By'.'Full Name'
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: ="middle"
+                                        Visible: =!(App.Width <= 450)
+                                        Width: =LblExpTitle_user.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =6
+
+                                    LblExp_state As Label:
+                                        AcceptsFocus: =false
+                                        AlignInContainer: =AlignInContainer.Center
+                                        Alignment: =Align.Left
+                                        AutoHeight: =true
+                                        Color: =varDsColorGeneralSubText
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: ="'Segoe UI', 'Open Sans', sans-serif"
+                                        FontSize: =If(App.Width <= 450, varFontSizeNormalText - 1, varFontSizeNormalText)
+                                        FontWeight: ="normal"
+                                        Height: =32
+                                        Italic: =false
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnChange: =false
+                                        OnSelect: =false
+                                        Overflow: ="Hidden"
+                                        PaddingBottom: =0
+                                        PaddingEnd: =0
+                                        PaddingStart: =2
+                                        PaddingTop: =0
+                                        Strikethrough: =false
+                                        TabIndex: =0
+                                        Text: =ThisItem.ExpenseStatus
+                                        TextRole: ="Default"
+                                        Tooltip: =""
+                                        Underline: =false
+                                        VerticalAlignment: ="middle"
+                                        Visible: =true
+                                        Width: =LblExpTitle_state.Width
+                                        Wrap: =true
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =7
+
+                                    cntBtnExp_action As groupContainer.horizontalAutoLayoutContainer:
+                                        DropShadow: =DropShadow.None
+                                        LayoutAlignItems: =LayoutAlignItems.Center
+                                        LayoutGridColumnMinWidth: =0
+                                        LayoutGridColumns: =6
+                                        LayoutGridRowMinHeight: =0
+                                        LayoutGridRows: =6
+                                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        LayoutMode: =LayoutMode.Auto
+                                        PaddingBottom: =8
+                                        PaddingLeft: =8
+                                        PaddingRight: =8
+                                        PaddingTop: =8
+                                        RadiusBottomLeft: =0
+                                        RadiusBottomRight: =0
+                                        RadiusTopLeft: =0
+                                        RadiusTopRight: =0
+                                        Width: =LblExpTitle_action.Width
+                                        ZIndex: =8
+
+                                        btnExp_action As Button:
+                                            AcceptsFocus: =true
+                                            AccessibleLabel: =""
+                                            Align: =Align.Center
+                                            Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                            BasePaletteColor: =
+                                            BorderColor: =
+                                            BorderStyle: =""
+                                            ContentLanguage: =""
+                                            DisplayMode: =DisplayMode.Edit
+                                            Font: =""
+                                            FontColor: =RGBA(0, 121, 107, 1)
+                                            FontItalic: =false
+                                            FontSize: =0
+                                            FontStrikethrough: =false
+                                            FontUnderline: =false
+                                            FontWeight: =""
+                                            Height: =32
+                                            Icon: ="MoreHorizontal"
+                                            IconRotation: =90
+                                            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                            Layout: ='ButtonCanvas.Layout'.IconOnly
+                                            LayoutMaxHeight: =0
+                                            LayoutMaxWidth: =0
+                                            LayoutMinHeight: =16
+                                            LayoutMinWidth: =16
+                                            OnSelect: |-
+                                                =UpdateContext({locCurrentRowActionReport: !locCurrentRowActionReport});
+                                            TabIndex: =0
+                                            Text: =
+                                            Tooltip: =""
+                                            VerticalAlign: =""
+                                            Visible: =true
+                                            Width: =Self.Height
+                                            X: =0
+                                            Y: =0
+                                            ZIndex: =1
+
+                                cntExpAction_Row_2 As groupContainer.horizontalAutoLayoutContainer:
+                                    DropShadow: =DropShadow.Regular
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =130
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutGap: =4
+                                    LayoutGridColumnMinWidth: =0
+                                    LayoutGridColumns: =6
+                                    LayoutGridRowMinHeight: =0
+                                    LayoutGridRows: =6
+                                    LayoutMode: =LayoutMode.Auto
+                                    PaddingBottom: =6
+                                    PaddingLeft: =6
+                                    PaddingRight: =6
+                                    PaddingTop: =6
+                                    Visible: =ThisItem.IsSelected && locCurrentRowActionReport
+                                    Width: =120
+                                    X: =LblExpTitle_action.X - Self.Width + LblExpTitle_action.Width/3 
+                                    ZIndex: =4
+
+                                    btnExpeView_scrSearch_1 As Button:
+                                        AcceptsFocus: =true
+                                        AccessibleLabel: =""
+                                        Align: =""
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                        BasePaletteColor: =
+                                        BorderColor: =
+                                        BorderStyle: =""
+                                        ContentLanguage: =""
+                                        DisplayMode: =DisplayMode.Edit
+                                        FillPortions: =1
+                                        Font: =Font.'Segoe UI'
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontSize: =varFontSizeNormalText + 2
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =FontWeight.Semibold
+                                        Height: =20
+                                        Icon: =""
+                                        IconRotation: =0
+                                        IconStyle: ="Outline"
+                                        Layout: ="Icon before"
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnSelect: |-
+                                            =Set(gblSelectedRowMyExpense, ThisItem);
+                                            Navigate(scrSearch);
+                                            
+                                            UpdateContext({locCurrentRowActionReport: false});
+                                        TabIndex: =0
+                                        Text: ="Ansehen"
+                                        Tooltip: =""
+                                        VerticalAlign: =""
+                                        Visible: =true
+                                        Width: =96
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    DvExpeAction_scrSearch_2 As rectangle:
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        BorderColor: =RGBA(166, 166, 166, 1)
+                                        BorderStyle: =BorderStyle.None
+                                        BorderThickness: =2
+                                        DisabledFill: =RGBA(166, 166, 166, 1)
+                                        Fill: =RGBA(230, 230, 230, 1)
+                                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                        Height: =1
+                                        HoverFill: =RGBA(230, 230, 230, 1)
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinWidth: =0
+                                        PressedFill: =RGBA(230, 230, 230, 1)
+                                        Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                        X: =
+                                        Y: =
+                                        ZIndex: =2
+
+                                    btnExpeApprove_scrSearch_2 As Button:
+                                        AcceptsFocus: =true
+                                        AccessibleLabel: =""
+                                        Align: =""
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                        BasePaletteColor: =
+                                        BorderColor: =
+                                        BorderStyle: =""
+                                        ContentLanguage: =""
+                                        DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, DisplayMode.Edit, DisplayMode.Disabled)
+                                        FillPortions: =1
+                                        Font: =Font.'Segoe UI'
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontSize: =varFontSizeNormalText + 2
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =FontWeight.Semibold
+                                        Height: =20
+                                        Icon: =""
+                                        IconRotation: =0
+                                        IconStyle: ="Outline"
+                                        Layout: ="Icon before"
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnSelect: |-
+                                            =Patch(
+                                                hh_Expenses,
+                                                ThisItem,
+                                                {
+                                                    ExpenseStatus: 'ExpenseStatus (hh_Expenses)'.Approved
+                                                }
+                                            );
+                                            ClearCollect(ColMain_Expense, hh_Expenses);
+                                            ClearCollect(ColMain_Notification, hh_Notifications);
+                                            
+                                            UpdateContext({locCurrentRowActionReport: false});
+                                        TabIndex: =0
+                                        Text: ="Freigeben"
+                                        Tooltip: =""
+                                        VerticalAlign: =""
+                                        Visible: =true
+                                        Width: =96
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =3
+
+                                    DvExpeAction_scrSearch_4 As rectangle:
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        BorderColor: =RGBA(166, 166, 166, 1)
+                                        BorderStyle: =BorderStyle.None
+                                        BorderThickness: =2
+                                        DisabledFill: =RGBA(166, 166, 166, 1)
+                                        Fill: =RGBA(230, 230, 230, 1)
+                                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                        Height: =1
+                                        HoverFill: =RGBA(230, 230, 230, 1)
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinWidth: =0
+                                        PressedFill: =RGBA(230, 230, 230, 1)
+                                        Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                        X: =
+                                        Y: =
+                                        ZIndex: =4
+
+                                    btnExpeReject_scrSearch_2 As Button:
+                                        AcceptsFocus: =true
+                                        AccessibleLabel: =""
+                                        Align: =""
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                        BasePaletteColor: =
+                                        BorderColor: =
+                                        BorderStyle: =""
+                                        ContentLanguage: =""
+                                        DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && gblIsSupervisor, DisplayMode.Edit, DisplayMode.Disabled)
+                                        FillPortions: =1
+                                        Font: =Font.'Segoe UI'
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontSize: =varFontSizeNormalText + 2
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =FontWeight.Semibold
+                                        Height: =20
+                                        Icon: =""
+                                        IconRotation: =0
+                                        IconStyle: ="Outline"
+                                        Layout: ="Icon before"
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnSelect: |-
+                                            =Patch(
+                                                hh_Expenses,
+                                                ThisItem,
+                                                {
+                                                    ExpenseStatus: 'ExpenseStatus (hh_Expenses)'.Rejected
+                                                }
+                                            );
+                                            ClearCollect(ColMain_Expense, hh_Expenses);
+                                            ClearCollect(ColMain_Notification, hh_Notifications);
+                                            
+                                            UpdateContext({locCurrentRowActionReport: false});
+                                        TabIndex: =0
+                                        Text: ="Ablehnen"
+                                        Tooltip: =""
+                                        VerticalAlign: =""
+                                        Visible: =true
+                                        Width: =96
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =5
+
+                                    DvExpeView_scrSearch_1 As rectangle:
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        BorderColor: =RGBA(166, 166, 166, 1)
+                                        BorderStyle: =BorderStyle.None
+                                        BorderThickness: =2
+                                        DisabledFill: =RGBA(166, 166, 166, 1)
+                                        Fill: =RGBA(230, 230, 230, 1)
+                                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                                        Height: =1
+                                        HoverFill: =RGBA(230, 230, 230, 1)
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinWidth: =0
+                                        PressedFill: =RGBA(230, 230, 230, 1)
+                                        Width: =ContEmp_Row_1.Width - ContEmp_Row_1.PaddingLeft*2
+                                        X: =
+                                        Y: =
+                                        ZIndex: =6
+
+                                    btnExpeEdit_scrSearch_1 As Button:
+                                        AcceptsFocus: =true
+                                        AccessibleLabel: =""
+                                        Align: =""
+                                        AlignInContainer: =AlignInContainer.Stretch
+                                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                        BasePaletteColor: =
+                                        BorderColor: =
+                                        BorderStyle: =""
+                                        ContentLanguage: =""
+                                        DisplayMode: =If(ThisItem.ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending && ThisItem.'Created By'.'Primary Email' = User().Email, DisplayMode.Edit, DisplayMode.Disabled)
+                                        FillPortions: =1
+                                        Font: =Font.'Segoe UI'
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontSize: =varFontSizeNormalText + 2
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =FontWeight.Semibold
+                                        Height: =20
+                                        Icon: =""
+                                        IconRotation: =0
+                                        IconStyle: ="Outline"
+                                        Layout: ="Icon before"
+                                        LayoutMaxHeight: =0
+                                        LayoutMaxWidth: =0
+                                        LayoutMinHeight: =16
+                                        LayoutMinWidth: =16
+                                        OnSelect: |-
+                                            =UpdateContext({locCurrentRowActionReport: false});
+                                        TabIndex: =0
+                                        Text: ="Bearbeiten"
+                                        Tooltip: =""
+                                        VerticalAlign: =""
+                                        Visible: =true
+                                        Width: =96
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =7
+
+    cmpBtnNewExp_scrReport As cmpButtonIcon:
+        ColorBg: =RGBA(0, 121, 107, 1)
+        Height: =65
+        IconSize: =10
+        ImageIcon: =Icon_Plus_White
+        OnSelect: =Set(locModalActived, true)
+        ShadowLg: =true
+        ShadowMd: =false
+        TooltipText: ="Neue Ausgabe"
+        Visible: =varIsMobileView
+        Width: =65
+        X: =Parent.Width - Self.Width - 20
+        Y: =Parent.Height - Self.Height - 20
+        ZIndex: =2
+
+    cmpNavbarSidebar_scrReport_Mobile As cmpNavbarSidebar:
+        BackgroundColor: =RGBA(0, 102, 90, 1)
+        Btn1Navigate: =scrExpense
+        Btn3Navigate: =scrSearch
+        ChildTabPriority: =true
+        Close_ResetNavbarCollapsed: |-
+            =UpdateContext({locSidebarOpened: !locSidebarOpened});
+        ContentLanguage: =""
+        CurrentActiveButton: ="Berichte"
+        EnableChildFocus: =true
+        FontSize: =varFontSizeButton
+        Height: =App.Height - cmpNavbarHeader_scrExpense_Mobile.Height
+        IconSize: =20
+        SidebarOpened: =locSidebarOpened
+        Visible: =varIsMobileView
+        Width: |-
+            =Switch(
+                Self.SidebarOpened,
+                true, App.Width,
+                false, - (Self.TimerClose)*1.5,
+                0
+            )
+        Y: =cmpNavbarHeader_scrReport_Mobile.Height
+        ZIndex: =3
+
+    cmpModal_expenseForm_scrReport As cmpModal_expenseForm:
+        ChildTabPriority: =true
+        CloseModal: =Set(locModalActived, false)
+        ContentLanguage: =""
+        EnableChildFocus: =true
+        MobileDesignEnabled: =varIsMobileView
+        ModalActived: =locModalActived
+        ModalGap: =varDsGap
+        ModalHeight: =If(varIsMobileView, App.Height*0.92, cntForm_expense.Height)
+        ModalPadding: =varDsGap
+        ModalWidth: =If(varIsMobileView, App.Width * 0.9, cntForm_expense.Width * 0.8) 
+        SubmitModal: =
+        TitleFontSize: =varFontSizeCardTitle+4
+        Visible: =If(Self.ModalActived && Self.BGActived, true, !Self.BGActived, false, true)
+        Width: =App.Width
+        ZIndex: =4
+

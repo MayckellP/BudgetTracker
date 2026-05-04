@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{3b96dd18-0fd2-45f4-a908-1f9526e3e647}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="zd_budgetname" select="1" icon="1" preview="1">
+        <row name="result" id="zd_hh_budgetid">
+          <cell name="zd_budgetname" width="300" />
+          <cell name="createdon" width="125" />
+          <cell name="zd_year" width="100" />
+          <cell name="zd_totalbudget" width="110" />
+          <cell name="zd_department" width="107" />
+          <cell name="zd_budgetstatus" width="115" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="zd_hh_budget">
+          <attribute name="zd_hh_budgetid" />
+          <attribute name="zd_budgetname" />
+          <attribute name="createdon" />
+          <order attribute="zd_budgetname" descending="false" />
+          <attribute name="zd_year" />
+          <attribute name="zd_totalbudget" />
+          <attribute name="zd_department" />
+          <attribute name="zd_budgetstatus" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="hh_Budget Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

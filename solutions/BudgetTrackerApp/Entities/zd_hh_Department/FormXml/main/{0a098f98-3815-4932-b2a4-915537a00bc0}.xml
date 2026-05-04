@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0a098f98-3815-4932-b2a4-915537a00bc0}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{e5f2c53c-dcd9-4e0a-ab4f-769ff9412813}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{cb0e72bc-a5c1-489c-8500-5e5e64b0cf68}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b91cd2c1-4ba9-4c86-ab33-390a60544d01}">
+                        <labels>
+                          <label description="DepartmentName" languagecode="1033" />
+                        </labels>
+                        <control id="zd_departmentname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_departmentname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ca1df21-39f0-4d61-aee6-5262d01f187a}">
+                        <labels>
+                          <label description="Supervisor" languagecode="1033" />
+                        </labels>
+                        <control id="zd_supervisor" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_supervisor" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cf27f039-7b66-4a0b-b95f-f50699f90458}">
+                        <labels>
+                          <label description="BusinessUnit" languagecode="1033" />
+                        </labels>
+                        <control id="zd_businessunit" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_businessunit" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,88 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+App:
+  Properties:
+    Formulas: |+
+      =/* ================== Responsive Design ================== */
+      // ----- Breakpoints
+      varIsMobileView = App.Width <= 850;
+      varBreakpoint = Switch(
+          true,
+          App.Width <= 850, "SM",
+          App.Width <= 1000, "MD",     
+          App.Width <= 1400, "LG",     
+          "XL"                 
+      );
+
+      // ----- Fontsize
+      varFontSizePageTitle = Switch(varBreakpoint, "SM", 0, "MD", 16, "LG",18, "XL", 22);
+
+      varFontSizeCardTitle = Switch(varBreakpoint, "SM", 8.5, "MD", 9.5, "LG", 10.5, "XL", 14);
+
+      varFontSizeButton = Switch(varBreakpoint, "SM", 8, "MD", 9, "LG",10, "XL", 11);
+      varDsContainerHeader = Switch(varBreakpoint, "SM", 37, "MD", 37, "LG",38, "XL", 42);
+      varDsInputHeight = Switch(varBreakpoint, "SM", 35, "MD", 37, "LG",37, "XL", 40);
+      varDsContainerPaddingX = Switch(varBreakpoint, "SM", 10, "MD", 10, "LG",15, "XL", 20);
+
+      varFontSizeNormalText = Switch(varBreakpoint, "SM", 8, "MD", 9, "LG", 9.5, "XL", 11);
+      varFontSizeInputLabel = 9;
+      varFontSizeLegend = Switch(varBreakpoint, "SM", 8, "MD", 8.5, "LG", 8.5, 9);
+
+      // ----- Main Containers:    Siderbar | Header | Footer 
+      varDsSidebarWidth = Switch(varBreakpoint, "MD", App.Width * 0.17, "LG", App.Width * 0.14, "XL", App.Width * 0.12);
+      varDsHeaderHeight = Switch(varBreakpoint, "MD", App.Height * 0.06, "LG", App.Height * 0.06, "XL", App.Height*0.05);
+
+
+      /* ================== General Design ================== */
+      // Background color system
+      varDsBackgroundApp = If(varIsDarkModusActived, RGBA(58, 58, 58, 1), RGBA(247, 247, 248, 1));
+      varDsColorTitlePage = If(varIsDarkModusActived, RGBA(255, 255, 255, 1), RGBA(0, 121, 107, 1));
+      varDsBGCardContainer = If(varIsDarkModusActived, RGBA(50, 50, 50, 1), RGBA(255, 255, 255, 1));
+      varDsColorGeneralText = If(varIsDarkModusActived, RGBA(255, 255, 255, 1), RGBA(0, 0, 0, 1));
+      varDsColorGeneralSubText = If(varIsDarkModusActived, RGBA(199, 198, 198, 1), RGBA(0, 0, 0, 1));
+      varDsColorGeneralLegend = If(varIsDarkModusActived, RGBA(199, 198, 198, 1),  RGBA(91, 91, 91, 1));
+      varDsColorPrimaryButton = If(varIsDarkModusActived, RGBA(36, 89, 84, 1),  RGBA(0, 121, 107, 1));
+
+      // ----- Gap-Container
+      varDsGap = Switch(varBreakpoint, "SM", 10, "MD", 12, "LG", 12, "XL", 15);
+      // ----- BorderThickness
+      varDsBorderSizeContainer = 0.5;
+
+      /* ================== DarkMode Design ================== */
+      varIsDarkModusActived = cmpHeader_scrExpense.DarkModus || cmpHeader_scrReport.DarkModus || cmpHeader_scrSearch.DarkModus;
+
+
+      gblCurrentBudget = Coalesce(LookUp(hh_Budgets, Department.DepartmentName = gblCurrentDepartment.DepartmentName && Year = Year(Today()), TotalBudget), 1);
+      gblTotalExpenseApproved = Coalesce(Sum(Filter(ColMain_Expense, Department.DepartmentName = gblCurrentDepartment.DepartmentName && Year('Created On') = Year(Today()) && ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Approved), Amount), 0);
+      gblTotalExpensePending = Coalesce(Sum(Filter(ColMain_Expense, Department.DepartmentName = gblCurrentDepartment.DepartmentName && Year('Created On') = Year(Today()) && ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending), Amount), 0);
+      gblTotalSaldo = gblCurrentBudget - gblTotalExpenseApproved;
+      gblExpensePrecent = (gblTotalExpenseApproved/gblCurrentBudget) * 100;
+    OnStart: |-
+      =ClearCollect(ColMain_Employee, Filter(Users, 'User Licensed' = true));
+      ClearCollect(ColMain_Expense, hh_Expenses);
+      ClearCollect(ColMain_Department, hh_Departments);
+      ClearCollect(ColMain_Category, hh_Categories);
+      ClearCollect(ColMain_Notification, hh_Notifications);
+
+      Set(locModalActived, false);
+
+      Set(gblIsSupervisor, LookUp(ColMain_Department, Supervisor.'Primary Email' = User().Email, true));
+      Set(gblCurrentDepartment, LookUp(ColMain_Department, DepartmentName = "Finanz"));
+      /*
+      Set(gblCurrentBudget, LookUp(hh_Budgets, Department.DepartmentName = gblCurrentDepartment.DepartmentName && Year = Year(Today()), TotalBudget)) ;
+      Set(gblTotalExpenseApproved, Coalesce(Sum(Filter(ColMain_Expense, Department.DepartmentName = gblCurrentDepartment.DepartmentName && Year('Created On') = Year(Today()) && ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Approved), Amount), 0));
+      Set(gblTotalExpensePending, Coalesce(Sum(Filter(ColMain_Expense, Department.DepartmentName = gblCurrentDepartment.DepartmentName && Year('Created On') = Year(Today()) && ExpenseStatus = 'ExpenseStatus (hh_Expenses)'.Pending), Amount), 0));
+      Set(gblTotalSaldo, gblCurrentBudget - gblTotalExpenseApproved);
+      Set(gblExpensePrecent, (gblTotalExpenseApproved/gblCurrentBudget)*100);*/
+
+      Set(gblExpenseStatusByNotify, false);
+      Set(gblSelectedRowMyExpense, {});
+    SizeBreakpoints: =[850, 1000, 1300]
+    StartScreen: =scrExpense
+    Theme: =PowerAppsTheme

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{87ccdbba-86b2-4fb0-946e-b9f2787f94ad}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{df1f7494-24c7-4b62-9f4b-739d0e25250d}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{73a65918-2f96-4287-9152-49e5d893b91e}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4a679bee-fb61-4c35-aad6-e5d8dcecc682}">
+                        <labels>
+                          <label description="CategoryName" languagecode="1033" />
+                        </labels>
+                        <control id="zd_categoryname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="zd_categoryname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{632041a4-bf9f-4c4e-a974-24e47845b4ae}">
+                        <labels>
+                          <label description="Budget" languagecode="1033" />
+                        </labels>
+                        <control id="zd_budget" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="zd_budget" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bffff0d7-a62c-4ff4-8165-76a1567288d9}">
+                        <labels>
+                          <label description="BudgetLimit" languagecode="1033" />
+                        </labels>
+                        <control id="zd_budgetlimit" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="zd_budgetlimit" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{814c4704-11d9-4248-9c8c-cfc48c2e8e60}">
+                        <labels>
+                          <label description="CategoryStatus" languagecode="1033" />
+                        </labels>
+                        <control id="zd_categorystatus" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="zd_categorystatus" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b957f507-b9a7-4b84-8bb5-5f4e1b4719b2}" locklevel="0" rowspan="1" colspan="1">
+                        <labels>
+                          <label description="Department" languagecode="1033" />
+                        </labels>
+                        <control id="zd_department" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="zd_department" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{5a64ad37-6eca-4374-a2b4-252a6d1b9145}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{35b9e619-83ee-40f1-9116-ef87d32eb610}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7b038720-b0b0-4fab-836e-30780e95f040}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{19fdad02-0e52-48c7-9fda-86c62b7db2b3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{c411dc03-a69d-4a78-a5ba-5494064ae7a2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{13ab2dde-acf8-4152-8b69-cb808fad715b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{e8e806a5-c538-4749-a190-45df56fa6df1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9c933d41-618f-45a1-af03-4b3740e1db83}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
