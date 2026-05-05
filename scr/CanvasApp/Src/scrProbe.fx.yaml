@@ -1,0 +1,215 @@
+scrProbe As screen:
+    ContentLanguage: =""
+    Fill: =Color.White
+    LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    OnVisible: |-
+        =UpdateContext({locSidebarOpened: Blank()});
+        Set(gblExpenseStatusByNotify, false);
+
+    cmpNavbarHeader_scrProbe_Mobile As cmpNavbarHeader:
+        ChildTabPriority: =true
+        ContentLanguage: =""
+        EnableChildFocus: =true
+        FillPortions: =0.34
+        HamburguerIconSize: =30
+        LayoutMaxHeight: =65
+        LayoutMaxWidth: =0
+        LayoutMinHeight: =60
+        LayoutMinWidth: =640
+        PageName: ="Probe"
+        ShowNavbarSidebar: |-
+            =UpdateContext({locSidebarOpened: !locSidebarOpened});
+        SidebarActived: =locSidebarOpened
+        TextDetailsColor: =RGBA(214, 221, 224, 1)
+        TextDetailsFontSize: =8
+        TitleFontSize: =12
+        Visible: =varIsMobileView
+
+    cmpSidebar_scrProbe As cmpSidebar:
+        AlignInContainer: =AlignInContainer.Stretch
+        Btn1Icon: =If(varIsDarkModusActived, Dashboard_Selected, Dashboard_Black)
+        Btn1Navigate: =scrExpense
+        Btn1Text: ="Finanz Übersicht"
+        Btn2Icon: =If(varIsDarkModusActived, Report_Selected, Report_Black)
+        Btn2Navigate: =scrReport
+        Btn2Text: ="Berichte"
+        Btn3Icon: =If(varIsDarkModusActived, Search_Selected, Search_Black)
+        Btn3IconSelected: =Search_Selected
+        Btn3Navigate: =scrSearch
+        Btn3Text: ="Suchen"
+        Btn4Visible: =false
+        ChildTabPriority: =true
+        ContentLanguage: =""
+        EnableChildFocus: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        FillPortions: =0.8
+        FontSize: =varFontSizeButton
+        LayoutMaxHeight: =0
+        LayoutMaxWidth: =varDsSidebarWidth
+        LayoutMinHeight: =640
+        LayoutMinWidth: =120
+        OnSelectBtnNewRecord: =
+        PrimaryColor: =varDsColorPrimaryButton
+        SelectedPage: ="Probe"
+        TextColor: =varDsColorGeneralText
+        TitleFontSize: =12
+        Visible: =!varIsMobileView
+        Width: =varDsSidebarWidth
+        ZIndex: =2
+
+    cntMain_scrProbe As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =App.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =If(varIsMobileView, LayoutDirection.Vertical, LayoutDirection.Horizontal)
+        LayoutGridColumnMinWidth: =0
+        LayoutGridColumns: =6
+        LayoutGridRowMinHeight: =0
+        LayoutGridRows: =6
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =App.Width
+        X: =App.Width/2 - Self.Width/2
+        Y: =App.Height/2 - Self.Height/2
+        ZIndex: =1
+
+        cntMainRight_scrProbe As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =varDsBackgroundApp
+            FillPortions: =4
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =varDsGap
+            LayoutGridColumnMinWidth: =0
+            LayoutGridColumns: =6
+            LayoutGridRowMinHeight: =0
+            LayoutGridRows: =6
+            LayoutMaxHeight: =0
+            LayoutMaxWidth: =If(varBreakpoint = "Mobile", Parent.Width, 0)
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =varDsGap
+            PaddingLeft: =varDsGap
+            PaddingRight: =varDsGap
+            PaddingTop: =varDsGap
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            X: =cmpSidebar_scrProbe.Width
+            ZIndex: =3
+
+            cmpHeader_scrProbe As cmpHeaderSimple:
+                AlignInContainer: =AlignInContainer.Stretch
+                ChildTabPriority: =true
+                ContentLanguage: =""
+                DarkModusInput: =varIsDarkModusActived
+                DetailsColor: =varDsColorGeneralLegend
+                DetailsFontSize: =varFontSizeNormalText
+                DetailsText: ="Página Probe con los mismos componentes reutilizables"
+                EnableChildFocus: =true
+                FillPortions: =0.85
+                IconsSize: =12
+                LayoutMaxHeight: =varDsHeaderHeight
+                LayoutMaxWidth: =Parent.Width
+                LayoutMinHeight: =0
+                LayoutMinWidth: =0
+                OnSelect_RefreshData: |-
+                    =ClearCollect(ColMain_Expense, hh_Expenses);
+                    ClearCollect(ColMain_Department, hh_Departments);
+                    ClearCollect(ColMain_Category, hh_Categories);
+                TitelColor: =varDsColorTitlePage
+                TitelFontSize: =varFontSizePageTitle
+                TitelText: ="Probe"
+                TitelWidth: =120
+                Visible: =!varIsMobileView
+
+            cntBody_scrProbe As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(222, 222, 222, 1)
+                DropShadow: =DropShadow.None
+                FillPortions: =13
+                Height: =Parent.Height * 0.1
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =varDsGap
+                LayoutGridColumnMinWidth: =0
+                LayoutGridColumns: =6
+                LayoutGridRowMinHeight: =0
+                LayoutGridRows: =6
+                LayoutMaxHeight: =0
+                LayoutMaxWidth: =0
+                LayoutMinHeight: =16
+                LayoutMinWidth: =16
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                cntCard_scrProbe As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Start
+                    BorderColor: =RGBA(222, 222, 222, 1)
+                    BorderThickness: =0.5
+                    DropShadow: =DropShadow.None
+                    Fill: =varDsBGCardContainer
+                    FillPortions: =0
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =10
+                    LayoutGridColumnMinWidth: =0
+                    LayoutGridColumns: =6
+                    LayoutGridRowMinHeight: =0
+                    LayoutGridRows: =6
+                    LayoutMaxHeight: =0
+                    LayoutMaxWidth: =0
+                    LayoutMinHeight: =160
+                    LayoutMinWidth: =16
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =15
+                    PaddingLeft: =varDsContainerPaddingX
+                    PaddingRight: =varDsContainerPaddingX
+                    PaddingTop: =15
+                    RadiusBottomLeft: =6
+                    RadiusBottomRight: =6
+                    RadiusTopLeft: =6
+                    RadiusTopRight: =6
+                    ZIndex: =4
+
+                    lblProbeTitle_scrProbe As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =0
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =varFontSizeCardTitle
+                        Text: ="Probe - nueva página"
+                        ZIndex: =1
+
+                    lblProbeDescription_scrProbe As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =0
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Normal
+                        LayoutMaxHeight: =0
+                        LayoutMaxWidth: =0
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =varFontSizeNormalText
+                        Text: ="Esta pantalla usa los mismos componentes reutilizables y la convención de nombres solicitada."
+                        ZIndex: =1
