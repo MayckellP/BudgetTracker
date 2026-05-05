@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ImportExportXml version="9.2.26043.151" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26043.151" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26043.00151">
   <SolutionManifest>
-    <UniqueName>hospitalh_budgetmanagement</UniqueName>
+    <UniqueName>hospitalh_budgetmanagement_v2</UniqueName>
     <LocalizedNames>
-      <LocalizedName description="HospitalH_BudgetManagement" languagecode="1033" />
+      <LocalizedName description="HospitalH_BudgetManagement_v2" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.0</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>ZuriDevPublisher</UniqueName>
@@ -86,23 +86,23 @@
       <RootComponent type="1" schemaName="zd_hh_department" behavior="0" />
       <RootComponent type="1" schemaName="zd_hh_expense" behavior="0" />
       <RootComponent type="1" schemaName="zd_hh_notification" behavior="0" />
-      <RootComponent type="20" id="{a10be01a-c120-f111-88b1-70a8a507a37b}" behavior="0" />
-      <RootComponent type="20" id="{d2abaea1-bc22-f111-8341-70a8a508241e}" behavior="0" />
-      <RootComponent type="20" id="{ebd8bca5-bb22-f111-8341-70a8a508241e}" behavior="0" />
-      <RootComponent type="29" id="{0cda5b1c-ec25-f111-88b4-7ced8d436121}" behavior="0" />
-      <RootComponent type="29" id="{2a8c3f69-df21-f111-88b1-7ced8d430217}" behavior="0" />
-      <RootComponent type="29" id="{41a4af5e-d921-f111-88b1-7ced8d430217}" behavior="0" />
-      <RootComponent type="29" id="{53251632-b124-f111-88b4-7ced8d42f43c}" behavior="0" />
+      <RootComponent type="20" id="{a10be02b-c121-f111-88b1-70a8a507a38c}" behavior="0" />
+      <RootComponent type="20" id="{d2abaea2-bc23-f111-8341-70a8a508242f}" behavior="0" />
+      <RootComponent type="20" id="{ebd8bca6-bb23-f111-8341-70a8a50824f0}" behavior="0" />
+      <RootComponent type="29" id="{0cda5b1d-ec26-f111-88b4-7ced8d436122}" behavior="0" />
+      <RootComponent type="29" id="{2a8c3f6a-df22-f111-88b1-7ced8d430218}" behavior="0" />
+      <RootComponent type="29" id="{41a4af5f-d922-f111-88b1-7ced8d430218}" behavior="0" />
+      <RootComponent type="29" id="{53251633-b125-f111-88b4-7ced8d42f43d}" behavior="0" />
       <RootComponent type="300" schemaName="crb5e_buttons_d9296" behavior="0" />
       <RootComponent type="300" schemaName="crb5e_headers_07abe" behavior="0" />
       <RootComponent type="300" schemaName="crb5e_modals_411f2" behavior="0" />
       <RootComponent type="300" schemaName="crb5e_navigation_a8e64" behavior="0" />
-      <RootComponent type="300" schemaName="zd_expenseportal_ad7a0" behavior="0" />
-      <RootComponent type="60" id="{69d2ed9e-cd20-f111-88b1-70a8a50930d9}" behavior="0" />
+      <RootComponent type="300" schemaName="zd_expenseportal_v2_be8f1" behavior="0" />
+      <RootComponent type="60" id="{69d2ed9f-cd21-f111-88b1-70a8a50930da}" behavior="0" />
       <RootComponent type="61" schemaName="zd_hh_expenseCommands" behavior="0" />
-      <RootComponent type="62" schemaName="zd_HospitalBudgetManagement" behavior="0" />
+      <RootComponent type="62" schemaName="zd_HospitalBudgetManagement_v2" behavior="0" />
       <RootComponent type="66" schemaName="zd_UI.Library.CanvasChartPieRechart" behavior="0" />
-      <RootComponent type="80" schemaName="zd_HospitalBudgetManagement" behavior="0" />
+      <RootComponent type="80" schemaName="zd_HospitalBudgetManagement_v2" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
